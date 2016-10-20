@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+    <base href="/" />
+    <script src="/angular/angular.min.js" type="text/javascript"></script>
+    <script src="/angular-ui-router/release/angular-ui-router.min.js" type="text/javascript"></script>
+    <script src="/oclazyload/dist/ocLazyLoad.min.js" type="text/javascript"></script>
+    <script src="/scripts/app.js" type="text/javascript"></script>
+    <script src="/scripts/config/broadcastConfig.js" type="text/javascript"></script>
+    <script src="/scripts/directives/header/header.js" type="text/javascript"></script>
+    <script src="/scripts/directives/loader/loader.js" type="text/javascript"></script>
+    <script src="/scripts/routing/routing.js" type="text/javascript"></script>
+    <script src="/scripts/controllers/login.js" type="text/javascript"></script>
+    <title>Tavant Technologies</title>
+</head>
+<body>
+<!-- Page container -->
+<div class="pg-main-wrap" >
+    <!-- header part of application -->
+    <div header ></div>
+    <div id="page-views" >
+        <!-- middle part of application -->
+        <div  ui-view="main" ng-cloak> </div>
+
+    </div>
+</div>
+<!-- Loader  -->
+<div loader></div>
+</body>
+</html>

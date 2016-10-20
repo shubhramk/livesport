@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <form class="form-signin" name="userForm" ng-submit="doLogin()" novalidate>
+        <h2 class="form-signin-heading">Please login</h2>
+        <div class="fieldset form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+            <label>Username</label>
+            <input type="text" name="name" class="form-control" ng-model="form.Name" required>
+            <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
+        </div>
+        <div class="fieldset form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+            <label>Password</label>
+            <input type="password" name="email" class="form-control" ng-model="form.Password" required>
+            <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Enter a valid email.</p>
+        </div>
+        <div class="fieldset form-group">
+            <button class="btn btn-primary" type="submit" ng-disabled="userForm.$invalid" >Login</button>
+        </div>
+    </form>
+</div>
