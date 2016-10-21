@@ -15,7 +15,7 @@ angular.module('myApp', [
     'templates-common'
 ])
     .run(['$rootScope', function run($rootScope) {
-
+        $rootScope.islogin = false;
     }])
     .controller('AppCtrl', ['$scope', function AppCtrl($scope) {
 

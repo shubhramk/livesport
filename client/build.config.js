@@ -32,7 +32,10 @@ module.exports = {
     cache: ['src/*.appcache'],
     less: [
       'less/main.less',
-      'modules/home/home.less'
+      'modules/home/home.less',
+      'modules/channels/channels.less',
+      'modules/events/events.less',
+      'modules/favorites/favorites.less'
     ]
   },
 

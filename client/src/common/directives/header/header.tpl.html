@@ -1,0 +1,9 @@
+<div class="header-section"  ng-if="$root.islogin">
+    <div class="tabs-container">
+    <ul class="nav nav-tabs">
+        <li role="presentation"  ng-class="{active : activeMenu === 'channels'}" ng-click="tabclick('channels')"><a>Channels</a></li>
+        <li role="presentation" ng-class="{active : activeMenu === 'favorites'}" ng-click="tabclick('favorites')"><a >Favorites</a></li>
+        <li role="presentation" ng-class="{active : activeMenu === 'events'}" ng-click="tabclick('events')"><a>Events</a></li>
+    </ul>
+    </div>
+</div>
