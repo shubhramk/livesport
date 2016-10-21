@@ -8,11 +8,11 @@
         </video>
 
     </div>
-    <div class="login-box">
+    <form  class="login-box"  name="userForm" ng-submit="doLogin()" novalidate>
         <h1>Login</h1>
-        <input type="text" placeholder="Username"/>
-        <input type="text" placeholder="Password"/>
-        <button>Login</button>
+        <input type="text" name="name" ng-model="form.Name" required placeholder="Username">
+        <input type="password" name="email"  ng-model="form.Password" required placeholder="Password">
+        <button type="submit" ng-disabled="userForm.$invalid" >Login</button>
         <!--<p>Not a member? <span>Sign Up</span></p>-->
-    </div>
+    </form>
 </div>

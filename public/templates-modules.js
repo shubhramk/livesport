@@ -289,12 +289,12 @@ angular.module("login/login.tpl.html", []).run(["$templateCache", function($temp
     "        </video>\n" +
     "\n" +
     "    </div>\n" +
-    "    <div class=\"login-box\">\n" +
+    "    <form  class=\"login-box\"  name=\"userForm\" ng-submit=\"doLogin()\" novalidate>\n" +
     "        <h1>Login</h1>\n" +
-    "        <input type=\"text\" placeholder=\"Username\"/>\n" +
-    "        <input type=\"text\" placeholder=\"Password\"/>\n" +
-    "        <button>Login</button>\n" +
+    "        <input type=\"text\" name=\"name\" ng-model=\"form.Name\" required placeholder=\"Username\">\n" +
+    "        <input type=\"password\" name=\"email\"  ng-model=\"form.Password\" required placeholder=\"Password\">\n" +
+    "        <button type=\"submit\" ng-disabled=\"userForm.$invalid\" >Login</button>\n" +
     "        <!--<p>Not a member? <span>Sign Up</span></p>-->\n" +
-    "    </div>\n" +
+    "    </form>\n" +
     "</div>");
 }]);
