@@ -1,0 +1,24 @@
+CACHE MANIFEST
+
+#version @@version
+
+CACHE:
+
+#images
+#Modules/header/img/logo.png
+
+
+#style sheets
+#assets/weatherForecast-0.0.1.min.css
+
+#style sheet images
+#modules/img/abc.png
+
+
+#javascript files
+#assets/main.min.js
+
+
+NETWORK:
+*
+
