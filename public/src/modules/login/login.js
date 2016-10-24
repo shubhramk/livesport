@@ -4,11 +4,13 @@
 /**
  * Login module - user login
  */
-angular.module('myApp').controller('LoginCtrl',['$scope' , '$http' ,function ($scope,$http) {
+angular.module('myApp').controller('LoginCtrl',['$scope' , '$http' ,'$state','$rootScope',function ($scope,$http,$state,$rootScope) {
     $scope.doLogin = function(){
         $http.post('/api/checkLogin' , $scope.form).
             success(function(data) {
                 console.log(data);
+                $state.go('home');
+                $rootScope.islogin = true;
             });
     };
 }]);

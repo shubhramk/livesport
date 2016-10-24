@@ -5792,8 +5792,33 @@ button.close {
 /**
  * Typography-related.
  */
+/******
+Font-Family: Lato
+********/
+@font-face {
+  font-family: 'latobold';
+  src: url('../../../assets/font/Lato/lato-bold-webfont.woff2') format('woff2'), url("../../../assets/font/Lato/Lato-Bold.ttf") format("truetype"), url('../../../assets/font/Lato/lato-bold-webfont.woff') format('woff');
+}
+@font-face {
+  font-family: 'latoregular';
+  src: url('../../../assets/font/Lato/Lato/lato-regular-webfont.woff2') format('woff2'), url("../../../assets/font/Lato/Lato-Regular.ttf") format("truetype"), url('../../../assets/font/Lato/lato-regular-webfont.woff') format('woff');
+}
 body {
-  background: #eee !important;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'latoregular';
+}
+.body-bg {
+  background-image: url('../../../assets/images/body-bg.jpg');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.main-container {
+  width: 1180px;
+  margin: 0 auto;
+  position: relative;
 }
 .wrapper {
   margin-top: 80px;
@@ -5892,4 +5917,61 @@ body {
 .login-box p span {
   cursor: pointer;
   color: #666;
+}
+header {
+  background-color: #3c3c3c;
+}
+header .header-top {
+  height: 70px;
+}
+header .header-top .logo {
+  color: #fff;
+  font-size: 30px;
+  margin-top: 10px;
+}
+header .header-top .logo .fa {
+  font-size: 25px;
+}
+header .header-top .search-block {
+  margin-top: 20px;
+}
+header .header-top .search-block .fa {
+  color: #fff;
+}
+header .header-top .search-block input {
+  background-color: #333333;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #999999;
+  padding: 6px 10px;
+}
+header .header-bottom nav {
+  background-color: #262626;
+  border-color: transparent;
+  border-radius: 0px;
+}
+header .header-bottom nav .navbar-nav li a {
+  color: #fff;
+}
+header .header-bottom nav .navbar-nav li a:hover {
+  background-color: #000;
+  color: #fff;
+}
+header .header-bottom nav .navbar-nav li a.active {
+  background-color: #000;
+}
+/****
+Mobile
+***/
+@media screen and (max-device-width: 767px) {
+  .main-container {
+    width: 100%;
+  }
+}
+/****
+IPAD
+***/
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .main-container {
+    width: 100%;
+  }
 }

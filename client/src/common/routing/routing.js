@@ -1,6 +1,3 @@
-/**
- * Routing Configuration of Application
- */
 angular.module( 'myApp')
     .config(function config ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
@@ -58,10 +55,10 @@ angular.module( 'myApp')
             .state('login', {
                 url: '/login',
                 views: {
-                  "main": {
-                      templateUrl: 'login/login.tpl.html',
-                      controller: 'LoginCtrl'
-                  }
+                    "main": {
+                        templateUrl: 'login/login.tpl.html',
+                        controller: 'LoginCtrl'
+                    }
                 },
                 resolve: {
                     loadMyService: ['$ocLazyLoad', function($ocLazyLoad) {
@@ -69,7 +66,7 @@ angular.module( 'myApp')
                     }]
                 },
                 data: {
-                  pageTitle: 'Login'
+                    pageTitle: 'Login'
                 }
             }).state('home', {
                 url: '/home',
@@ -140,7 +137,6 @@ angular.module( 'myApp')
                     requireLogin: true
                 }
             });
-      //default page
-      $urlRouterProvider.otherwise('/login');
+        //default page
+        $urlRouterProvider.otherwise('/login');
     });
-

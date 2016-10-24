@@ -20,9 +20,42 @@
 
 @import 'variables.less';
 
+/******
+Font-Family: Lato
+********/
+@font-face {
+    font-family: 'latobold';
+    src: url('../../../assets/font/Lato/lato-bold-webfont.woff2') format('woff2'),
+    url("../../../assets/font/Lato/Lato-Bold.ttf") format("truetype"),
+    url('../../../assets/font/Lato/lato-bold-webfont.woff') format('woff');
+
+}
+
+@font-face {
+    font-family: 'latoregular';
+    src: url('../../../assets/font/Lato/Lato/lato-regular-webfont.woff2') format('woff2'),
+    url("../../../assets/font/Lato/Lato-Regular.ttf") format("truetype"),
+    url('../../../assets/font/Lato/lato-regular-webfont.woff') format('woff');
+}
 
 body {
-    background: #eee !important;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'latoregular';
+}
+.body-bg {
+    background-image: url('../../../assets/images/body-bg.jpg');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+
+}
+
+.main-container {
+    width: 1180px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .wrapper {
@@ -121,5 +154,73 @@ body {
             cursor:pointer;
             color:#666;
         }
+    }
+}
+
+header {
+    background-color:  rgba(60, 60, 60, 1);
+    .header-top {
+        height: 70px;
+        .logo {
+            color: #fff;
+            font-size: 30px;
+            margin-top: 10px;
+            .fa {
+                font-size: 25px;
+            }
+        }
+        .search-block {
+            margin-top: 20px;
+            .fa {
+                color: #fff;
+            }
+            input {
+                background-color: rgba(51, 51, 51, 1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                color: rgba(153, 153, 153, 1);
+                padding: 6px 10px;
+            }
+        }
+    }
+    .header-bottom {
+        nav {
+            background-color: #262626;
+            border-color: transparent;
+            border-radius: 0px;
+            .navbar-nav {
+                li {
+                    a {
+                        color: #fff;
+                        &:hover {
+                            background-color: #000;
+                            color: #fff;
+                        }
+                        &.active {
+                            background-color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+/****
+Mobile
+***/
+@media screen and (max-device-width: 767px) {
+    .main-container {
+        width: 100%;
+    }
+}
+
+/****
+IPAD
+***/
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .main-container {
+        width: 100%;
     }
 }
