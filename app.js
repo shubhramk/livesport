@@ -4,7 +4,8 @@
 var express = require('express');
 var bodyParser = require("body-parser");
 var path = require('path');
-
+var process = require('process');
+var http = require('http');
 
 
 var api = require('./routes/api');
@@ -18,8 +19,8 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/api', api);
 
-app.listen(3000, function () {
-    console.log('express-handlebars example server listening on: 3000');
+app.listen(process.env.PORT || 3000, function(){
+    console.log('server running');
 });
 
 module.exports = app;
