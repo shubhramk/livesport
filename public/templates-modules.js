@@ -17,6 +17,35 @@ angular.module("favorites/favorites.tpl.html", []).run(["$templateCache", functi
 
 angular.module("home/home.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("home/home.tpl.html",
+    "<!--<div class=\"vid-container\">-->\n" +
+    "<!--<vjs-video-container vjs-ratio=\"4:3\"  vjs-setup='{\"fluid\": true}'>-->\n" +
+    "    <!--<video class=\"video-js vjs-sublime-skin\" width=\"100%\" height=\"100%\" controls preload=\"auto\" poster=\"http://vjs.zencdn.net/v/oceans.png\">-->\n" +
+    "        <!--<source src=\"http://vjs.zencdn.net/v/oceans.mp4\" type='video/mp4' />-->\n" +
+    "        <!--<source src=\"http://vjs.zencdn.net/v/oceans.webm\" type='video/webm' />-->\n" +
+    "        <!--<source src=\"http://vjs.zencdn.net/v/oceans.ogv\" type='video/ogg' />-->\n" +
+    "        <!--<p class=\"vjs-no-js\">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href=\"http://videojs.com/html5-video-support/\" target=\"_blank\">supports HTML5 video</a>-->\n" +
+    "        <!--</p>-->\n" +
+    "    <!--</video>-->\n" +
+    "<!--</div>-->\n" +
+    "<div class=\"vid-container\">\n" +
+    "    <video  class=\"video-js vjs-sublime-skin\" controls preload=\"auto\" width=\"1280\" height=\"720\"\n" +
+    "            poster=\"assets/video/demo-poster.png\"\n" +
+    "            vjs-video vjs-setup=\"options\" vjs-media=\"mediaObj\">\n" +
+    "\n" +
+    "    </video>\n" +
+    "</div>\n" +
+    "\n" +
+    "<!--<video-->\n" +
+    "        <!--id=\"main-video\"-->\n" +
+    "        <!--class=\"video-js vjs-sublime-skin\"-->\n" +
+    "        <!--width=\"1280\"-->\n" +
+    "        <!--height=\"720\"-->\n" +
+    "        <!--vjs-media=\"media\"-->\n" +
+    "        <!--vjs-vid >-->\n" +
+    "\n" +
+    "<!--</video>-->\n" +
+    "<button ng-click=\"playVid('1')\">PLAY 1</button>\n" +
+    "<button ng-click=\"playVid('0')\">PLAY 2</button>\n" +
     "");
 }]);
 

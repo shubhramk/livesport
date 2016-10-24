@@ -8,6 +8,7 @@
 
  **/
 angular.module('myApp', [
+    'vjs.video',
     'ui.router',
     'ui.bootstrap',
     'oc.lazyLoad',

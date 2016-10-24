@@ -71,6 +71,7 @@ module.exports = {
       'libs/jquery/dist/jquery.min.js',
       'libs/angular/angular.min.js',
       'libs/bootstrap/dist/js/bootstrap.min.js',
+      'libs/video.js/dist/video.min.js',
       'libs/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'libs/angular-ui-router/release/angular-ui-router.min.js',
       'libs/oclazyload/dist/oclazyload.min.js'
