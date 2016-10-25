@@ -8,6 +8,8 @@
 }
 .video-section {
   background: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
   width: 100%;
 }
 .video-section .carousel-section {
@@ -26,7 +28,7 @@
 .slick-prev,
 .slick-next {
   background-color: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid #333;
   border-radius: 3px;
   cursor: pointer;
   font-size: 30px;
@@ -53,9 +55,53 @@
 }
 .slick-prev::before,
 .slick-next::before {
+  color: #333;
   font-size: 28px;
   font-weight: bold;
 }
 .highlight {
   border: 1px solid red;
+}
+.featured-videos,
+.top-videos {
+  margin-top: 30px;
+}
+.featured-videos .heading,
+.top-videos .heading {
+  color: #999999;
+  font-size: 24px;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+}
+.featured-videos .video-container,
+.top-videos .video-container {
+  float: left;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 25%;
+}
+.featured-videos img,
+.top-videos img {
+  height: auto;
+  width: 100%;
+}
+.featured-videos .video-heading,
+.top-videos .video-heading {
+  color: #222222;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.featured-videos .video-content,
+.top-videos .video-content {
+  color: #666666;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.clear {
+  clear: both;
 }

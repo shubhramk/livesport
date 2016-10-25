@@ -56,7 +56,24 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "        </slick>\n" +
     "    </div>\n" +
     "</div>\n" +
-    "");
+    "<div class=\"featured-videos\">\n" +
+    "    <div class=\"heading\">Featured Videos</div>\n" +
+    "    <div class=\"video-container\" ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +
+    "        <img src=\"{{i.poster}}\"  class=\"carousel-image\"/>\n" +
+    "        <div class=\"video-heading\">{{i.heading}}</div>\n" +
+    "        <div class=\"video-content\">{{i.content}}</div>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "<div class=\"clear\"></div>\n" +
+    "<div class=\"top-videos\">\n" +
+    "    <div class=\"heading\">Top Videos</div>\n" +
+    "    <div class=\"video-container\"  ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +
+    "        <img src=\"{{i.poster}}\"  class=\"carousel-image\"/>\n" +
+    "        <div class=\"video-heading\">{{i.heading}}</div>\n" +
+    "        <div class=\"video-content\">{{i.content}}</div>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "<div class=\"clear\"></div>");
 }]);
 
 angular.module("login/login.tpl.html", []).run(["$templateCache", function($templateCache) {

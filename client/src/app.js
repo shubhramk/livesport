@@ -17,7 +17,13 @@ angular.module('myApp', [
     'templates-common'
 ])
     .run(['$rootScope', function run($rootScope) {
-        $rootScope.islogin = false;
+        if(localStorage.getItem("islogin") === "true"){
+            $rootScope.islogin = true;
+        }
+        else{
+            $rootScope.islogin = false;
+        }
+
     }])
     .controller('AppCtrl', ['$scope', function AppCtrl($scope) {
 

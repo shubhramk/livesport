@@ -37,3 +37,21 @@
         </slick>
     </div>
 </div>
+<div class="featured-videos">
+    <div class="heading">Featured Videos</div>
+    <div class="video-container" ng-repeat="i in vidArr  track by $index ;" ng-click="playVid($index)">
+        <img src="{{i.poster}}"  class="carousel-image"/>
+        <div class="video-heading">{{i.heading}}</div>
+        <div class="video-content">{{i.content}}</div>
+    </div>
+</div>
+<div class="clear"></div>
+<div class="top-videos">
+    <div class="heading">Top Videos</div>
+    <div class="video-container"  ng-repeat="i in vidArr  track by $index ;" ng-click="playVid($index)">
+        <img src="{{i.poster}}"  class="carousel-image"/>
+        <div class="video-heading">{{i.heading}}</div>
+        <div class="video-content">{{i.content}}</div>
+    </div>
+</div>
+<div class="clear"></div>
