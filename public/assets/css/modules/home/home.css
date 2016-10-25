@@ -65,14 +65,15 @@
 .featured-videos,
 .top-videos {
   margin-top: 30px;
+  border-top: 1px solid #ccc;
 }
 .featured-videos .heading,
 .top-videos .heading {
   color: #999999;
   font-size: 24px;
   font-weight: bold;
-  height: 50px;
-  line-height: 50px;
+  height: 70px;
+  line-height: 70px;
   padding-left: 20px;
 }
 .featured-videos .video-container,

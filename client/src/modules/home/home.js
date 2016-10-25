@@ -16,13 +16,9 @@ angular.module('myApp')
             event: {
                 beforeChange: function (event, slick, currentSlide, nextSlide) {
                     $scope.indexcounter = nextSlide;
-                    $scope.playVid(nextSlide);
                 }
             }
         };
-
-
-        $scope.vidArr = [];
         $scope.vidArr = [
             {
                 sources: [

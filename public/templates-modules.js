@@ -29,7 +29,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "    <!--</video>-->\n" +
     "<!--</div>-->\n" +
     "<div class=\"vid-container\">\n" +
-    "    <video  class=\"video-js vjs-sublime-skin\" controls preload=\"auto\" width=\"1280\" height=\"600\"\n" +
+    "    <video  class=\"video-js vjs-sublime-skin\" controls preload=\"auto\" width=\"1180\" height=\"600\"\n" +
     "            poster=\"assets/video/demo-poster.png\"\n" +
     "            vjs-video vjs-setup=\"options\" vjs-media=\"mediaObj\">\n" +
     "\n" +
@@ -63,6 +63,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "        <div class=\"video-heading\">{{i.heading}}</div>\n" +
     "        <div class=\"video-content\">{{i.content}}</div>\n" +
     "    </div>\n" +
+    "    <div class=\"clear\"></div>\n" +
     "</div>\n" +
     "<div class=\"clear\"></div>\n" +
     "<div class=\"top-videos\">\n" +
@@ -72,6 +73,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "        <div class=\"video-heading\">{{i.heading}}</div>\n" +
     "        <div class=\"video-content\">{{i.content}}</div>\n" +
     "    </div>\n" +
+    "    <div class=\"clear\"></div>\n" +
     "</div>\n" +
     "<div class=\"clear\"></div>");
 }]);
