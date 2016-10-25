@@ -51,7 +51,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "    <div class=\"carousel-section\">\n" +
     "        <slick class=\"slider\" settings=\"slickConfig2\" ng-if=\"slickConfig2Loaded\">\n" +
     "            <div ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +
-    "                <img src=\"{{i.poster}}\"  class=\"carousel-image\"/>\n" +
+    "                <img src=\"{{i.poster}}\"  class=\"carousel-image\" ng-class=\"{'highlight':($index==indexcounter)}\"/>\n" +
     "            </div>\n" +
     "        </slick>\n" +
     "    </div>\n" +

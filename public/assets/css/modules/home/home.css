@@ -10,15 +10,12 @@
   background: #fff;
   width: 100%;
 }
-.video-player-section {
-  height: 550px;
-}
-.video-player-section > img {
-  height: 100%;
-  width: 100%;
-}
-.carousel-section {
+.video-section .carousel-section {
   margin-top: -50px;
+}
+.video-section .carousel-section .carousel-image {
+  width: 277px;
+  height: 156px;
 }
 .slick-prev::before {
   content: "<";
@@ -50,10 +47,6 @@
 .slick-next:hover {
   background-color: #ffffff;
 }
-.carousel-image {
-  width: 277px;
-  height: 156px;
-}
 .slick-prev:hover::before,
 .slick-next:hover::before {
   color: #333;
@@ -62,4 +55,7 @@
 .slick-next::before {
   font-size: 28px;
   font-weight: bold;
+}
+.highlight {
+  border: 1px solid red;
 }

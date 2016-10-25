@@ -32,7 +32,7 @@
     <div class="carousel-section">
         <slick class="slider" settings="slickConfig2" ng-if="slickConfig2Loaded">
             <div ng-repeat="i in vidArr  track by $index ;" ng-click="playVid($index)">
-                <img src="{{i.poster}}"  class="carousel-image"/>
+                <img src="{{i.poster}}"  class="carousel-image" ng-class="{'highlight':($index==indexcounter)}"/>
             </div>
         </slick>
     </div>
