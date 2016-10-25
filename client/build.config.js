@@ -70,6 +70,8 @@ module.exports = {
     js: [
       'libs/jquery/dist/jquery.min.js',
       'libs/angular/angular.min.js',
+      'libs/slick-carousel/slick/slick.js',
+      'libs/angular-slick-carousel/dist/angular-slick.min.js',
       'libs/bootstrap/dist/js/bootstrap.min.js',
       'libs/video.js/dist/video.min.js',
       'libs/angular-bootstrap/ui-bootstrap-tpls.min.js',
@@ -80,7 +82,10 @@ module.exports = {
 
     ],
     css: [
-        'libs/bootstrap/dist/css/bootstrap.min.css'
+        'libs/bootstrap/dist/css/bootstrap.min.css',
+        'libs/slick-carousel/slick/slick.css',
+        'libs/slick-carousel/slick/slick-theme.css',
+        'libs/angular-slick-carousel/examples/css/app.dist.css'
     ],
     assets: [
     ]

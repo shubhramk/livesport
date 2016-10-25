@@ -1,3 +1,4 @@
+
 <!--<div class="vid-container">-->
 <!--<vjs-video-container vjs-ratio="4:3"  vjs-setup='{"fluid": true}'>-->
     <!--<video class="video-js vjs-sublime-skin" width="100%" height="100%" controls preload="auto" poster="http://vjs.zencdn.net/v/oceans.png">-->
@@ -9,7 +10,7 @@
     <!--</video>-->
 <!--</div>-->
 <div class="vid-container">
-    <video  class="video-js vjs-sublime-skin" controls preload="auto" width="1280" height="720"
+    <video  class="video-js vjs-sublime-skin" controls preload="auto" width="1280" height="600"
             poster="assets/video/demo-poster.png"
             vjs-video vjs-setup="options" vjs-media="mediaObj">
 
@@ -25,5 +26,14 @@
         <!--vjs-vid >-->
 
 <!--</video>-->
-<button ng-click="playVid('1')">PLAY 1</button>
-<button ng-click="playVid('0')">PLAY 2</button>
+<!--<button ng-click="playVid('1')">PLAY 1</button>
+<button ng-click="playVid('0')">PLAY 2</button>-->
+<div class="video-section">
+    <div class="carousel-section">
+        <slick class="slider" settings="slickConfig2" ng-if="slickConfig2Loaded">
+            <div ng-repeat="i in vidArr  track by $index ;" ng-click="playVid($index)">
+                <img src="{{i.poster}}"  class="carousel-image"/>
+            </div>
+        </slick>
+    </div>
+</div>

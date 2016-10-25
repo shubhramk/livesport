@@ -1,4 +1,7 @@
-angular.module( 'myApp')
+angular.module( 'myApp').config(['slickCarouselConfig', function (slickCarouselConfig) {
+    slickCarouselConfig.dots = true;
+    slickCarouselConfig.autoplay = false;
+}])
     .config(function config ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
         // Lazy load configuration

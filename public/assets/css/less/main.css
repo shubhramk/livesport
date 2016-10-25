@@ -7332,6 +7332,7 @@ header .header-bottom nav {
   background-color: #262626;
   border-color: transparent;
   border-radius: 0px;
+  margin-bottom: 0;
 }
 header .header-bottom nav .navbar-nav li a {
   color: #fff;

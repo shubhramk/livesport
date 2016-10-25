@@ -2,7 +2,7 @@ angular.module('templates-common', ['directives/header/header.tpl.html']);
 
 angular.module("directives/header/header.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("directives/header/header.tpl.html",
-    "<div class=\"main-container\" >\n" +
+    "<div>\n" +
     "    <header class=\"main-header\" ng-if=\"$root.islogin\">\n" +
     "        <div class=\"header-top\">\n" +
     "            <div class=\"col-lg-6 col-md-6 col-xs-6\">\n" +

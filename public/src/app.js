@@ -12,6 +12,7 @@ angular.module('myApp', [
     'ui.router',
     'ui.bootstrap',
     'oc.lazyLoad',
+    'slickCarousel',
     'templates-modules',
     'templates-common'
 ])
