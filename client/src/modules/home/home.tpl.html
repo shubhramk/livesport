@@ -13,7 +13,6 @@
     <video  class="video-js vjs-sublime-skin" controls preload="auto" width="1180" height="600"
             poster="assets/video/demo-poster.png"
             vjs-video vjs-setup="options" vjs-media="mediaObj">
-
     </video>
 </div>
 
@@ -33,6 +32,7 @@
         <slick class="slider" settings="slickConfig2" ng-if="slickConfig2Loaded">
             <div ng-repeat="i in vidArr  track by $index ;" ng-click="playVid($index)">
                 <img src="{{i.poster}}"  class="carousel-image" ng-class="{'highlight':($index==indexcounter)}"/>
+                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
             </div>
         </slick>
     </div>
@@ -40,7 +40,7 @@
 <div class="featured-videos">
     <div class="heading">Featured Videos</div>
     <div class="video-container" ng-repeat="i in vidArr  track by $index ;" ng-click="playVid($index)">
-        <img src="{{i.poster}}"  class="carousel-image"/>
+        <div class="video-block"><img src="{{i.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
         <div class="video-heading">{{i.heading}}</div>
         <div class="video-content">{{i.content}}</div>
     </div>
@@ -50,7 +50,7 @@
 <div class="top-videos">
     <div class="heading">Top Videos</div>
     <div class="video-container"  ng-repeat="i in vidArr  track by $index ;" ng-click="playVid($index)">
-        <img src="{{i.poster}}"  class="carousel-image"/>
+        <div class="video-block"><img src="{{i.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
         <div class="video-heading">{{i.heading}}</div>
         <div class="video-content">{{i.content}}</div>
     </div>

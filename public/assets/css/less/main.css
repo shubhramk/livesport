@@ -7196,11 +7196,13 @@ body {
 .body-bg {
   background-image: url('../../../assets/images/body-bg.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100%;
   width: 100%;
 }
 .main-container {
-  background: #fff;
+  background-color: #333;
   width: 1180px;
   margin: 0 auto;
   position: relative;
@@ -7337,6 +7339,7 @@ header .header-bottom nav {
 }
 header .header-bottom nav .navbar-nav li a {
   color: #fff;
+  cursor: pointer;
 }
 header .header-bottom nav .navbar-nav li a:hover {
   background-color: #000;

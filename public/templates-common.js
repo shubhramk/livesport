@@ -32,10 +32,10 @@ angular.module("directives/header/header.tpl.html", []).run(["$templateCache", f
     "                    <!-- Collect the nav links, forms, and other content for toggling -->\n" +
     "                    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n" +
     "                        <ul class=\"nav navbar-nav\">\n" +
-    "\n" +
-    "                            <li role=\"presentation\"  ng-class=\"{active : activeMenu === 'channels'}\" ng-click=\"tabclick('channels')\"><a>Channels</a></li>\n" +
-    "                            <li role=\"presentation\" ng-class=\"{active : activeMenu === 'favorites'}\" ng-click=\"tabclick('favorites')\"><a >Favorites</a></li>\n" +
-    "                            <li role=\"presentation\" ng-class=\"{active : activeMenu === 'events'}\" ng-click=\"tabclick('events')\"><a>Events</a></li>\n" +
+    "                            <li><a ng-class=\"{active : activeMenu === 'home'}\" ng-click=\"tabclick('home')\">Home</a></li>\n" +
+    "                            <li role=\"presentation\"><a ng-class=\"{active : activeMenu === 'channels'}\" ng-click=\"tabclick('channels')\">Channels</a></li>\n" +
+    "                            <li role=\"presentation\"><a ng-class=\"{active : activeMenu === 'favorites'}\" ng-click=\"tabclick('favorites')\">Favorites</a></li>\n" +
+    "                            <li role=\"presentation\"><a ng-class=\"{active : activeMenu === 'events'}\" ng-click=\"tabclick('events')\">Events</a></li>\n" +
     "                           <!-- <li><a class=\"active\" href=\"#\">Dashboard</a></li>\n" +
     "                            <li><a href=\"#\">Channel</a></li>\n" +
     "                            <li><a href=\"#\">Wishlist</a></li>-->\n" +

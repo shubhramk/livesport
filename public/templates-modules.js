@@ -32,7 +32,6 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "    <video  class=\"video-js vjs-sublime-skin\" controls preload=\"auto\" width=\"1180\" height=\"600\"\n" +
     "            poster=\"assets/video/demo-poster.png\"\n" +
     "            vjs-video vjs-setup=\"options\" vjs-media=\"mediaObj\">\n" +
-    "\n" +
     "    </video>\n" +
     "</div>\n" +
     "\n" +
@@ -52,6 +51,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "        <slick class=\"slider\" settings=\"slickConfig2\" ng-if=\"slickConfig2Loaded\">\n" +
     "            <div ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +
     "                <img src=\"{{i.poster}}\"  class=\"carousel-image\" ng-class=\"{'highlight':($index==indexcounter)}\"/>\n" +
+    "                <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i>\n" +
     "            </div>\n" +
     "        </slick>\n" +
     "    </div>\n" +
@@ -59,7 +59,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "<div class=\"featured-videos\">\n" +
     "    <div class=\"heading\">Featured Videos</div>\n" +
     "    <div class=\"video-container\" ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +
-    "        <img src=\"{{i.poster}}\"  class=\"carousel-image\"/>\n" +
+    "        <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
     "        <div class=\"video-heading\">{{i.heading}}</div>\n" +
     "        <div class=\"video-content\">{{i.content}}</div>\n" +
     "    </div>\n" +
@@ -69,7 +69,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "<div class=\"top-videos\">\n" +
     "    <div class=\"heading\">Top Videos</div>\n" +
     "    <div class=\"video-container\"  ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +
-    "        <img src=\"{{i.poster}}\"  class=\"carousel-image\"/>\n" +
+    "        <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
     "        <div class=\"video-heading\">{{i.heading}}</div>\n" +
     "        <div class=\"video-content\">{{i.content}}</div>\n" +
     "    </div>\n" +

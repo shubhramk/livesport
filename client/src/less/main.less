@@ -48,13 +48,14 @@ body {
 .body-bg {
     background-image: url('../../../assets/images/body-bg.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 100%;
     width: 100%;
-
 }
 
 .main-container {
-    background:#fff;
+    background-color:#333;
     width: 1180px;
     margin: 0 auto;
     position: relative;
@@ -194,6 +195,7 @@ header {
                 li {
                     a {
                         color: #fff;
+                        cursor: pointer;
                         &:hover {
                             background-color: #000;
                             color: #fff;
