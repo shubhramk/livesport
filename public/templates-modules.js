@@ -36,7 +36,7 @@ angular.module("favorites/favorites.tpl.html", []).run(["$templateCache", functi
 
 angular.module("home/home.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("home/home.tpl.html",
-    "\n" +
+    "<div class=\"container\">\n" +
     "<!--<div class=\"vid-container\">-->\n" +
     "<!--<vjs-video-container vjs-ratio=\"4:3\"  vjs-setup='{\"fluid\": true}'>-->\n" +
     "    <!--<video class=\"video-js vjs-sublime-skin\" width=\"100%\" height=\"100%\" controls preload=\"auto\" poster=\"http://vjs.zencdn.net/v/oceans.png\">-->\n" +
@@ -78,7 +78,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "<div class=\"featured-videos\">\n" +
     "    <div class=\"heading\">Featured Videos</div>\n" +
     "    <div class=\"no-js\">\n" +
-    "        <ul class=\"grid-caption cs-style-4\">\n" +
+    "        <ul class=\"grid-caption cs-style-3\">\n" +
     "            <li class=\"video-container\" ng-repeat=\"i in vidArr  track by $index ;\">\n" +
     "                <figure>\n" +
     "                    <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
@@ -102,7 +102,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "<div class=\"top-videos\">\n" +
     "    <div class=\"heading\">Top Videos</div>\n" +
     "    <div class=\"no-js\">\n" +
-    "        <ul class=\"grid-caption cs-style-4\">\n" +
+    "        <ul class=\"grid-caption cs-style-3\">\n" +
     "            <li class=\"video-container\" ng-repeat=\"i in vidArr  track by $index ;\">\n" +
     "                <figure>\n" +
     "                    <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
@@ -122,7 +122,8 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "    </div>\n" +
     "    <div class=\"clear\"></div>\n" +
     "</div>\n" +
-    "<div class=\"clear\"></div>");
+    "<div class=\"clear\"></div>\n" +
+    "</div>");
 }]);
 
 angular.module("login/login.tpl.html", []).run(["$templateCache", function($templateCache) {

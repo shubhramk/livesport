@@ -1,14 +1,15 @@
-<div>
+<div class="container">
     <header class="main-header" ng-if="$root.islogin">
         <div class="header-top">
             <div class="col-lg-6 col-md-6 col-xs-6">
                 <div class="logo">LiveSports <i class="fa fa-random" aria-hidden="true"></i></div>
             </div>
-            <div class="col-lg-6 col-md-6 col-xs-6">
+            <div class="col-lg-6 col-md-6 col-xs-6 text-right">
                 <div class="search-block text-right">
                     <input type="text" placeholder="Search" />
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
+                <div class="logout"><i ng-click="logout()" class="fa fa-sign-out" aria-hidden="true"></i></div>
             </div>
         </div>
         <div class="header-bottom">
@@ -24,14 +25,13 @@
                         </button>
                         <!-- <a class="navbar-brand" href="#">Live Sports</a>-->
                     </div>
-
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li><a ng-class="{active : activeMenu === 'home'}" ng-click="tabclick('home')">Home</a></li>
-                            <li role="presentation"><a ng-class="{active : activeMenu === 'channels'}" ng-click="tabclick('channels')">Channels</a></li>
-                            <li role="presentation"><a ng-class="{active : activeMenu === 'favorites'}" ng-click="tabclick('favorites')">Favorites</a></li>
-                            <li role="presentation"><a ng-class="{active : activeMenu === 'events'}" ng-click="tabclick('events')">Events</a></li>
+                        <ul class="nav navbar-nav" ng-init="activeMenu= 'home'">
+                            <li role="presentation"><a ui-sref-active="active" ui-sref="home">Home</a></li>
+                            <li role="presentation"><a ui-sref-active="active" ui-sref="channels">Channels</a></li>
+                            <li role="presentation"><a ui-sref-active="active" ui-sref="favorites">Favorites</a></li>
+                            <li role="presentation"><a ui-sref-active="active" ui-sref="events">Events</a></li>
                            <!-- <li><a class="active" href="#">Dashboard</a></li>
                             <li><a href="#">Channel</a></li>
                             <li><a href="#">Wishlist</a></li>-->

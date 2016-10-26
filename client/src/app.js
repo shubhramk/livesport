@@ -16,7 +16,7 @@ angular.module('myApp', [
     'templates-modules',
     'templates-common'
 ])
-    .run(['$rootScope','$anchorScroll', function run($rootScope,$anchorScroll) {
+    .run(['$rootScope','$anchorScroll', '$state', '$location', function run($rootScope,$anchorScroll,$state, $location) {
         $anchorScroll.yOffset = 0;
         if(localStorage.getItem("islogin") === "true"){
             $rootScope.islogin = true;
@@ -24,6 +24,13 @@ angular.module('myApp', [
         else{
             $rootScope.islogin = false;
         }
+
+        $rootScope.logout =  function() {
+            localStorage.setItem("islogin", false);
+            $rootScope.islogin = false;
+            $state.go('login');
+           // $location.href = '/login';
+        };
 
     }])
     .controller('AppCtrl', ['$scope', function AppCtrl($scope) {

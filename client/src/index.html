@@ -21,8 +21,8 @@
     <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
   </head>
 
-  <body class="body-bg">
-  <div class="main-container">
+  <body ng-class="(islogin===true)? 'body-bg': ''">
+  <div class="page-wrapper">
     <div header ></div>
     <div ui-view="main"></div>
   </div>

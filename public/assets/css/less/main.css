@@ -7194,17 +7194,19 @@ body {
   font-family: 'latoregular';
 }
 .body-bg {
-  background-image: url('../../../assets/images/body-bg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background-image: url('../../../assets/images/body-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;*/
+  background-color: #000;
   height: 100%;
   width: 100%;
 }
-.main-container {
+.container {
   background-color: #333;
   width: 1180px;
   margin: 0 auto;
+  padding: 0;
   position: relative;
 }
 .wrapper {
@@ -7321,15 +7323,31 @@ header .header-top .logo .fa {
 }
 header .header-top .search-block {
   margin-top: 20px;
+  display: inline-block;
+  position: relative;
 }
 header .header-top .search-block .fa {
   color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 7px;
 }
 header .header-top .search-block input {
   background-color: #333333;
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #999999;
   padding: 6px 10px;
+}
+header .header-top .logout {
+  display: inline-block;
+  margin: 0 15px;
+}
+header .header-top .logout .fa {
+  color: #fff;
+  cursor: pointer;
+}
+header .header-top .logout .fa:hover {
+  color: #cc0000;
 }
 header .header-bottom nav {
   background-color: #262626;
@@ -7340,13 +7358,15 @@ header .header-bottom nav {
 header .header-bottom nav .navbar-nav li a {
   color: #fff;
   cursor: pointer;
+  padding-bottom: 5px;
 }
 header .header-bottom nav .navbar-nav li a:hover {
-  background-color: #000;
+  border-bottom: 3px solid #CC0000;
   color: #fff;
 }
 header .header-bottom nav .navbar-nav li a.active {
-  background-color: #000;
+  border-bottom: 3px solid #CC0000;
+  color: #fff;
 }
 /****
 Mobile

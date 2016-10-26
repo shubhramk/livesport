@@ -20,7 +20,7 @@
 .grid li {
 	display: inline-block;
 	overflow: hidden;
-	width: 314px;
+	width: 25%;
 	text-align: left;
 	vertical-align: top;
 }

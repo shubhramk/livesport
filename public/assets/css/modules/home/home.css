@@ -107,7 +107,8 @@
   margin-bottom: 20px;
   padding-left: 15px;
   padding-right: 15px;
-  width: 50%;
+  width: 33%;
+  height: 200px;
 }
 .featured-videos .video-container .video-block,
 .top-videos .video-container .video-block {
@@ -136,7 +137,7 @@
 }
 .featured-videos .video-container .video-block img,
 .top-videos .video-container .video-block img {
-  height: 300px;
+  height: auto;
   width: 100%;
 }
 .featured-videos .video-container .video-heading,
@@ -155,4 +156,7 @@
 }
 .clear {
   clear: both;
+}
+.video-js {
+  background-color: #222;
 }
