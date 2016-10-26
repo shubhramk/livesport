@@ -39,20 +39,48 @@
 </div>
 <div class="featured-videos">
     <div class="heading">Featured Videos</div>
-    <div class="video-container" ng-repeat="i in vidArr  track by $index ;" ng-click="playVid($index)">
-        <div class="video-block"><img src="{{i.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-        <div class="video-heading">{{i.heading}}</div>
-        <div class="video-content">{{i.content}}</div>
+    <div class="no-js">
+        <ul class="grid-caption cs-style-4">
+            <li class="video-container" ng-repeat="i in vidArr  track by $index ;">
+                <figure>
+                    <div class="video-block"><img src="{{i.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
+                    <figcaption>
+                        <h3>{{i.heading}}</h3>
+                        <span>{{i.content}}</span>
+                        <a ng-click="playVid($index)">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>
+          <!--  <div class="video-container" ng-repeat="i in vidArr  track by $index ;" ng-click="playVid($index)">
+                <div class="video-block"><img src="{{i.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
+                <div class="video-heading">{{i.heading}}</div>
+                <div class="video-content">{{i.content}}</div>
+            </div>-->
+        </ul>
     </div>
     <div class="clear"></div>
 </div>
 <div class="clear"></div>
 <div class="top-videos">
     <div class="heading">Top Videos</div>
-    <div class="video-container"  ng-repeat="i in vidArr  track by $index ;" ng-click="playVid($index)">
-        <div class="video-block"><img src="{{i.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-        <div class="video-heading">{{i.heading}}</div>
-        <div class="video-content">{{i.content}}</div>
+    <div class="no-js">
+        <ul class="grid-caption cs-style-4">
+            <li class="video-container" ng-repeat="i in vidArr  track by $index ;">
+                <figure>
+                    <div class="video-block"><img src="{{i.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
+                    <figcaption>
+                        <h3>{{i.heading}}</h3>
+                        <span>{{i.content}}</span>
+                        <a ng-click="playVid($index)">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>
+            <!--  <div class="video-container" ng-repeat="i in vidArr  track by $index ;" ng-click="playVid($index)">
+                  <div class="video-block"><img src="{{i.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
+                  <div class="video-heading">{{i.heading}}</div>
+                  <div class="video-content">{{i.content}}</div>
+              </div>-->
+        </ul>
     </div>
     <div class="clear"></div>
 </div>

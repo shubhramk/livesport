@@ -1,1 +1,14 @@
-<h1>Favorites</h1>
+<div class="no-js">
+<ul class="grid-caption cs-style-3">
+    <li ng-repeat="favdata in vidArr">
+        <figure>
+            <img src="{{favdata.poster}}" alt="img04">
+            <figcaption>
+                <h3>{{favdata.heading}}</h3>
+                <span>{{favdata.content}}</span>
+                <a ng-href="#">Take a look</a>
+            </figcaption>
+        </figure>
+    </li>
+</ul>
+    </div>

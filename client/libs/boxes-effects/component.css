@@ -12,9 +12,6 @@
 	min-height: 500px;
 }
 
-.js .grid {
-	background: url(../img/loading.gif) no-repeat 50% 100px;
-}
 
 .js .grid.loaded {
 	background: none;
@@ -64,7 +61,7 @@
 	display: block;
 	outline: none;
 	border: none;
-	width: 100%;
+	width: 300px;
 }
 
 .grid li > a {
@@ -83,26 +80,10 @@
 	height: 100%;
 	background: #96cdc8;
 }
-
-.grid.swipe-right .curtain {
-	-webkit-transform: translate3d(-100%,0,0);
-	transform: translate3d(-100%,0,0);
-}
-
 .grid.swipe-down .curtain {
 	-webkit-transform: translate3d(0,-100%,0);
 	transform: translate3d(0,-100%,0);
 }
-
-.grid.swipe-rotate .curtain {
-	width: 200%;
-	height: 200%;
-	-webkit-transform: rotate3d(0,0,1,90deg);
-	transform: rotate3d(0,0,1,90deg);
-	-webkit-transform-origin: top left;
-	transform-origin: top left;
-}
-
 /* Shadow */
 .grid .curtain::after {
 	position: absolute;
@@ -113,16 +94,9 @@
 	background: rgba(0,0,0,1);
 	content: '';
 }
-
-.grid.swipe-right .curtain::after,
-.grid.swipe-rotate .curtain::after {
-	left: -100%;
-}
-
 .grid.swipe-down .curtain::after {
 	top: -100%;
 }
-
 /* Title */
 .grid li h3 {
 	position: absolute;
@@ -169,25 +143,6 @@
 }
 
 /* Animations */
-
-/* Swipe right */
-.grid.swipe-right li.animate .curtain {
-	-webkit-animation: swipeRight 1.5s cubic-bezier(0.6,0,0.4,1) forwards;
-	animation: swipeRight 1.5s cubic-bezier(0.6,0,0.4,1) forwards;
-}
-
-@-webkit-keyframes swipeRight {
-	0% {} /* fixes Chrome 35.0.1916.114 issue (easing breaks) */
-	50%, 60% { -webkit-transform: translate3d(0,0,0); }
-	100% { -webkit-transform: translate3d(100%,0,0); }
-}
-
-@keyframes swipeRight {
-	0% {}
-	50%, 60% { -webkit-transform: translate3d(0,0,0); transform: translate(0); }
-	100% { -webkit-transform: translate3d(100%,0,0); transform: translate3d(100%,0,0); }
-} 
-
 /* Swipe down */
 .grid.swipe-down li.animate .curtain {
 	-webkit-animation: swipeDown 1.5s cubic-bezier(0.6,0,0.4,1) forwards;
@@ -205,25 +160,6 @@
 	50%, 60% { -webkit-transform: translate(0); transform: translate(0); }
 	100% { transform: translate3d(0,100%,0); transform: translate3d(0,100%,0); }
 }
-
-/* Swipe rotate */
-.grid.swipe-rotate li.animate .curtain {
-	-webkit-animation: swipeRotate 1.5s ease forwards;
-	animation: swipeRotate 1.5s ease forwards;
-}
-
-@-webkit-keyframes swipeRotate {
-	0% {} /* fixes Chrome 35.0.1916.114 issue (easing breaks) */
-	50%, 60% { -webkit-transform: rotate3d(0,0,1,0deg); }
-	100% { -webkit-transform: rotate3d(0,0,1,-90deg); }
-}
-
-@keyframes swipeRotate {
-	0% {}
-	50%, 60% { -webkit-transform: rotate3d(0,0,1,0deg); transform: rotate3d(0,0,1,0deg); }
-	100% { -webkit-transform: rotate3d(0,0,1,-90deg); transform: rotate3d(0,0,1,-90deg); }
-}
-
 /* Shadow */
 .grid li.animate .curtain::after {
 	-webkit-animation: fadeOut 1.5s ease forwards;
@@ -269,4 +205,195 @@
 .grid li.shown img,
 .grid li.shown h3 {
 	visibility: visible;
+}
+
+/**Caption Animation**/
+.grid-caption {
+	padding: 20px 20px 100px 20px;
+	max-width: 1300px;
+	margin: 0 auto;
+	list-style: none;
+	text-align: center;
+}
+
+.grid-caption li {
+	display: inline-block;
+	width: 440px;
+	margin: 0;
+	padding: 20px;
+	text-align: left;
+	position: relative;
+}
+
+.grid-caption figure {
+	margin: 0;
+	position: relative;
+}
+
+.grid-caption figure img {
+	max-width: 100%;
+	display: block;
+	position: relative;
+	width:400px;
+	height:300px;
+}
+
+.grid-caption figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	background: #2c3f52;
+	color: #ed4e6e;
+}
+
+.grid-caption figcaption h3 {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+
+.grid-caption figcaption span:before {
+	content: 'by ';
+}
+
+.grid-caption figcaption a {
+	text-align: center;
+	padding: 5px 10px;
+	border-radius: 2px;
+	display: inline-block;
+	background: #ed4e6e;
+	color: #fff;
+	cursor: pointer;
+}
+
+/* Individual Caption Styles */
+/* Caption Style 3 */
+.cs-style-3 figure {
+	overflow: hidden;
+}
+
+.cs-style-3 figure img {
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+}
+
+.no-touch .cs-style-3 figure:hover img,
+.cs-style-3 figure.cs-hover img {
+	-webkit-transform: translateY(-50px);
+	-moz-transform: translateY(-50px);
+	-ms-transform: translateY(-50px);
+	transform: translateY(-50px);
+}
+
+.cs-style-3 figcaption {
+	height: auto;
+	width: 100%;
+	top: auto;
+	bottom: 0;
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	transform: translateY(100%);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+	transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.no-touch .cs-style-3 figure:hover figcaption,
+.cs-style-3 figure.cs-hover figcaption {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+	transition: transform 0.4s, opacity 0.1s;
+}
+
+.cs-style-3 figcaption a {
+	position: absolute;
+	bottom: 7px;
+	right: 7px;
+}
+/* Caption Style 4 */
+.cs-style-4 li {
+	-webkit-perspective: 1700px;
+	-moz-perspective: 1700px;
+	perspective: 1700px;
+	-webkit-perspective-origin: 0 50%;
+	-moz-perspective-origin: 0 50%;
+	perspective-origin: 0 50%;
+}
+
+.cs-style-4 figure {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.cs-style-4 figure > div {
+	overflow: hidden;
+}
+
+.cs-style-4 figure img {
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+}
+
+.no-touch .cs-style-4 figure:hover img,
+.cs-style-4 figure.cs-hover img {
+	-webkit-transform: translateX(25%);
+	-moz-transform: translateX(25%);
+	-ms-transform: translateX(25%);
+	transform: translateX(25%);
+}
+
+.cs-style-4 figcaption {
+	height: 100%;
+	width: 50%;
+	opacity: 0;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: rotateY(-90deg);
+	-moz-transform: rotateY(-90deg);
+	transform: rotateY(-90deg);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+	transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.no-touch .cs-style-4 figure:hover figcaption,
+.cs-style-4 figure.cs-hover figcaption {
+	opacity: 1;
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+	transition: transform 0.4s, opacity 0.1s;
+}
+
+.cs-style-4 figcaption a {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+@media screen and (max-width: 31.5em) {
+	.grid-caption {
+		padding: 10px 10px 100px 10px;
+	}
+	.grid-caption li {
+		width: 100%;
+		min-width: 300px;
+	}
 }

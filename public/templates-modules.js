@@ -18,7 +18,20 @@ angular.module("events/events.tpl.html", []).run(["$templateCache", function($te
 
 angular.module("favorites/favorites.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("favorites/favorites.tpl.html",
-    "<h1>Favorites</h1>");
+    "<div class=\"no-js\">\n" +
+    "<ul class=\"grid-caption cs-style-3\">\n" +
+    "    <li ng-repeat=\"favdata in vidArr\">\n" +
+    "        <figure>\n" +
+    "            <img src=\"{{favdata.poster}}\" alt=\"img04\">\n" +
+    "            <figcaption>\n" +
+    "                <h3>{{favdata.heading}}</h3>\n" +
+    "                <span>{{favdata.content}}</span>\n" +
+    "                <a ng-href=\"#\">Take a look</a>\n" +
+    "            </figcaption>\n" +
+    "        </figure>\n" +
+    "    </li>\n" +
+    "</ul>\n" +
+    "    </div>");
 }]);
 
 angular.module("home/home.tpl.html", []).run(["$templateCache", function($templateCache) {
@@ -64,20 +77,48 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "</div>\n" +
     "<div class=\"featured-videos\">\n" +
     "    <div class=\"heading\">Featured Videos</div>\n" +
-    "    <div class=\"video-container\" ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +
-    "        <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
-    "        <div class=\"video-heading\">{{i.heading}}</div>\n" +
-    "        <div class=\"video-content\">{{i.content}}</div>\n" +
+    "    <div class=\"no-js\">\n" +
+    "        <ul class=\"grid-caption cs-style-4\">\n" +
+    "            <li class=\"video-container\" ng-repeat=\"i in vidArr  track by $index ;\">\n" +
+    "                <figure>\n" +
+    "                    <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
+    "                    <figcaption>\n" +
+    "                        <h3>{{i.heading}}</h3>\n" +
+    "                        <span>{{i.content}}</span>\n" +
+    "                        <a ng-click=\"playVid($index)\">Take a look</a>\n" +
+    "                    </figcaption>\n" +
+    "                </figure>\n" +
+    "            </li>\n" +
+    "          <!--  <div class=\"video-container\" ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +
+    "                <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
+    "                <div class=\"video-heading\">{{i.heading}}</div>\n" +
+    "                <div class=\"video-content\">{{i.content}}</div>\n" +
+    "            </div>-->\n" +
+    "        </ul>\n" +
     "    </div>\n" +
     "    <div class=\"clear\"></div>\n" +
     "</div>\n" +
     "<div class=\"clear\"></div>\n" +
     "<div class=\"top-videos\">\n" +
     "    <div class=\"heading\">Top Videos</div>\n" +
-    "    <div class=\"video-container\"  ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +
-    "        <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
-    "        <div class=\"video-heading\">{{i.heading}}</div>\n" +
-    "        <div class=\"video-content\">{{i.content}}</div>\n" +
+    "    <div class=\"no-js\">\n" +
+    "        <ul class=\"grid-caption cs-style-4\">\n" +
+    "            <li class=\"video-container\" ng-repeat=\"i in vidArr  track by $index ;\">\n" +
+    "                <figure>\n" +
+    "                    <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
+    "                    <figcaption>\n" +
+    "                        <h3>{{i.heading}}</h3>\n" +
+    "                        <span>{{i.content}}</span>\n" +
+    "                        <a ng-click=\"playVid($index)\">Take a look</a>\n" +
+    "                    </figcaption>\n" +
+    "                </figure>\n" +
+    "            </li>\n" +
+    "            <!--  <div class=\"video-container\" ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +
+    "                  <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
+    "                  <div class=\"video-heading\">{{i.heading}}</div>\n" +
+    "                  <div class=\"video-content\">{{i.content}}</div>\n" +
+    "              </div>-->\n" +
+    "        </ul>\n" +
     "    </div>\n" +
     "    <div class=\"clear\"></div>\n" +
     "</div>\n" +

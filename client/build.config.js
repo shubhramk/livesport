@@ -82,7 +82,9 @@ module.exports = {
       'libs/boxes-effects/imagesloaded.pkgd.min.js',
       'libs/boxes-effects/classie.js',
       'libs/boxes-effects/colorfinder-1.1.js',
-      'libs/boxes-effects/gridScrollFx.js'
+      'libs/boxes-effects/gridScrollFx.js',
+      'libs/boxes-effects/modernizr.caption.custom.js',
+      'libs/boxes-effects/toucheffects.js'
     ],
     lazyLoadLibs:[
 
