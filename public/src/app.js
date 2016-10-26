@@ -17,7 +17,7 @@ angular.module('myApp', [
     'templates-common'
 ])
     .run(['$rootScope','$anchorScroll', function run($rootScope,$anchorScroll) {
-        $anchorScroll.yOffset = 50;
+        $anchorScroll.yOffset = 0;
         if(localStorage.getItem("islogin") === "true"){
             $rootScope.islogin = true;
         }

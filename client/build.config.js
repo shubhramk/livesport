@@ -76,7 +76,13 @@ module.exports = {
       'libs/video.js/dist/video.min.js',
       'libs/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'libs/angular-ui-router/release/angular-ui-router.min.js',
-      'libs/oclazyload/dist/oclazyload.min.js'
+      'libs/oclazyload/dist/oclazyload.min.js',
+      'libs/boxes-effects/modernizr.custom.js',
+      'libs/boxes-effects/masonry.pkgd.min.js',
+      'libs/boxes-effects/imagesloaded.pkgd.min.js',
+      'libs/boxes-effects/classie.js',
+      'libs/boxes-effects/colorfinder-1.1.js',
+      'libs/boxes-effects/gridScrollFx.js'
     ],
     lazyLoadLibs:[
 
@@ -85,9 +91,12 @@ module.exports = {
         'libs/bootstrap/dist/css/bootstrap.min.css',
         'libs/slick-carousel/slick/slick.css',
         'libs/slick-carousel/slick/slick-theme.css',
-        'libs/angular-slick-carousel/examples/css/app.dist.css'
+        'libs/angular-slick-carousel/examples/css/app.dist.css',
+        'libs/boxes-effects/normalize.css',
+        'libs/boxes-effects/demo.css',
+        'libs/boxes-effects/component.css'
     ],
     assets: [
     ]
-  },
+  }
 };

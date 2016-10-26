@@ -1,1 +1,7 @@
-<h1>Channels</h1>
+<div class="container">
+    <section class="grid-wrap">
+        <ul class="grid swipe-down" id="grid">
+            <li ng-repeat="channeldata in channelsarray"><a href="#"><img src="{{channeldata.poster}}" alt="dummy"><h3>{{channeldata.heading}}</h3></a></li>
+        </ul>
+    </section>
+</div>

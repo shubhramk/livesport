@@ -2,7 +2,13 @@ angular.module('templates-modules', ['channels/channels.tpl.html', 'events/event
 
 angular.module("channels/channels.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("channels/channels.tpl.html",
-    "<h1>Channels</h1>");
+    "<div class=\"container\">\n" +
+    "    <section class=\"grid-wrap\">\n" +
+    "        <ul class=\"grid swipe-down\" id=\"grid\">\n" +
+    "            <li ng-repeat=\"channeldata in channelsarray\"><a href=\"#\"><img src=\"{{channeldata.poster}}\" alt=\"dummy\"><h3>{{channeldata.heading}}</h3></a></li>\n" +
+    "        </ul>\n" +
+    "    </section>\n" +
+    "</div>");
 }]);
 
 angular.module("events/events.tpl.html", []).run(["$templateCache", function($templateCache) {
