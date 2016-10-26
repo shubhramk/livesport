@@ -9,25 +9,27 @@
         <!--</p>-->
     <!--</video>-->
 <!--</div>-->
-<div class="vid-container" id="video-player">
-    <video  class="video-js vjs-sublime-skin" controls preload="auto" width="1180" height="600"
-            poster="assets/video/demo-poster.png"
-            vjs-video vjs-setup="options" vjs-media="mediaObj">
-    </video>
-</div>
+<!--<div class="vid-container" id="video-player">-->
+    <!--<video  class="video-js vjs-sublime-skin" controls preload="auto" width="1180" height="600"-->
+            <!--poster="assets/video/demo-poster.png"-->
+            <!--vjs-video vjs-setup="options" vjs-media="mediaObj">-->
+    <!--</video>-->
+<!--</div>-->
+    <div class="vid-container" >
+        <video
+                id="video-player"
+                controls
+                preload="auto"
+                class="video-js vjs-sublime-skin"
+                width="1180"
+                height="600"
+                vjs-media="mediaObj"
+                vjs-vid >
 
-<!--<video-->
-        <!--id="main-video"-->
-        <!--class="video-js vjs-sublime-skin"-->
-        <!--width="1280"-->
-        <!--height="720"-->
-        <!--vjs-media="media"-->
-        <!--vjs-vid >-->
+        </video>
+    </div>
 
-<!--</video>-->
-<!--<button ng-click="playVid('1')">PLAY 1</button>
-<button ng-click="playVid('0')">PLAY 2</button>-->
-<div class="video-section">
+    <div class="video-section">
     <div class="carousel-section">
         <slick class="slider" settings="slickConfig2" ng-if="slickConfig2Loaded">
             <div ng-repeat="i in vidArr  track by $index ;" ng-click="playVid($index)">

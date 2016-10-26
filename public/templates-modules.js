@@ -47,25 +47,27 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "        <!--</p>-->\n" +
     "    <!--</video>-->\n" +
     "<!--</div>-->\n" +
-    "<div class=\"vid-container\" id=\"video-player\">\n" +
-    "    <video  class=\"video-js vjs-sublime-skin\" controls preload=\"auto\" width=\"1180\" height=\"600\"\n" +
-    "            poster=\"assets/video/demo-poster.png\"\n" +
-    "            vjs-video vjs-setup=\"options\" vjs-media=\"mediaObj\">\n" +
-    "    </video>\n" +
-    "</div>\n" +
+    "<!--<div class=\"vid-container\" id=\"video-player\">-->\n" +
+    "    <!--<video  class=\"video-js vjs-sublime-skin\" controls preload=\"auto\" width=\"1180\" height=\"600\"-->\n" +
+    "            <!--poster=\"assets/video/demo-poster.png\"-->\n" +
+    "            <!--vjs-video vjs-setup=\"options\" vjs-media=\"mediaObj\">-->\n" +
+    "    <!--</video>-->\n" +
+    "<!--</div>-->\n" +
+    "    <div class=\"vid-container\" >\n" +
+    "        <video\n" +
+    "                id=\"video-player\"\n" +
+    "                controls\n" +
+    "                preload=\"auto\"\n" +
+    "                class=\"video-js vjs-sublime-skin\"\n" +
+    "                width=\"1180\"\n" +
+    "                height=\"600\"\n" +
+    "                vjs-media=\"mediaObj\"\n" +
+    "                vjs-vid >\n" +
     "\n" +
-    "<!--<video-->\n" +
-    "        <!--id=\"main-video\"-->\n" +
-    "        <!--class=\"video-js vjs-sublime-skin\"-->\n" +
-    "        <!--width=\"1280\"-->\n" +
-    "        <!--height=\"720\"-->\n" +
-    "        <!--vjs-media=\"media\"-->\n" +
-    "        <!--vjs-vid >-->\n" +
+    "        </video>\n" +
+    "    </div>\n" +
     "\n" +
-    "<!--</video>-->\n" +
-    "<!--<button ng-click=\"playVid('1')\">PLAY 1</button>\n" +
-    "<button ng-click=\"playVid('0')\">PLAY 2</button>-->\n" +
-    "<div class=\"video-section\">\n" +
+    "    <div class=\"video-section\">\n" +
     "    <div class=\"carousel-section\">\n" +
     "        <slick class=\"slider\" settings=\"slickConfig2\" ng-if=\"slickConfig2Loaded\">\n" +
     "            <div ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +

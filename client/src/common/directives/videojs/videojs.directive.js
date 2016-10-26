@@ -32,22 +32,35 @@ angular.module("myApp").directive('vjsVid', function () {
 
             };
 
-            function init(){
-                attrs.id = attrs.id || "videojs" + (new Date()).getTime();
+            function init(media){
+                attrs.id = attrs.id || "videojs_" + (new Date()).getTime();
+                console.log(attrs.id);
                 element.attr('id', attrs.id);
-                player = videojs(attrs.id, setup, function(){
-
-                    this.src(media.sources);
-                    this.poster(media.poster);
+                videojs(attrs.id, setup, function(){
+                    player = this;
+                    console.log(media.sources);
+                    setStreams(media);
                 });
+            }
+            function setStreams(media){
+                player.src(media.sources);
+                player.poster(media.poster);
+                player.play();
             }
             scope.$watchGroup(['vjsMedia'], function() {
 
                 media = scope.vjsMedia;
+                console.log(media.sources);
+                console.log(media.poster);
+                // if ((player !== undefined) && (player !== null)) {
+                //     player.dispose();
+                // }
                 if ((player !== undefined) && (player !== null)) {
-                    player.dispose();
+                    setStreams(media);
+                }else{
+                    init(media);
                 }
-                init();
+
             });
 
             scope.$on('$destroy', function() {
