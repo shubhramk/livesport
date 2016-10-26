@@ -2,7 +2,7 @@
  * Home module - Home screen
  */
 angular.module('myApp')
-    .controller('HomeCtrl', ['$scope', '$interval' , function homeCtrl($scope,$interval) {
+    .controller('HomeCtrl', ['$scope', '$interval' ,  '$location', '$anchorScroll', function homeCtrl($scope,$interval,$location,$anchorScroll) {
         $scope.pos = 0;
         $scope.slickConfig2Loaded = true;
         $scope.indexcounter = 0 ;
@@ -115,7 +115,7 @@ angular.module('myApp')
             console.log('video id:' + data.id);
             console.log('video.js player instance:' + data.player);
             console.log('video.js controlBar instance:' + data.controlBar);
-           // data.player.play();
+            data.player.play();
         });
 
         $scope.mediaObj = $scope.vidArr[0];
@@ -123,6 +123,9 @@ angular.module('myApp')
         $scope.playVid = function(index){
             $scope.mediaObj = $scope.vidArr[index];
             $scope.indexcounter = index;
+            $location.hash('video-player');
+            // call $anchorScroll()
+            $anchorScroll();
         };
        /* $interval(function(){
             if( $scope.indexcounter > $scope.vidArr.length){
