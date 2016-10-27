@@ -74,7 +74,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "                id=\"video-player\"\n" +
     "                controls\n" +
     "                preload=\"auto\"\n" +
-    "                class=\"video-js vjs-sublime-skin\"\n" +
+    "                class=\"video-js vjs-sublime-skin vjs-16-9\"\n" +
     "                width=\"1180\"\n" +
     "                height=\"600\"\n" +
     "                vjs-media=\"mediaObj\"\n" +

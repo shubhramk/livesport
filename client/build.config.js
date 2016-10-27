@@ -74,7 +74,7 @@ module.exports = {
       'libs/slick-carousel/slick/slick.js',
       'libs/angular-slick-carousel/dist/angular-slick.min.js',
       'libs/bootstrap/dist/js/bootstrap.min.js',
-      'libs/video.js/dist/video.min.js',
+      'libs/video.js/video.min.js',
       'libs/videojs-plugin/videojs-contrib-hls.js',
       'libs/videojs-plugin/dash.all.min.js',
       'libs/videojs-plugin/videojs-dash.min.js',

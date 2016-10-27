@@ -6,6 +6,9 @@
     /* The main font color changes the ICON COLORS as well as the text */
     color: #fff;
 }
+.vjs-paused.vjs-has-started .vjs-big-play-button {
+    display: block;
+}
 
 /* The "Big Play Button" is the play button that shows before the video plays.
    To center it set the align values to center and middle. The typical location
@@ -195,6 +198,9 @@
     max-height: 14px;
     height: 100%;
 }
-.vjs-sublime-skin .vjs-caption-settings {
-    display: none;
+.vjs-sublime-skin .vjs-captions-button {
+    display: none !important;
+}
+.vjs-sublime-skin .vjs-audio-button {
+    display: none !important;
 }
