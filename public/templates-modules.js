@@ -1,11 +1,11 @@
-angular.module('templates-modules', ['channels/channels.tpl.html', 'events/events.tpl.html', 'favorites/favorites.tpl.html', 'home/home.tpl.html', 'login/login.tpl.html']);
+angular.module('templates-modules', ['channels/channels.tpl.html', 'events/events.tpl.html', 'favorites/favorites.tpl.html', 'home/home.tpl.html', 'login/login.tpl.html', 'view-video/view-video.tpl.html']);
 
 angular.module("channels/channels.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("channels/channels.tpl.html",
     "<div class=\"container\">\n" +
     "    <section class=\"grid-wrap\">\n" +
     "        <ul class=\"grid swipe-down\" id=\"grid\">\n" +
-    "            <li ng-repeat=\"channeldata in channelsarray\"><a href=\"#\"><img src=\"{{channeldata.poster}}\" alt=\"dummy\"><h3>{{channeldata.heading}}</h3></a></li>\n" +
+    "            <li ng-repeat=\"channeldata in channelsarray\"><a ng-href=\"javascript:void(0)\" ui-sref=\"viewvideo\"><img ng-src=\"{{channeldata.poster}}\" alt=\"dummy\"><h3>{{channeldata.heading}}</h3></a></li>\n" +
     "        </ul>\n" +
     "    </section>\n" +
     "</div>");
@@ -13,7 +13,23 @@ angular.module("channels/channels.tpl.html", []).run(["$templateCache", function
 
 angular.module("events/events.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("events/events.tpl.html",
-    "<h1>Events</h1>");
+    "<div class=\"container events\">\n" +
+    "    <section class=\"grid-wrap\">\n" +
+    "        <ul class=\"grid swipe-down\" id=\"grid\">\n" +
+    "            <li ng-repeat=\"eventdata in eventsarray|orderBy:$index:true\" >\n" +
+    "                <a ng-href=\"javascript:void(0)\" ui-sref=\"viewvideo\"><img ng-src=\"{{eventdata.poster}}\" alt=\"dummy\">\n" +
+    "                    <h3>\n" +
+    "                        {{eventdata.heading}}\n" +
+    "                        <br>\n" +
+    "                        <span class=\"category\">{{eventdata.category}}</span>\n" +
+    "                        <br>\n" +
+    "                        <span class=\"date\">{{eventdata.date}}</span>\n" +
+    "                    </h3>\n" +
+    "                </a>\n" +
+    "            </li>\n" +
+    "        </ul>\n" +
+    "    </section>\n" +
+    "</div>");
 }]);
 
 angular.module("favorites/favorites.tpl.html", []).run(["$templateCache", function($templateCache) {
@@ -147,5 +163,39 @@ angular.module("login/login.tpl.html", []).run(["$templateCache", function($temp
     "        <button type=\"submit\" ng-disabled=\"userForm.$invalid\" >Login</button>\n" +
     "        <!--<p>Not a member? <span>Sign Up</span></p>-->\n" +
     "    </form>\n" +
+    "</div>");
+}]);
+
+angular.module("view-video/view-video.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("view-video/view-video.tpl.html",
+    "<div class=\"container events\">\n" +
+    "<div class=\"vid-container\" >\n" +
+    "    <video\n" +
+    "            id=\"video-player\"\n" +
+    "            controls\n" +
+    "            preload=\"auto\"\n" +
+    "            class=\"video-js vjs-sublime-skin\"\n" +
+    "            width=\"1180\"\n" +
+    "            height=\"600\"\n" +
+    "            vjs-media=\"mediaObj\"\n" +
+    "            vjs-vid >\n" +
+    "\n" +
+    "    </video>\n" +
+    "</div>\n" +
+    "    <section class=\"grid-wrap\">\n" +
+    "        <ul class=\"grid swipe-down\" id=\"grid\">\n" +
+    "            <li ng-repeat=\"eventdata in eventsarray|orderBy:$index:true\" >\n" +
+    "                <a ng-href=\"javascript:void(0)\"  ng-click=\"playVid($index)\"><img src=\"{{eventdata.poster}}\" alt=\"dummy\">\n" +
+    "                    <h3>\n" +
+    "                        {{eventdata.heading}}\n" +
+    "                        <br>\n" +
+    "                        <span class=\"category\">{{eventdata.category}}</span>\n" +
+    "                        <br>\n" +
+    "                        <span class=\"date\">{{eventdata.date}}</span>\n" +
+    "                    </h3>\n" +
+    "                </a>\n" +
+    "            </li>\n" +
+    "        </ul>\n" +
+    "    </section>\n" +
     "</div>");
 }]);

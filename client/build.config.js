@@ -35,7 +35,8 @@ module.exports = {
       'modules/home/home.less',
       'modules/channels/channels.less',
       'modules/events/events.less',
-      'modules/favorites/favorites.less'
+      'modules/favorites/favorites.less',
+      'modules/view-video/view-video.less'
     ]
   },
 

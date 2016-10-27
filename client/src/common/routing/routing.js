@@ -2,8 +2,9 @@ angular.module( 'myApp').config(['slickCarouselConfig', function (slickCarouselC
     slickCarouselConfig.dots = true;
     slickCarouselConfig.autoplay = false;
 }])
-    .config(function config ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
-
+    .config(function config ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,$compileProvider) {
+        /**For href javascript:void(0)**/
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|javascript):/);
         // Lazy load configuration
         $ocLazyLoadProvider.config({
             events: true,
@@ -49,7 +50,15 @@ angular.module( 'myApp').config(['slickCarouselConfig', function (slickCarouselC
                         'src/modules/favorites/favorites.js',
                         'assets/css/modules/favorites/favorites.css'
                     ]
+                },
+                {
+                    name: 'viewvideoAssets',
+                    files: [
+                        'src/modules/view-video/view-video.js',
+                        'assets/css/modules/view-video/view-video.css'
+                    ]
                 }
+
             ]
         });
 
@@ -133,6 +142,23 @@ angular.module( 'myApp').config(['slickCarouselConfig', function (slickCarouselC
                     loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
                         // you can lazy load files for an existing module
                         return $ocLazyLoad.load(['mainAssets','eventsAssets']);
+                    }]
+                },
+                data: {
+                    pageTitle: 'Home',
+                    requireLogin: true
+                }
+            }).state('viewvideo', {
+                url: '/view-video',
+                views: {
+                    "main": {
+                        controller: 'viewvideoCtrl',
+                        templateUrl: 'view-video/view-video.tpl.html'
+                    }
+                }, resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                    loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+                        // you can lazy load files for an existing module
+                        return $ocLazyLoad.load(['mainAssets','viewvideoAssets']);
                     }]
                 },
                 data: {

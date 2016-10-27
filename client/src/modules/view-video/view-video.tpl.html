@@ -1,8 +1,21 @@
 <div class="container events">
+<div class="vid-container" >
+    <video
+            id="video-player"
+            controls
+            preload="auto"
+            class="video-js vjs-sublime-skin"
+            width="1180"
+            height="600"
+            vjs-media="mediaObj"
+            vjs-vid >
+
+    </video>
+</div>
     <section class="grid-wrap">
         <ul class="grid swipe-down" id="grid">
             <li ng-repeat="eventdata in eventsarray|orderBy:$index:true" >
-                <a ng-href="javascript:void(0)" ui-sref="viewvideo"><img ng-src="{{eventdata.poster}}" alt="dummy">
+                <a ng-href="javascript:void(0)"  ng-click="playVid($index)"><img src="{{eventdata.poster}}" alt="dummy">
                     <h3>
                         {{eventdata.heading}}
                         <br>

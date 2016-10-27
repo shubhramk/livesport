@@ -1,6 +1,3 @@
-.demo {
-  color: orange;
-}
 #grid li.shown:hover a:before {
   border-color: #000 !important;
   border-width: 6px !important;

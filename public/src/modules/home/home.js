@@ -55,7 +55,7 @@ angular.module('myApp')
             },{
                 sources: [
                     {
-                        src: 'rtmp://192.168.0.5/live/livestream',
+                        src: 'rtmp://10.193.67.78/live/livestream',
                         type: "rtmp/mp4"
                     }
                 ],

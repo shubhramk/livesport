@@ -2,7 +2,7 @@
  * Events module - Events screen
  */
 angular.module('myApp')
-    .controller('eventCtrl', ['$scope', '$timeout' , function eventCtrl($scope , $timeout) {
+    .controller('viewvideoCtrl', ['$scope', '$timeout' , function eventCtrl($scope , $timeout) {
         console.log("events");
         $scope.eventsarray=[
             {
@@ -287,6 +287,10 @@ angular.module('myApp')
         $scope.mediaObj = $scope.eventsarray[0];
 
         $scope.playVid = function(index){
-
+            $scope.mediaObj = $scope.eventsarray[index];
+            $scope.indexcounter = index;
+            $location.hash('video-player');
+            // call $anchorScroll()
+            $anchorScroll();
         };
     }]);
