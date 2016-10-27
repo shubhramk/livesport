@@ -23,17 +23,6 @@ angular.module('myApp')
             {
                 sources: [
                     {
-                        src: 'https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8',
-                        type: "application/x-mpegURL"
-                    }
-                ],
-                poster: 'assets/images/vp-g01.jpg',
-                heading:'Justice League',
-                content:'Action Drama - HLS (VOD)'
-            },
-            {
-                sources: [
-                    {
                         src: 'http://clips-akc.us-east-1.next.gopro.com/6d9c/media/mp4/gopro/2016/09/13/6d9c5000-13b2-4cc2-b486-72d58976e767/1473801787608/asset_1200k.mp4',
                         type: 'video/mp4'
                     }
@@ -42,6 +31,18 @@ angular.module('myApp')
                 heading:'Darkness World -MP4',
                 content:'Action Drama'
             },
+            {
+                sources: [
+                    {
+                        src: 'https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8',
+                        type: "application/x-mpegURL"
+                    }
+                ],
+                poster: 'assets/images/vp-g01.jpg',
+                heading:'Justice League',
+                content:'Action Drama - HLS (VOD)'
+            },
+
             {
                 sources: [
                     {

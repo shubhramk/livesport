@@ -21,6 +21,16 @@
 
 @import 'variables.less';
 
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../../../assets/font/font-awesome-4.6.3/fonts/fontawesome-webfont.woff2') format('woff2'),
+  url("../../../assets/font/font-awesome-4.6.3/fonts/fontawesome-webfont.ttf") format("truetype"),
+  url("../../../assets/font/font-awesome-4.6.3/fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"),
+  url("../../../assets/font/font-awesome-4.6.3/fonts/fontawesome-webfont.svg") format("svg"),
+  url('../../../assets/font/font-awesome-4.6.3/fonts/fontawesome-webfont.woff') format('woff');
+}
+
 /******
 Font-Family: Lato
 ********/
@@ -56,7 +66,7 @@ body {
 }
 
 .container {
-    background-color:#333;
+    background: rgba(0, 0, 0, 0) repeating-linear-gradient(-90deg, #222222, #222222 10px, #111 3px, #222 11px) repeat scroll 0 0;
     width: 1180px;
     margin: 0 auto;
     padding: 0;
@@ -162,6 +172,25 @@ body {
     }
 }
 
+.video-heading {
+  background: repeating-linear-gradient(
+          -55deg,
+          #222,
+          #222 10px,
+          #333 10px,
+          #333 20px
+  );
+  h2 {
+    color:#fff;
+    font-size: 24px;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+  }
+
+}
+
 header {
     background-color:  rgba(60, 60, 60, 1);
     .header-top {
@@ -192,10 +221,12 @@ header {
             }
         }
         .logout {
-            display: inline-block;
-            margin: 0 15px;
+          display: inline-block;
+          margin: 0 8px;
+          position: relative;
+          top: 23px;
             .fa {
-                color: #fff;
+                color: rgba(153, 153, 153, 1);
                 cursor: pointer;
                 &:hover {
                     color: #cc0000;
@@ -215,6 +246,7 @@ header {
                         color: #fff;
                         cursor: pointer;
                         padding-bottom: 5px;
+                        padding-top: 10px;
                         &:hover {
                             border-bottom: 3px solid #CC0000;
                             color: #fff;
@@ -233,11 +265,15 @@ header {
 /**Header Search CSS**/
 .morphsearch {
   width: 200px;
-  min-height: 40px;
-  background: #f1f1f1;
+  min-height: 30px;
+  background-color: rgba(51, 51, 51, 1);
   position: absolute;
   z-index: 10000;
   top: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(153, 153, 153, 1);
+
   right: 50px;
   font-size:16px;
   -webkit-transform-origin: 100% 0;
@@ -251,7 +287,7 @@ header {
   .morphsearch-form {
        background:#f1f1f1;
        width: 100%;
-       height: 40px;
+       height: 30px;
        margin: 0 auto;
        position: relative;
        -webkit-transition-property: width, height, -webkit-transform;
@@ -266,7 +302,7 @@ header {
          padding: 0 10% 0 10px;
          font-weight: 700;
          border: none;
-         background: transparent;
+         background-color: rgba(51, 51, 51, 1);
          font-size: 0.8em;
          color: #ec5a62;
          -webkit-transition: font-size 0.5s cubic-bezier(0.7,0,0.3,1);
@@ -314,6 +350,11 @@ header {
                         outline: none;
                       }
         }
+      .fa {
+        position: absolute;
+        right: 7px;
+        top: 6px;
+      }
      }
      .morphsearch-close {
        width: 36px;
@@ -338,7 +379,7 @@ header {
           left: 50%;
           border-radius: 3px;
           opacity: 0.2;
-          background: #000;
+          background: #fff;
         }
 
      }
@@ -349,7 +390,7 @@ header {
        height: 0;
        overflow: hidden;
        padding: 0 10.5%;
-       background: #f1f1f1;
+       background-color: #111;
        position: absolute;
        pointer-events: none;
        opacity: 0;
@@ -416,6 +457,7 @@ header {
      min-height: 100%;
      top: 0px;
      right: 0px;
+      position: fixed;
      .morphsearch-form {
        height: 180px;
        -webkit-transform: translate3d(0,3em,0);
@@ -433,6 +475,9 @@ header {
           -webkit-transition-delay: 0.5s;
           transition-delay: 0.5s;
         }
+       .fa {
+         display: none;
+       }
      }
      .morphsearch-close {
        opacity: 1;
@@ -506,6 +551,26 @@ input[type="search"] { /* reset normalize */
 .morphsearch.open ~ .overlay {
   opacity: 1;
 }
+
+ul.grid-caption {
+  li {
+    .video-detail-block {
+      height: 40px;
+      line-height: 40px;
+      background-color: #333;
+      color: #fff;
+      padding: 0 10px;
+      font-size: 14px;
+      .name {
+        float: left;
+      }
+      .fav {
+        float: right;
+      }
+    }
+  }
+}
+
 
 @media screen and (max-width: 53.125em) {
   .morphsearch-input {

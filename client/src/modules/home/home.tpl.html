@@ -40,7 +40,7 @@
     </div>
 </div>
 <div class="featured-videos">
-    <div class="heading">Featured Videos</div>
+    <div class="video-heading"><h2>Featured Videos</h2></div>
     <div class="no-js">
         <ul class="grid-caption cs-style-3">
             <li class="video-container" ng-repeat="i in vidArr  track by $index ;">
@@ -52,6 +52,10 @@
                         <a ng-click="playVid($index)">Take a look</a>
                     </figcaption>
                 </figure>
+                <div class="video-detail-block">
+                    <div class="name">Darkness world, MP4</div>
+                    <div class="fav"><i class="fa fa-bookmark" aria-hidden="true"></i></div>
+                </div>
             </li>
           <!--  <div class="video-container" ng-repeat="i in vidArr  track by $index ;" ng-click="playVid($index)">
                 <div class="video-block"><img src="{{i.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
@@ -64,7 +68,7 @@
 </div>
 <div class="clear"></div>
 <div class="top-videos">
-    <div class="heading">Top Videos</div>
+    <div class="video-heading"><h2>Top Videos</h2></div>
     <div class="no-js">
         <ul class="grid-caption cs-style-3">
             <li class="video-container" ng-repeat="i in vidArr  track by $index ;">
