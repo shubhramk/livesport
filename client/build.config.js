@@ -80,6 +80,7 @@ module.exports = {
       'libs/videojs-plugin/videojs-dash.min.js',
       'libs/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'libs/angular-ui-router/release/angular-ui-router.min.js',
+      'libs/underscore/underscore-min.js',
       'libs/oclazyload/dist/oclazyload.min.js',
       'libs/boxes-effects/modernizr.custom.js',
       'libs/boxes-effects/masonry.pkgd.min.js',

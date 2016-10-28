@@ -17,6 +17,7 @@ angular.module('myApp', [
     'templates-common'
 ])
     .run(['$rootScope','$anchorScroll', '$state', '$location', function run($rootScope,$anchorScroll,$state, $location) {
+        $rootScope.favoriteVidArr = [];
         $anchorScroll.yOffset = 0;
         if(localStorage.getItem("islogin") === "true"){
             $rootScope.islogin = true;

@@ -42,19 +42,19 @@ angular.module("events/events.tpl.html", []).run(["$templateCache", function($te
 angular.module("favorites/favorites.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("favorites/favorites.tpl.html",
     "<div class=\"no-js\">\n" +
-    "<ul class=\"grid-caption cs-style-3\">\n" +
-    "    <li ng-repeat=\"favdata in vidArr\">\n" +
-    "        <figure>\n" +
-    "            <img src=\"{{favdata.poster}}\" alt=\"img04\">\n" +
-    "            <figcaption>\n" +
-    "                <h3>{{favdata.heading}}</h3>\n" +
-    "                <span>{{favdata.content}}</span>\n" +
-    "                <a ng-href=\"#\">Take a look</a>\n" +
-    "            </figcaption>\n" +
-    "        </figure>\n" +
-    "    </li>\n" +
-    "</ul>\n" +
-    "    </div>");
+    "    <ul class=\"grid-caption cs-style-3\">\n" +
+    "        <li ng-repeat=\"obj in favoriteVidArr track by $index\">\n" +
+    "            <figure>\n" +
+    "                <img src=\"{{obj.poster}}\" alt=\"{{obj.heading}}\">\n" +
+    "                <figcaption>\n" +
+    "                    <h3>{{obj.heading}}</h3>\n" +
+    "                    <span>{{obj.content}}</span>\n" +
+    "                    <a ng-href=\"javascript:void(0);\" ng-click=\"showVideo(obj.channelID,obj.mediaID)\">Take a look</a>\n" +
+    "                </figcaption>\n" +
+    "            </figure>\n" +
+    "        </li>\n" +
+    "    </ul>\n" +
+    "</div>");
 }]);
 
 angular.module("home/home.tpl.html", []).run(["$templateCache", function($templateCache) {
@@ -99,7 +99,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "                </figure>\n" +
     "                <div class=\"video-detail-block\">\n" +
     "                    <div class=\"name\">Darkness world, MP4</div>\n" +
-    "                    <div class=\"fav\"><i class=\"fa fa-bookmark\" aria-hidden=\"true\"></i></div>\n" +
+    "                    <div class=\"fav\" ng-click=\"addToFavorite(obj)\"><i class=\"fa fa-bookmark\" aria-hidden=\"true\"></i></div>\n" +
     "                </div>\n" +
     "            </li>\n" +
     "        </ul>\n" +

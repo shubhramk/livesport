@@ -2,7 +2,8 @@
  * Home module - Home screen
  */
 angular.module('myApp')
-    .controller('HomeCtrl', ['$scope', '$interval' ,  '$location', '$anchorScroll','$http', function homeCtrl($scope,$interval,$location,$anchorScroll,$http) {
+    .controller('HomeCtrl', ['$scope', '$interval' ,  '$location', '$anchorScroll','$http','$rootScope',
+        function homeCtrl($scope,$interval,$location,$anchorScroll,$http,$rootScope) {
         $scope.pos = 0;
         $scope.slickConfig2Loaded = true;
         $scope.indexcounter = 0 ;
@@ -20,7 +21,7 @@ angular.module('myApp')
             }
         };
 
-
+         $scope.mediaObj = {};
         //get Top Ten Videos
         $http.get('/api/getTopTenVideos').
             success(function(data) {
@@ -45,11 +46,18 @@ angular.module('myApp')
         $scope.playVideo = function(index,vidArr){
             $scope.mediaObj = vidArr[index];
             $scope.indexcounter = index;
-            //$location.hash('video-player');
-            //$anchorScroll();
             $("html, body").animate({scrollTop: $("#video-player").offset().top}, "slow");
         };
 
+        //add to favorites
+        $scope.addToFavorite = function(obj){
+            $rootScope.favoriteVidArr.push(obj);
+            $rootScope.favoriteVidArr = _.uniq($rootScope.favoriteVidArr, function(item, key) {
+                return item.mediaID;
+            });
+            console.log($rootScope.favoriteVidArr);
+
+        };
 
         //video js player event
         $scope.$on('vjsVideoReady', function (e, data) {

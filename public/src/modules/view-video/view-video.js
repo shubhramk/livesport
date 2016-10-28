@@ -2,14 +2,34 @@
  * Video display module - Video screen
  */
 angular.module('myApp')
-    .controller('viewvideoCtrl', ['$scope', '$timeout' ,'$state','$http', function eventCtrl($scope , $timeout,$state,$http) {
-        console.log($state.current.name);
-        console.log($state.params.id);
+    .controller('viewvideoCtrl', ['$scope', '$timeout' ,'$state','$http','$rootScope',
+        function eventCtrl($scope , $timeout,$state,$http,$rootScope) {
 
         //get Channels List
 
-        $scope.videoHeading = ($state.current.name == 'channels.video') ? 'VIDEOS' : '';
-        $scope.isChannel    = ($state.current.name == 'channels.video')? true :false;
+        $scope.videoHeading = getHeading($state.current.name);
+        $scope.isChannel    = showVideoList($state.current.name);
+
+        function getHeading(stateName){
+            if(stateName == 'channels.video' ){
+                return "VIDEOS";
+            }else if(stateName == 'favorites.video' ){
+                return "FAVORITES VIDEOS";
+            }else{
+                return "";
+            }
+        }
+
+        function showVideoList(stateName){
+            if(stateName == 'channels.video' ){
+                return true;
+            }else if(stateName == 'favorites.video' ){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
 
         var ID = $state.params.id;
         var getVideoURL = '';
@@ -19,6 +39,22 @@ angular.module('myApp')
         }else if($state.current.name == 'events.video'){  //if it comes from video parent
             getVideoURL = '/api/getEvent/'+ID;
         }
+        else if($state.current.name == 'favorites.video'){  //if it comes from favorites parent
+            var vID = $state.params.vID;
+            console.log(vID);
+            var arr = _.filter($rootScope.favoriteVidArr, _.findWhere($rootScope.favoriteVidArr, {
+                mediaID: vID.toString()
+            }));
+            console.log(arr);
+            $scope.videoList = arr;
+            $timeout(function () {
+                new GridScrollFx(document.getElementById('grid'), {
+                    viewportFactor: 0.4
+                });
+            }, 100);
+        }
+
+        //get videos
         $http.get(getVideoURL).
             success(function(data) {
 
