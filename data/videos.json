@@ -1,0 +1,87 @@
+[
+    {
+      "mediaID":"1",
+      "sources": [
+          {
+            "src": "http://clips-akc.us-east-1.next.gopro.com/6d9c/media/mp4/gopro/2016/09/13/6d9c5000-13b2-4cc2-b486-72d58976e767/1473801787608/asset_1200k.mp4",
+            "type":"video/mp4"
+          }
+      ],
+      "poster": "https://betacontent.next.gopro.com/images/photos/147384538/832x468/cut.JPEG",
+      "heading":"Justice League",
+      "description":"Action Drama - HLS (VOD)",
+      "genre":"Football",
+      "type":"video",
+      "views":100,
+      "isFeatured":true,
+      "channelID":"1"
+    },
+    {
+      "mediaID":"2",
+      "sources": [
+        {
+          "src": "http://techslides.com/demos/sample-videos/small.mp4",
+          "type":"video/mp4"
+        }
+      ],
+      "poster": "assets/images/vp-g01.jpg",
+      "heading":"Justice League",
+      "description":"Action Drama - HLS (VOD)",
+      "genre":"Football",
+      "type":"video",
+      "views":10,
+      "isFeatured":true,
+      "channelID":"1"
+    },
+    {
+      "mediaID":"3",
+      "sources": [
+        {
+          "src": "http://vjs.zencdn.net/v/oceans.mp4",
+          "type":"video/mp4"
+        }
+      ],
+      "poster": "assets/images/vp-g01.jpg",
+      "heading":"Justice League",
+      "description":"Action Drama - HLS (VOD)",
+      "genre":"Football",
+      "type":"video",
+      "views":50,
+      "isFeatured":false,
+      "channelID":"2"
+    },
+    {
+      "mediaID":"4",
+      "sources": [
+        {
+          "src": "http://thenewcode.com/assets/videos/polina.mp4",
+          "type":"video/mp4"
+        }
+      ],
+      "poster": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg",
+      "heading":"Justice League",
+      "description":"Action Drama - HLS (VOD)",
+      "genre":"Football",
+      "type":"video",
+      "views":5,
+      "isFeatured":false,
+      "channelID":"1"
+    },
+    {
+      "mediaID":"5",
+      "sources": [
+        {
+          "src": "http://thenewcode.com/assets/videos/polina.mp4",
+          "type":"video/mp4"
+        }
+      ],
+      "poster": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg",
+      "heading":"Justice League",
+      "description":"Action Drama - HLS (VOD)",
+      "genre":"Football",
+      "type":"video",
+      "views":50,
+      "isFeatured":false,
+      "channelID":"1"
+    }
+]

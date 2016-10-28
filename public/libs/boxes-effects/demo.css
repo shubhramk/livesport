@@ -15,8 +15,8 @@
 .clearfix:after { clear: both; }
 
 body {
-	background: #D3EEE2;
-	color: #2E3444;
+	/*background: #D3EEE2;*/
+	/*color: #2E3444;*/
 	font-size: 100%;
 	line-height: 1.25;
 	font-family: 'Lato', sans-serif;

@@ -1,0 +1,42 @@
+[
+    {
+      "channelID":"1",
+      "poster": "assets/images/weight-lifting.jpg",
+      "heading":"Weight Lifting",
+      "description":"Weight Lifting",
+      "genre":"Weight Lifting",
+      "type":"video",
+      "views":100,
+      "isFeatured":true
+    },
+    {
+      "channelID":"2",
+      "poster": "assets/images/water-polo.JPG",
+      "heading":"Water Polo",
+      "description":"Water Polo",
+      "genre":"Water Polo",
+      "type":"video",
+      "views":50,
+      "isFeatured":true
+    },
+    {
+      "channelID":"3",
+      "poster": "assets/images/squash.JPG",
+      "heading":"Squash",
+      "description":"Squash Game",
+      "genre":"Squash",
+      "type":"video",
+      "views":10,
+      "isFeatured":true
+    },
+    {
+      "channelID":"4",
+      "poster": "assets/images/ice-hockey.jpg",
+      "heading":"Ice Hockey",
+      "description":"Ice Hockey",
+      "genre":"Hockey",
+      "type":"video",
+      "views":50,
+      "isFeatured":true
+    }
+]

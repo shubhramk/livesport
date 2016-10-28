@@ -114,7 +114,26 @@ angular.module( 'myApp').config(['slickCarouselConfig', function (slickCarouselC
                     pageTitle: 'Channels',
                     requireLogin: true
                 }
-            }).state('favorites', {
+            })
+            .state('channels.video', {
+                url: '/video/:id/',
+                views: {
+                    "main@": {
+                        controller: 'viewvideoCtrl',
+                        templateUrl: 'view-video/view-video.tpl.html'
+                    }
+                }, resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                    loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+                        // you can lazy load files for an existing module
+                        return $ocLazyLoad.load(['mainAssets','viewvideoAssets']);
+                    }]
+                },
+                data: {
+                    pageTitle: 'Channels Video',
+                    requireLogin: true
+                }
+            })
+            .state('favorites', {
                 url: '/favorites',
                 views: {
                     "main": {
@@ -148,10 +167,10 @@ angular.module( 'myApp').config(['slickCarouselConfig', function (slickCarouselC
                     pageTitle: 'Home',
                     requireLogin: true
                 }
-            }).state('viewvideo', {
-                url: '/view-video',
+            }).state('events.video', {
+                url: '/video/:id/',
                 views: {
-                    "main": {
+                    "main@": {
                         controller: 'viewvideoCtrl',
                         templateUrl: 'view-video/view-video.tpl.html'
                     }
@@ -162,7 +181,7 @@ angular.module( 'myApp').config(['slickCarouselConfig', function (slickCarouselC
                     }]
                 },
                 data: {
-                    pageTitle: 'Home',
+                    pageTitle: 'Events',
                     requireLogin: true
                 }
             });

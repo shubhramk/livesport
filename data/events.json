@@ -1,0 +1,66 @@
+[
+    {
+      "eventID":"1",
+      "poster": "assets/images/weight-lifting.jpg",
+      "heading":"Weight Lifting",
+      "description":"Weight Lifting",
+      "genre":"Weight Lifting",
+      "type":"video",
+      "views":100,
+      "isFeatured":true,
+      "isLive":true,
+      "sources" : [{
+          "src" : "http://clips-akc.us-east-1.next.gopro.com/6d9c/media/mp4/gopro/2016/09/13/6d9c5000-13b2-4cc2-b486-72d58976e767/1473801787608/asset_1200k.mp4",
+          "type" : "video/mp4"
+        }],
+      "date":"Oct 27,2016"
+    },
+    {
+      "eventID":"2",
+      "poster": "assets/images/water-polo.JPG",
+      "heading":"Water Polo",
+      "description":"Water Polo",
+      "genre":"Water Polo",
+      "type":"video",
+      "views":50,
+      "isFeatured":true,
+      "isLive":true,
+      "sources" : [{
+        "src" : "http://clips-akc.us-east-1.next.gopro.com/6d9c/media/mp4/gopro/2016/09/13/6d9c5000-13b2-4cc2-b486-72d58976e767/1473801787608/asset_1200k.mp4",
+        "type" : "video/mp4"
+      }],
+      "date":"Oct 27,2016"
+    },
+    {
+      "eventID":"3",
+      "poster": "assets/images/squash.JPG",
+      "heading":"Squash",
+      "description":"Squash Game",
+      "genre":"Squash",
+      "type":"video",
+      "views":10,
+      "isFeatured":true,
+      "isLive":true,
+      "sources" : [{
+        "src" : "http://clips-akc.us-east-1.next.gopro.com/6d9c/media/mp4/gopro/2016/09/13/6d9c5000-13b2-4cc2-b486-72d58976e767/1473801787608/asset_1200k.mp4",
+        "type" : "video/mp4"
+      }],
+      "date":"Oct 27,2016"
+    },
+    {
+      "eventID":"4",
+      "poster": "assets/images/ice-hockey.jpg",
+      "heading":"Ice Hockey",
+      "description":"Ice Hockey",
+      "genre":"Hockey",
+      "type":"video",
+      "views":50,
+      "isFeatured":true,
+      "isLive":true,
+      "sources" : [{
+        "src" : "http://clips-akc.us-east-1.next.gopro.com/6d9c/media/mp4/gopro/2016/09/13/6d9c5000-13b2-4cc2-b486-72d58976e767/1473801787608/asset_1200k.mp4",
+        "type" : "video/mp4"
+      }],
+      "date":"Oct 27,2016"
+    }
+]

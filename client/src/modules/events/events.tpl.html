@@ -1,14 +1,15 @@
 <div class="container events">
     <section class="grid-wrap">
         <ul class="grid swipe-down" id="grid">
-            <li ng-repeat="eventdata in eventsarray|orderBy:$index:true" >
-                <a ng-href="javascript:void(0)" ui-sref="viewvideo"><img ng-src="{{eventdata.poster}}" alt="dummy">
+            <li ng-repeat="obj in eventsArr" >
+                <a ng-href="javascript:void(0)"  ng-click="showVideo(obj.eventID)">
+                    <img ng-src="{{obj.poster}}" alt="{{obj.heading}}">
                     <h3>
-                        {{eventdata.heading}}
+                        {{obj.heading}}
                         <br>
-                        <span class="category">{{eventdata.category}}</span>
+                        <span class="category">{{obj.genre}}</span>
                         <br>
-                        <span class="date">{{eventdata.date}}</span>
+                        <span class="date">{{obj.date}}</span>
                     </h3>
                 </a>
             </li>

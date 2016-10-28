@@ -5,10 +5,16 @@ angular.module("channels/channels.tpl.html", []).run(["$templateCache", function
     "<div class=\"container\">\n" +
     "    <section class=\"grid-wrap\">\n" +
     "        <ul class=\"grid swipe-down\" id=\"grid\">\n" +
-    "            <li ng-repeat=\"channeldata in channelsarray\"><a ng-href=\"javascript:void(0)\" ui-sref=\"viewvideo\"><img ng-src=\"{{channeldata.poster}}\" alt=\"dummy\"><h3>{{channeldata.heading}}</h3></a></li>\n" +
+    "            <li ng-repeat=\"obj in channelsArr\">\n" +
+    "                 <a ng-href=\"javascript:void(0)\" ng-click=\"showVideo(obj.channelID)\">\n" +
+    "                     <img ng-src=\"{{obj.poster}}\" alt=\"{{obj.heading}}\">\n" +
+    "                     <h3>{{obj.heading}}</h3>\n" +
+    "                 </a>\n" +
+    "            </li>\n" +
     "        </ul>\n" +
     "    </section>\n" +
-    "</div>");
+    "</div>\n" +
+    "");
 }]);
 
 angular.module("events/events.tpl.html", []).run(["$templateCache", function($templateCache) {
@@ -16,14 +22,15 @@ angular.module("events/events.tpl.html", []).run(["$templateCache", function($te
     "<div class=\"container events\">\n" +
     "    <section class=\"grid-wrap\">\n" +
     "        <ul class=\"grid swipe-down\" id=\"grid\">\n" +
-    "            <li ng-repeat=\"eventdata in eventsarray|orderBy:$index:true\" >\n" +
-    "                <a ng-href=\"javascript:void(0)\" ui-sref=\"viewvideo\"><img ng-src=\"{{eventdata.poster}}\" alt=\"dummy\">\n" +
+    "            <li ng-repeat=\"obj in eventsArr\" >\n" +
+    "                <a ng-href=\"javascript:void(0)\"  ng-click=\"showVideo(obj.eventID)\">\n" +
+    "                    <img ng-src=\"{{obj.poster}}\" alt=\"{{obj.heading}}\">\n" +
     "                    <h3>\n" +
-    "                        {{eventdata.heading}}\n" +
+    "                        {{obj.heading}}\n" +
     "                        <br>\n" +
-    "                        <span class=\"category\">{{eventdata.category}}</span>\n" +
+    "                        <span class=\"category\">{{obj.genre}}</span>\n" +
     "                        <br>\n" +
-    "                        <span class=\"date\">{{eventdata.date}}</span>\n" +
+    "                        <span class=\"date\">{{obj.date}}</span>\n" +
     "                    </h3>\n" +
     "                </a>\n" +
     "            </li>\n" +
@@ -53,22 +60,6 @@ angular.module("favorites/favorites.tpl.html", []).run(["$templateCache", functi
 angular.module("home/home.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("home/home.tpl.html",
     "<div class=\"container\">\n" +
-    "<!--<div class=\"vid-container\">-->\n" +
-    "<!--<vjs-video-container vjs-ratio=\"4:3\"  vjs-setup='{\"fluid\": true}'>-->\n" +
-    "    <!--<video class=\"video-js vjs-sublime-skin\" width=\"100%\" height=\"100%\" controls preload=\"auto\" poster=\"http://vjs.zencdn.net/v/oceans.png\">-->\n" +
-    "        <!--<source src=\"http://vjs.zencdn.net/v/oceans.mp4\" type='video/mp4' />-->\n" +
-    "        <!--<source src=\"http://vjs.zencdn.net/v/oceans.webm\" type='video/webm' />-->\n" +
-    "        <!--<source src=\"http://vjs.zencdn.net/v/oceans.ogv\" type='video/ogg' />-->\n" +
-    "        <!--<p class=\"vjs-no-js\">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href=\"http://videojs.com/html5-video-support/\" target=\"_blank\">supports HTML5 video</a>-->\n" +
-    "        <!--</p>-->\n" +
-    "    <!--</video>-->\n" +
-    "<!--</div>-->\n" +
-    "<!--<div class=\"vid-container\" id=\"video-player\">-->\n" +
-    "    <!--<video  class=\"video-js vjs-sublime-skin\" controls preload=\"auto\" width=\"1180\" height=\"600\"-->\n" +
-    "            <!--poster=\"assets/video/demo-poster.png\"-->\n" +
-    "            <!--vjs-video vjs-setup=\"options\" vjs-media=\"mediaObj\">-->\n" +
-    "    <!--</video>-->\n" +
-    "<!--</div>-->\n" +
     "    <div class=\"vid-container\" >\n" +
     "        <video\n" +
     "                id=\"video-player\"\n" +
@@ -86,56 +77,50 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "    <div class=\"video-section\">\n" +
     "    <div class=\"carousel-section\">\n" +
     "        <slick class=\"slider\" settings=\"slickConfig2\" ng-if=\"slickConfig2Loaded\">\n" +
-    "            <div ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +
-    "                <img src=\"{{i.poster}}\"  class=\"carousel-image\" ng-class=\"{'highlight':($index==indexcounter)}\"/>\n" +
+    "            <div ng-repeat=\"obj in topTenVideos  track by $index ;\" ng-click=\"playVideo($index , topTenVideos)\">\n" +
+    "                <img src=\"{{obj.poster}}\"  class=\"carousel-image\" ng-class=\"{'highlight':($index==indexcounter)}\"/>\n" +
     "                <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i>\n" +
     "            </div>\n" +
     "        </slick>\n" +
     "    </div>\n" +
     "</div>\n" +
     "<div class=\"featured-videos\">\n" +
-    "    <div class=\"heading\">Featured Videos</div>\n" +
+    "    <div class=\"video-heading\"><h2>FEATURED VIDEOS</h2></div>\n" +
     "    <div class=\"no-js\">\n" +
     "        <ul class=\"grid-caption cs-style-3\">\n" +
-    "            <li class=\"video-container\" ng-repeat=\"i in vidArr  track by $index ;\">\n" +
+    "            <li class=\"video-container\" ng-repeat=\"obj in featuredVideos  track by $index\">\n" +
     "                <figure>\n" +
-    "                    <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
+    "                    <div class=\"video-block\"><img src=\"{{obj.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
     "                    <figcaption>\n" +
-    "                        <h3>{{i.heading}}</h3>\n" +
-    "                        <span>{{i.content}}</span>\n" +
-    "                        <a ng-click=\"playVid($index)\">Take a look</a>\n" +
+    "                        <h3>{{obj.heading}}</h3>\n" +
+    "                        <span>{{obj.content}}</span>\n" +
+    "                        <a ng-click=\"playVideo($index,featuredVideos)\">Take a look</a>\n" +
     "                    </figcaption>\n" +
     "                </figure>\n" +
+    "                <div class=\"video-detail-block\">\n" +
+    "                    <div class=\"name\">Darkness world, MP4</div>\n" +
+    "                    <div class=\"fav\"><i class=\"fa fa-bookmark\" aria-hidden=\"true\"></i></div>\n" +
+    "                </div>\n" +
     "            </li>\n" +
-    "          <!--  <div class=\"video-container\" ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +
-    "                <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
-    "                <div class=\"video-heading\">{{i.heading}}</div>\n" +
-    "                <div class=\"video-content\">{{i.content}}</div>\n" +
-    "            </div>-->\n" +
     "        </ul>\n" +
     "    </div>\n" +
     "    <div class=\"clear\"></div>\n" +
     "</div>\n" +
     "<div class=\"clear\"></div>\n" +
     "<div class=\"top-videos\">\n" +
-    "    <div class=\"heading\">Top Videos</div>\n" +
+    "    <div class=\"video-heading\"><h2>TOP VIDEOS</h2></div>\n" +
     "    <div class=\"no-js\">\n" +
     "        <ul class=\"grid-caption cs-style-3\">\n" +
-    "            <li class=\"video-container\" ng-repeat=\"i in vidArr  track by $index ;\">\n" +
+    "            <li class=\"video-container\" ng-repeat=\"obj in topVideos track by $index\">\n" +
     "                <figure>\n" +
-    "                    <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
+    "                    <div class=\"video-block\"><img src=\"{{obj.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
     "                    <figcaption>\n" +
-    "                        <h3>{{i.heading}}</h3>\n" +
-    "                        <span>{{i.content}}</span>\n" +
-    "                        <a ng-click=\"playVid($index)\">Take a look</a>\n" +
+    "                        <h3>{{obj.heading}}</h3>\n" +
+    "                        <span>{{obj.content}}</span>\n" +
+    "                        <a ng-click=\"playVideo($index,topVideos)\">Take a look</a>\n" +
     "                    </figcaption>\n" +
     "                </figure>\n" +
     "            </li>\n" +
-    "            <!--  <div class=\"video-container\" ng-repeat=\"i in vidArr  track by $index ;\" ng-click=\"playVid($index)\">\n" +
-    "                  <div class=\"video-block\"><img src=\"{{i.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
-    "                  <div class=\"video-heading\">{{i.heading}}</div>\n" +
-    "                  <div class=\"video-content\">{{i.content}}</div>\n" +
-    "              </div>-->\n" +
     "        </ul>\n" +
     "    </div>\n" +
     "    <div class=\"clear\"></div>\n" +
@@ -169,33 +154,36 @@ angular.module("login/login.tpl.html", []).run(["$templateCache", function($temp
 angular.module("view-video/view-video.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("view-video/view-video.tpl.html",
     "<div class=\"container events\">\n" +
-    "<div class=\"vid-container\" >\n" +
-    "    <video\n" +
-    "            id=\"video-player\"\n" +
-    "            controls\n" +
-    "            preload=\"auto\"\n" +
-    "            class=\"video-js vjs-sublime-skin\"\n" +
-    "            width=\"1180\"\n" +
-    "            height=\"600\"\n" +
-    "            vjs-media=\"mediaObj\"\n" +
-    "            vjs-vid >\n" +
+    "    <div class=\"vid-container\" >\n" +
+    "        <video\n" +
+    "                id=\"video-player\"\n" +
+    "                controls\n" +
+    "                preload=\"auto\"\n" +
+    "                class=\"video-js vjs-sublime-skin\"\n" +
+    "                width=\"1180\"\n" +
+    "                height=\"600\"\n" +
+    "                vjs-media=\"mediaObj\"\n" +
+    "                vjs-vid >\n" +
     "\n" +
-    "    </video>\n" +
-    "</div>\n" +
-    "    <section class=\"grid-wrap\">\n" +
+    "        </video>\n" +
+    "    </div>\n" +
+    "   <section > {{videoHeading}}</section>\n" +
+    "    <section class=\"grid-wrap\" ng-show=\"isChannel\">\n" +
     "        <ul class=\"grid swipe-down\" id=\"grid\">\n" +
-    "            <li ng-repeat=\"eventdata in eventsarray|orderBy:$index:true\" >\n" +
-    "                <a ng-href=\"javascript:void(0)\"  ng-click=\"playVid($index)\"><img src=\"{{eventdata.poster}}\" alt=\"dummy\">\n" +
+    "            <li ng-repeat=\"obj in videoList track by $index\" >\n" +
+    "                <a ng-href=\"javascript:void(0)\" ng-click=\"playVideo($index , videoList)\">\n" +
+    "                    <img ng-src=\"{{obj.poster}}\" alt=\"{{obj.heading}}\">\n" +
     "                    <h3>\n" +
-    "                        {{eventdata.heading}}\n" +
+    "                        {{obj.heading}}\n" +
     "                        <br>\n" +
-    "                        <span class=\"category\">{{eventdata.category}}</span>\n" +
+    "                        <span class=\"category\">{{obj.genre}}</span>\n" +
     "                        <br>\n" +
-    "                        <span class=\"date\">{{eventdata.date}}</span>\n" +
+    "                        <span class=\"date\">{{obj.date}}</span>\n" +
     "                    </h3>\n" +
     "                </a>\n" +
     "            </li>\n" +
     "        </ul>\n" +
     "    </section>\n" +
+    "\n" +
     "</div>");
 }]);

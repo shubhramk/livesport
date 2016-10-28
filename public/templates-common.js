@@ -9,16 +9,11 @@ angular.module("directives/header/header.tpl.html", []).run(["$templateCache", f
     "                <div class=\"logo\">LiveSports <i class=\"fa fa-random\" aria-hidden=\"true\"></i></div>\n" +
     "            </div>\n" +
     "            <div class=\"col-lg-6 col-md-6 col-xs-6 text-right\">\n" +
-    "                <div class=\"logout\"><i ng-click=\"logout()\" class=\"fa fa-sign-out\" aria-hidden=\"true\"></i></div>\n" +
-    "            </div>\n" +
-    "            <div>\n" +
-    "                <!--<div class=\"search-block text-right\">\n" +
-    "                    <input type=\"text\" placeholder=\"Search\" />\n" +
-    "                    <i class=\"fa fa-search\" aria-hidden=\"true\"></i>\n" +
-    "                </div>-->\n" +
+    "\n" +
     "                <div id=\"morphsearch\" class=\"morphsearch\">\n" +
     "                    <form class=\"morphsearch-form\">\n" +
     "                        <input class=\"morphsearch-input\" type=\"search\" placeholder=\"Search...\"/>\n" +
+    "                        <i class=\"fa fa-search\" aria-hidden=\"true\"></i>\n" +
     "                        <button class=\"morphsearch-submit\" type=\"submit\">Search</button>\n" +
     "                    </form>\n" +
     "                    <div class=\"morphsearch-content\">\n" +
@@ -106,6 +101,15 @@ angular.module("directives/header/header.tpl.html", []).run(["$templateCache", f
     "                    </div><!-- /morphsearch-content -->\n" +
     "                    <span class=\"morphsearch-close\"></span>\n" +
     "                </div><!-- /morphsearch -->\n" +
+    "\n" +
+    "                <div class=\"logout\"><i ng-click=\"logout()\" class=\"fa fa-sign-out\" aria-hidden=\"true\"></i></div>\n" +
+    "            </div>\n" +
+    "            <div>\n" +
+    "                <!--<div class=\"search-block text-right\">\n" +
+    "                    <input type=\"text\" placeholder=\"Search\" />\n" +
+    "                    <i class=\"fa fa-search\" aria-hidden=\"true\"></i>\n" +
+    "                </div>-->\n" +
+    "\n" +
     "\n" +
     "            </div>\n" +
     "\n" +
