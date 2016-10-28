@@ -10,7 +10,7 @@
       "isFeatured":true,
       "isLive":true,
       "sources" : [{
-          "src" : "rtmp://192.168.56.1/live/stream1",
+          "src" : "rtmp://192.168.0.4/live/stream1",
           "type" : "rtmp/mp4"
         }],
       "date":"Oct 27,2016"
