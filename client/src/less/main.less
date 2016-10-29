@@ -49,11 +49,27 @@ Font-Family: Lato
     url('../../../assets/font/Lato/lato-regular-webfont.woff') format('woff');
 }
 
+/******
+Font-Family: titillium_web
+********/
+@font-face {
+  font-family: 'titillium';
+  src: url('../../../assets/font/titillium_web/TitilliumWeb-Light.woff2') format('woff2'),
+  url("../../../assets/font/titillium_web/TitilliumWeb-Regular.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: 'titillium-bold';
+  src: url("../../../assets/font/titillium_web/TitilliumWeb-Bold.ttf") format("truetype")
+}
+
+
+
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: 'latoregular';
+    font-family: 'titillium';
 }
 .body-bg {
    /* background-image: url('../../../assets/images/body-bg.jpg');
@@ -184,9 +200,11 @@ body {
     color:#fff;
     font-size: 24px;
     font-weight: bold;
+    font-family: 'titillium-bold';
     height: 50px;
     line-height: 50px;
     padding-left: 20px;
+
   }
 
 }
@@ -199,9 +217,14 @@ header {
             color: #fff;
             font-size: 30px;
             margin-top: 10px;
+            width: 200px;
             .fa {
                 font-size: 25px;
             }
+          img {
+            display: inline-block;
+            width: 90%;
+          }
         }
         .search-block {
             margin-top: 20px;
@@ -247,6 +270,8 @@ header {
                         cursor: pointer;
                         padding-bottom: 5px;
                         padding-top: 10px;
+                        font-family: 'titillium';
+                        text-transform: uppercase;
                         &:hover {
                             border-bottom: 3px solid #CC0000;
                             color: #fff;
@@ -567,6 +592,42 @@ ul.grid-caption {
       .fav {
         float: right;
       }
+    }
+  }
+}
+
+.vid-play-detail-section {
+  background-color: #333;
+  height: 70px;
+  margin-bottom: 70px;
+  clear: both;
+  color: #fff;
+  padding: 14px 0;
+  font-size: 12px;
+   .col-left {
+     h3 {
+       font-size: 18px;
+       margin: 0;
+     }
+   }
+  .col-left-b {
+    margin-top: 5px;
+    >div {
+      float: left;
+    }
+    div:last-child {
+      padding-left: 20px;
+    }
+    .by {
+      span {
+        color: #CC0000;
+      }
+    }
+  }
+  .col-right-b {
+    margin-top: 5px;
+    .fa-thumbs-down {
+      color: #706F6F;
     }
   }
 }

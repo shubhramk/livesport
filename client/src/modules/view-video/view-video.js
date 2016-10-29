@@ -43,7 +43,7 @@ angular.module('myApp')
             var vID = String($state.params.vID);
             console.log(vID);
             var arr = _.filter($rootScope.favoriteVidArr,function(item) {
-                return item.mediaID != vID
+                return item.mediaID != vID;
             });
             console.log(arr);
             $scope.videoList = arr;
@@ -65,7 +65,7 @@ angular.module('myApp')
                         new GridScrollFx(document.getElementById('grid'), {
                             viewportFactor: 0.4
                         });
-                    }, 100)
+                    }, 100);
                 }
             });
 
