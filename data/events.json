@@ -2,7 +2,7 @@
     {
       "eventID":"1",
       "poster": "assets/images/weight-lifting.jpg",
-      "heading":"Weight Lifting",
+      "heading":"LIVE STREAM(RTMP)",
       "description":"Weight Lifting",
       "genre":"Weight Lifting",
       "type":"video",
@@ -10,15 +10,15 @@
       "isFeatured":true,
       "isLive":true,
       "sources" : [{
-          "src" : "http://clips-akc.us-east-1.next.gopro.com/6d9c/media/mp4/gopro/2016/09/13/6d9c5000-13b2-4cc2-b486-72d58976e767/1473801787608/asset_1200k.mp4",
-          "type" : "video/mp4"
+          "src" : "rtmp://192.168.0.4/live/stream1",
+          "type" : "rtmp/mp4"
         }],
       "date":"Oct 27,2016"
     },
     {
       "eventID":"2",
       "poster": "assets/images/water-polo.JPG",
-      "heading":"Water Polo",
+      "heading":"LIVE STREAM(HLS)",
       "description":"Water Polo",
       "genre":"Water Polo",
       "type":"video",
@@ -26,15 +26,15 @@
       "isFeatured":true,
       "isLive":true,
       "sources" : [{
-        "src" : "http://clips-akc.us-east-1.next.gopro.com/6d9c/media/mp4/gopro/2016/09/13/6d9c5000-13b2-4cc2-b486-72d58976e767/1473801787608/asset_1200k.mp4",
-        "type" : "video/mp4"
+        "src" : "http://cdn3.viblast.com/streams/hls/airshow/playlist.m3u8",
+        "type" : "application/x-mpegURL"
       }],
       "date":"Oct 27,2016"
     },
     {
       "eventID":"3",
       "poster": "assets/images/squash.JPG",
-      "heading":"Squash",
+      "heading":"LIVE STREAM(MPEG-DASH)",
       "description":"Squash Game",
       "genre":"Squash",
       "type":"video",
@@ -42,15 +42,31 @@
       "isFeatured":true,
       "isLive":true,
       "sources" : [{
-        "src" : "http://clips-akc.us-east-1.next.gopro.com/6d9c/media/mp4/gopro/2016/09/13/6d9c5000-13b2-4cc2-b486-72d58976e767/1473801787608/asset_1200k.mp4",
-        "type" : "video/mp4"
+        "src" : "http://bitlivedemo-a.akamaihd.net/mpds/stream.php?streamkey=bitcodin",
+        "type" : "application/dash+xml"
       }],
       "date":"Oct 27,2016"
     },
     {
       "eventID":"4",
+      "poster": "assets/images/squash.JPG",
+      "heading":"LIVE STREAM(MPEG-DASH)- 2",
+      "description":"Squash Game",
+      "genre":"Squash",
+      "type":"video",
+      "views":10,
+      "isFeatured":true,
+      "isLive":true,
+      "sources" : [{
+        "src" : "http://24x7dash-i.akamaihd.net/dash/live/900080/dash-demo/dash.mpd",
+        "type" : "application/dash+xml"
+      }],
+      "date":"Oct 27,2016"
+    },
+    {
+      "eventID":"5",
       "poster": "assets/images/ice-hockey.jpg",
-      "heading":"Ice Hockey",
+      "heading":"LIVE STREAM (HLS) ",
       "description":"Ice Hockey",
       "genre":"Hockey",
       "type":"video",
@@ -58,8 +74,8 @@
       "isFeatured":true,
       "isLive":true,
       "sources" : [{
-        "src" : "http://clips-akc.us-east-1.next.gopro.com/6d9c/media/mp4/gopro/2016/09/13/6d9c5000-13b2-4cc2-b486-72d58976e767/1473801787608/asset_1200k.mp4",
-        "type" : "video/mp4"
+        "src" : "http://wms.shared.streamshow.it/carinatv/carinatv/playlist.m3u8",
+        "type" : "application/x-mpegURL"
       }],
       "date":"Oct 27,2016"
     }

@@ -95,7 +95,35 @@ router
     .get('/getEvent/:eventID', function(req, res) {
         var eventVideo  = _.where(eventData, {eventID: req.params.eventID});
         res.json(eventVideo);
-    });
+    })
+    .get('/getAllVideos', function(req, res) {
+        var relevance = _.where(jsonData, {sType:'relevance'});
+        var popular   = _.where(jsonData, {sType: 'popular'});
+        var recent    = _.where(jsonData, {sType: 'recent'});
+        res.json({
+            "relevance": relevance,
+            "popular":popular,
+            "recent":recent
+
+        });
+    })
+    .get('/getSearchedVideo/:cID/:vID', function(req, res) {
+
+        var channelsVidList  = _.where(jsonData, {channelID: req.params.cID});
+
+        //current video
+        var curVid = _.filter(channelsVidList,function(item) {
+            return item.mediaID == req.params.vID;
+        });
+
+        //video list
+        var arr = _.filter(channelsVidList,function(item) {
+            return item.mediaID != req.params.vID;
+        });
+         var finalArr  = curVid.concat(arr);
+         res.json(finalArr);
+    })
+
 
 
 module.exports = router;

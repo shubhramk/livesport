@@ -10,11 +10,25 @@ angular.module("myApp").directive('header', function () {
         replace: true,
         scope: true,
         templateUrl: "directives/header/header.tpl.html",
-        controller: function($scope,$state,$timeout) {
+        controller: function($scope,$state,$timeout,$http) {
+
             $scope.tabclick = function(value){
                 $scope.activeMenu = value;
                 $state.go(value);
             };
+
+            //get Featured Videos
+            $scope.searchArr = {};
+            $http.get('/api/getAllVideos').
+            success(function(data) {
+
+                $scope.searchArr = data;
+            });
+            $scope.showVideo =  function(ID,vidID){
+                $state.go('channels.search',{id:ID,vID:vidID});
+                angular.element("span.morphsearch-close").trigger('click');
+            };
+
 
             /**Search Container JS**/
             (function() {

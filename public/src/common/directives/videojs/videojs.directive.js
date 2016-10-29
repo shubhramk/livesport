@@ -34,11 +34,10 @@ angular.module("myApp").directive('vjsVid', function () {
 
             function init(media){
                 attrs.id = attrs.id || "videojs_" + (new Date()).getTime();
-                console.log(attrs.id);
+
                 element.attr('id', attrs.id);
                 videojs(attrs.id, setup, function(){
                     player = this;
-                    console.log(media.sources);
                     setStreams(media);
                 });
             }
@@ -50,8 +49,6 @@ angular.module("myApp").directive('vjsVid', function () {
             scope.$watchGroup(['vjsMedia'], function() {
 
                 media = scope.vjsMedia;
-                console.log(media.sources);
-                console.log(media.poster);
                 // if ((player !== undefined) && (player !== null)) {
                 //     player.dispose();
                 // }

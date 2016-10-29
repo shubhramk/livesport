@@ -7,8 +7,8 @@ angular.module( 'myApp').config(['slickCarouselConfig', function (slickCarouselC
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|javascript):/);
         // Lazy load configuration
         $ocLazyLoadProvider.config({
-            events: true,
-            debug: true,
+            events: false,
+            debug: false,
             modules: [
                 {
                     name: 'mainAssets',
@@ -64,59 +64,78 @@ angular.module( 'myApp').config(['slickCarouselConfig', function (slickCarouselC
 
         // Routing
         $stateProvider
-            .state('login', {
-                url: '/login',
+                .state('login', {
+                    url: '/login',
+                    views: {
+                        "main": {
+                            templateUrl: 'login/login.tpl.html',
+                            controller: 'LoginCtrl'
+                        }
+                    },
+                    resolve: {
+                        loadMyService: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load(['mainAssets','loginAssets']);
+                        }]
+                    },
+                    data: {
+                        pageTitle: 'Login'
+                    }
+                }).state('home', {
+                url: '/home',
                 views: {
                     "main": {
-                        templateUrl: 'login/login.tpl.html',
-                        controller: 'LoginCtrl'
+                        controller: 'HomeCtrl',
+                        templateUrl: 'home/home.tpl.html'
                     }
-                },
-                resolve: {
-                    loadMyService: ['$ocLazyLoad', function($ocLazyLoad) {
-                        return $ocLazyLoad.load(['mainAssets','loginAssets']);
+                }, resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                    loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+                        // you can lazy load files for an existing module
+                        return $ocLazyLoad.load(['mainAssets','homeAssets']);
                     }]
                 },
                 data: {
-                    pageTitle: 'Login'
+                    pageTitle: 'Home',
+                    requireLogin: true
                 }
-            }).state('home', {
-            url: '/home',
-            views: {
-                "main": {
-                    controller: 'HomeCtrl',
-                    templateUrl: 'home/home.tpl.html'
+            })
+            .state('channels', {
+                url: '/channels',
+                views: {
+                    "main": {
+                        controller: 'channelsCtrl',
+                        templateUrl: 'channels/channels.tpl.html'
+                    }
+                }, resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                    loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+                        // you can lazy load files for an existing module
+                        return $ocLazyLoad.load(['mainAssets','channelsAssets']);
+                    }]
+                },
+                data: {
+                    pageTitle: 'Channels',
+                    requireLogin: true
                 }
-            }, resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
-                loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
-                    // you can lazy load files for an existing module
-                    return $ocLazyLoad.load(['mainAssets','homeAssets']);
-                }]
-            },
-            data: {
-                pageTitle: 'Home',
-                requireLogin: true
-            }
-        }).state('channels', {
-            url: '/channels',
-            views: {
-                "main": {
-                    controller: 'channelsCtrl',
-                    templateUrl: 'channels/channels.tpl.html'
-                }
-            }, resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
-                loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
-                    // you can lazy load files for an existing module
-                    return $ocLazyLoad.load(['mainAssets','channelsAssets']);
-                }]
-            },
-            data: {
-                pageTitle: 'Channels',
-                requireLogin: true
-            }
-        })
+            })
             .state('channels.video', {
                 url: '/video/:id/',
+                views: {
+                    "main@": {
+                        controller: 'viewvideoCtrl',
+                        templateUrl: 'view-video/view-video.tpl.html'
+                    }
+                }, resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                    loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+                        // you can lazy load files for an existing module
+                        return $ocLazyLoad.load(['mainAssets','viewvideoAssets']);
+                    }]
+                },
+                data: {
+                    pageTitle: 'Channels Video',
+                    requireLogin: true
+                }
+            })
+            .state('channels.search', {
+                url: '/video/:id/:vID',
                 views: {
                     "main@": {
                         controller: 'viewvideoCtrl',
