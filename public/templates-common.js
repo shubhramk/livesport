@@ -26,7 +26,7 @@ angular.module("directives/header/header.tpl.html", []).run(["$templateCache", f
     "                                    >\n" +
     "                                <img class=\"round\" src=\"{{obj.poster}}\" alt=\"{{obj.heading}}\"/>\n" +
     "                                <h3>{{obj.heading}}</h3>\n" +
-    "                               \n" +
+    "\n" +
     "                            </a>\n" +
     "                        </div>\n" +
     "                        <div class=\"dummy-column\">\n" +

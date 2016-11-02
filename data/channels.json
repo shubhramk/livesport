@@ -3,7 +3,7 @@
       "channelID":"1",
       "poster": "assets/images/weight-lifting.jpg",
       "heading":"Weight Lifting",
-      "description":"Weight Lifting",
+      "description":"the sport or activity of lifting barbells or other heavy weights.",
       "genre":"Weight Lifting",
       "type":"video",
       "views":100,
@@ -11,10 +11,10 @@
     },
     {
       "channelID":"2",
-      "poster": "assets/images/water-polo.JPG",
-      "heading":"Water Polo",
-      "description":"Water Polo",
-      "genre":"Water Polo",
+      "poster": "assets/images/polo.jpg",
+      "heading":"Polo",
+      "description":"Polo is a team sport played on horseback. ",
+      "genre":"Goal sports",
       "type":"video",
       "views":50,
       "isFeatured":true
@@ -23,7 +23,7 @@
       "channelID":"3",
       "poster": "assets/images/squash.JPG",
       "heading":"Squash",
-      "description":"Squash Game",
+      "description":"Squash is a racket sport played by two (singles) or four players (doubles) in a four-walled court with a small, hollow rubber ball.",
       "genre":"Squash",
       "type":"video",
       "views":10,
@@ -33,10 +33,50 @@
       "channelID":"4",
       "poster": "assets/images/ice-hockey.jpg",
       "heading":"Ice Hockey",
-      "description":"Ice Hockey",
+      "description":"Ice hockey is a contact team sport played on ice, usually in a rink, in which two teams of skaters use their sticks to shoot a vulcanized rubber puck into their opponent's net to score points. ",
       "genre":"Hockey",
       "type":"video",
       "views":50,
       "isFeatured":true
-    }
+    },
+  {
+    "channelID":"5",
+    "poster": "assets/images/handball.jpg",
+    "heading":"Handball",
+    "description":"Handball is a team sport in which two teams of seven players each pass a ball using their hands with the aim of throwing it into the goal of the other team. ",
+    "genre":"Goal sports",
+    "type":"video",
+    "views":50,
+    "isFeatured":true
+  },
+  {
+    "channelID":"6",
+    "poster": "assets/images/Ground_fighting.jpg",
+    "heading":"Wrestling",
+    "description":"Wrestling is a combat sport involving grappling type techniques such as clinch fighting, throws and takedowns, joint locks, pins and other grappling holds.",
+    "genre":"Combat Sport",
+    "type":"video",
+    "views":50,
+    "isFeatured":true
+  },
+  {
+    "channelID":"7",
+    "poster": "assets/images/Track_cycling.jpg",
+    "heading":"Cycling",
+    "description":"Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport.",
+    "genre":"Cycling",
+    "type":"video",
+    "views":50,
+    "isFeatured":true
+  },
+  {
+    "channelID":"8",
+    "poster": "assets/images/Basketball.jpg",
+    "heading":"Basketball",
+    "description":"Basketball is a sport, generally played by two teams of five players. The objective is to shoot a ball through a hoop to backboards at each end of the court.",
+    "genre":"Goal sports",
+    "type":"video",
+    "views":50,
+    "isFeatured":true
+  }
 ]
