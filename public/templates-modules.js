@@ -117,12 +117,12 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "                <figure>\n" +
     "                    <div class=\"video-block\"><img src=\"{{obj.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
     "                    <figcaption>\n" +
-    "                        <h3>{{obj.heading}}</h3>\n" +
+    "                        <h3>{{obj.description}}</h3>\n" +
     "                        <a ng-click=\"playVideo($index,featuredVideos)\">Play</a>\n" +
     "                    </figcaption>\n" +
     "                </figure>\n" +
     "                <div class=\"video-detail-block\">\n" +
-    "                    <div class=\"name\">Darkness world, MP4</div>\n" +
+    "                    <div class=\"name\">{{obj.heading}}</div>\n" +
     "                    <div class=\"fav\" ng-click=\"addToFavorite(obj)\"><i class=\"fa fa-bookmark\" aria-hidden=\"true\" tooltip-placement=\"top\" uib-tooltip=\"Add to Favorites\" tooltip-class=\"addtofav\" tooltip-enable=\"!getselected(obj.mediaID)\" ng-class=\"{'favadded':getselected(obj.mediaID)}\"></i></div>\n" +
     "                </div>\n" +
     "            </li>\n" +
@@ -135,16 +135,16 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "    <div class=\"video-heading\"><h2>TOP VIDEOS</h2></div>\n" +
     "    <div class=\"no-js\">\n" +
     "        <ul class=\"grid-caption cs-style-3\">\n" +
-    "            <li class=\"video-container\" ng-repeat=\"obj in topVideos track by $index\">\n" +
+    "            <li class=\"video-container\" ng-repeat=\"obj in topVideos | limitTo:6 track by $index \">\n" +
     "                <figure>\n" +
     "                    <div class=\"video-block\"><img src=\"{{obj.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
     "                    <figcaption>\n" +
-    "                        <h3>{{obj.heading}}</h3>\n" +
+    "                        <h3>{{obj.description}}</h3>\n" +
     "                        <a ng-click=\"playVideo($index,topVideos)\">Play</a>\n" +
     "                    </figcaption>\n" +
     "                </figure>\n" +
     "                <div class=\"video-detail-block\">\n" +
-    "                    <div class=\"name\">Darkness world, MP4</div>\n" +
+    "                    <div class=\"name\">{{obj.heading}}</div>\n" +
     "                    <div class=\"fav\" ng-click=\"addToFavorite(obj)\"><i class=\"fa fa-bookmark\" aria-hidden=\"true\" tooltip-placement=\"top\" uib-tooltip=\"Add to Favorites\"  tooltip-class=\"addtofav\" tooltip-enable=\"!getselected(obj.mediaID)\" ng-class=\"{'favadded':getselected(obj.mediaID)}\"></i></div>\n" +
     "                </div>\n" +
     "            </li>\n" +

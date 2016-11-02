@@ -78,5 +78,15 @@
     "type":"video",
     "views":50,
     "isFeatured":true
+  },
+  {
+    "channelID":"9",
+    "poster": "assets/images/baseball.JPG",
+    "heading":"Baseball",
+    "description":"Baseball is a bat-and-ball game played between two teams of nine players each, who take turns batting and fielding. ",
+    "genre":"Bat & Ball Sports",
+    "type":"video",
+    "views":50,
+    "isFeatured":true
   }
 ]

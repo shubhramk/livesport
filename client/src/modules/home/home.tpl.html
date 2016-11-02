@@ -48,12 +48,12 @@
                 <figure>
                     <div class="video-block"><img src="{{obj.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
                     <figcaption>
-                        <h3>{{obj.heading}}</h3>
+                        <h3>{{obj.description}}</h3>
                         <a ng-click="playVideo($index,featuredVideos)">Play</a>
                     </figcaption>
                 </figure>
                 <div class="video-detail-block">
-                    <div class="name">Darkness world, MP4</div>
+                    <div class="name">{{obj.heading}}</div>
                     <div class="fav" ng-click="addToFavorite(obj)"><i class="fa fa-bookmark" aria-hidden="true" tooltip-placement="top" uib-tooltip="Add to Favorites" tooltip-class="addtofav" tooltip-enable="!getselected(obj.mediaID)" ng-class="{'favadded':getselected(obj.mediaID)}"></i></div>
                 </div>
             </li>
@@ -66,16 +66,16 @@
     <div class="video-heading"><h2>TOP VIDEOS</h2></div>
     <div class="no-js">
         <ul class="grid-caption cs-style-3">
-            <li class="video-container" ng-repeat="obj in topVideos track by $index">
+            <li class="video-container" ng-repeat="obj in topVideos | limitTo:6 track by $index ">
                 <figure>
                     <div class="video-block"><img src="{{obj.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
                     <figcaption>
-                        <h3>{{obj.heading}}</h3>
+                        <h3>{{obj.description}}</h3>
                         <a ng-click="playVideo($index,topVideos)">Play</a>
                     </figcaption>
                 </figure>
                 <div class="video-detail-block">
-                    <div class="name">Darkness world, MP4</div>
+                    <div class="name">{{obj.heading}}</div>
                     <div class="fav" ng-click="addToFavorite(obj)"><i class="fa fa-bookmark" aria-hidden="true" tooltip-placement="top" uib-tooltip="Add to Favorites"  tooltip-class="addtofav" tooltip-enable="!getselected(obj.mediaID)" ng-class="{'favadded':getselected(obj.mediaID)}"></i></div>
                 </div>
             </li>

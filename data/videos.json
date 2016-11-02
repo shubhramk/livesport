@@ -3,100 +3,242 @@
       "mediaID":"1",
       "sources": [
           {
-            "src": "http://clips-akc.us-east-1.next.gopro.com/6d9c/media/mp4/gopro/2016/09/13/6d9c5000-13b2-4cc2-b486-72d58976e767/1473801787608/asset_1200k.mp4",
+            "src": "assets/video/hockey/video1.mp4",
             "type":"video/mp4"
           }
       ],
-      "poster": "https://betacontent.next.gopro.com/images/photos/147384538/832x468/cut.JPEG",
-      "heading":"Justice League",
-      "description":"Action Drama - HLS (VOD)",
-      "genre":"Football",
+      "poster": "assets/video/hockey/image1.png",
+      "heading":"NHL 17 EA SPORTS Hockey League",
+      "description":"National Hockey League 2016 powered by EA Sports",
+      "genre":"Hockey",
       "type":"video",
       "views":100,
       "likes":58,
       "unlikes":42,
       "isFeatured":true,
-      "channelID":"1",
+      "channelID":"4",
       "sType":"relevance"
     },
     {
       "mediaID":"2",
       "sources": [
         {
-          "src": "http://techslides.com/demos/sample-videos/small.mp4",
+          "src": "assets/video/hockey/video2.mp4",
           "type":"video/mp4"
         }
       ],
-      "poster": "assets/images/vp-g01.jpg",
-      "heading":"Justice League",
-      "description":"Action Drama - HLS (VOD)",
-      "genre":"Football 1",
+      "poster": "assets/video/hockey/image2.png",
+      "heading":"Singapore National Ice Hockey League",
+      "description":"Singapore Hockey Ice League 2016",
+      "genre":"Hockey",
       "type":"video",
       "views":10,
       "likes":8,
       "unlikes":2,
       "isFeatured":true,
-      "channelID":"1",
+      "channelID":"4",
       "sType":"relevance"
     },
     {
       "mediaID":"3",
       "sources": [
         {
-          "src": "http://vjs.zencdn.net/v/oceans.mp4",
+          "src": "assets/video/baseball/video1.mp4",
           "type":"video/mp4"
         }
       ],
-      "poster": "assets/images/vp-g01.jpg",
-      "heading":"Justice League",
-      "description":"Action Drama - HLS (VOD)",
-      "genre":"Football 2",
+      "poster": "assets/video/baseball/image1.png",
+      "heading":"THIS. Miller is not fair",
+      "description":"Check out some highlights from former NFL QB Tim Tebow's workout in front of MLB scouts.",
+      "genre":"Baseball",
       "type":"video",
       "views":50,
       "likes":48,
       "unlikes":2,
       "isFeatured":false,
-      "channelID":"2",
+      "channelID":"9",
       "sType":"popular"
     },
     {
       "mediaID":"4",
       "sources": [
         {
-          "src": "http://thenewcode.com/assets/videos/polina.mp4",
+          "src": "assets/video/baseball/video2.mp4",
           "type":"video/mp4"
         }
       ],
-      "poster": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg",
-      "heading":"Justice League",
-      "description":"Action Drama - HLS (VOD)",
-      "genre":"Football 3",
+      "poster": "assets/video/baseball/image2.png",
+      "heading":"Tim Tebow MLB Tryout Highlights NFL",
+      "description":"Tim Tebow MLB Tryout Highlights NFL",
+      "genre":"Baseball",
       "type":"video",
       "views":5,
       "likes":1,
       "unlikes":0,
       "isFeatured":false,
-      "channelID":"1",
+      "channelID":"9",
       "sType":"recent"
     },
     {
       "mediaID":"5",
       "sources": [
         {
-          "src": "http://thenewcode.com/assets/videos/polina.mp4",
+          "src": "assets/video/polo/video1.mp4",
           "type":"video/mp4"
         }
       ],
-      "poster": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg",
-      "heading":"Justice League",
-      "description":"Action Drama - HLS (VOD)",
-      "genre":"Football 4",
+      "poster": "assets/video/polo/image1.png",
+      "heading":"Prince Harry Falls Off His Horse, Twice",
+      "description":"Prince Harry fell off his horse twice as he played in a charity polo match in Cape Town",
+      "genre":"Polo",
       "type":"video",
       "views":50,
       "likes":36,
       "unlikes":2,
       "isFeatured":false,
-      "channelID":"1",
+      "channelID":"2",
       "sType":"popular"
-    }
+    },
+  {
+    "mediaID":"6",
+    "sources": [
+      {
+        "src": "assets/video/polo/video2.mp4",
+        "type":"video/mp4"
+      }
+    ],
+    "poster": "assets/video/polo/image2.png",
+    "heading":" Thrilling game of polo match",
+    "description":"Prince Harry fell off his horse twice as he played in a charity polo match in Cape Town",
+    "genre":"Polo",
+    "type":"video",
+    "views":50,
+    "likes":36,
+    "unlikes":2,
+    "isFeatured":false,
+    "channelID":"2",
+    "sType":"popular"
+  },
+  {
+    "mediaID":"7",
+    "sources": [
+      {
+        "src": "assets/video/basketball/video1.mp4",
+        "type":"video/mp4"
+      }
+    ],
+    "poster": "assets/video/basketball/image1.png",
+    "heading":"Steph Curry Erupts for 23 in the 3rd Quarter",
+    "description":"Steph Curry Erupts for 23 in the 3rd Quarter",
+    "genre":"Basketball",
+    "type":"video",
+    "views":50,
+    "likes":36,
+    "unlikes":2,
+    "isFeatured":false,
+    "channelID":"8",
+    "sType":"popular"
+  },
+  {
+    "mediaID":"8",
+    "sources": [
+      {
+        "src": "assets/video/cycling/video1.mp4",
+        "type":"video/mp4"
+      }
+    ],
+    "poster": "assets/video/cycling/image1.png",
+    "heading":"Track Cycling World Cup",
+    "description":"Men's Sprint Gold Final - Track Cycling World Cup - Hong Kong, China",
+    "genre":"Cycling",
+    "type":"video",
+    "views":50,
+    "likes":36,
+    "unlikes":2,
+    "isFeatured":false,
+    "channelID":"7",
+    "sType":"popular"
+  },
+  {
+    "mediaID":"9",
+    "sources": [
+      {
+        "src": "assets/video/wrestling/video1.mp4",
+        "type":"video/mp4"
+      }
+    ],
+    "poster": "assets/video/wrestling/image1.png",
+    "heading":"John Cena Raw",
+    "description":"A horror movie icon attacks John Cena Raw, Oct. 31, 2011",
+    "genre":"Wrestling",
+    "type":"video",
+    "views":50,
+    "likes":36,
+    "unlikes":2,
+    "isFeatured":false,
+    "channelID":"6",
+    "sType":"popular"
+  },
+  {
+    "mediaID":"10",
+    "sources": [
+      {
+        "src": "assets/video/handball/video1.mp4",
+        "type":"video/mp4"
+      }
+    ],
+    "poster": "assets/video/handball/image1.png",
+    "heading":"Handball Best goals",
+    "description":"This is Handball Best goals",
+    "genre":"Handball",
+    "type":"video",
+    "views":50,
+    "likes":36,
+    "unlikes":2,
+    "isFeatured":false,
+    "channelID":"5",
+    "sType":"popular"
+  },
+  {
+    "mediaID":"11",
+    "sources": [
+      {
+        "src": "assets/video/squash/video1.mp4",
+        "type":"video/mp4"
+      }
+    ],
+    "poster": "assets/video/squash/image1.png",
+    "heading":"Al-Ahram Open 2016",
+    "description":"Squash: Farag v Ashour - Al-Ahram Open 2016 - QF Highlights ",
+    "genre":"Squash",
+    "type":"video",
+    "views":50,
+    "likes":36,
+    "unlikes":2,
+    "isFeatured":false,
+    "channelID":"3",
+    "sType":"popular"
+  },
+  {
+    "mediaID":"12",
+    "sources": [
+      {
+        "src": "assets/video/weightlifting/video1.mp4",
+        "type":"video/mp4"
+      }
+    ],
+    "poster": "assets/video/weightlifting/image1.png",
+    "heading":"Weightlifting Rio 2016",
+    "description":"Nijat Rahimov of Kazakhstan wins gold in Men's 77kg Weightlifting in Rio 2016.",
+    "genre":"Weight Lifting",
+    "type":"video",
+    "views":50,
+    "likes":36,
+    "unlikes":2,
+    "isFeatured":false,
+    "channelID":"1",
+    "sType":"popular"
+  }
+
+
 ]
