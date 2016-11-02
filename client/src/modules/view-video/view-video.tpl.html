@@ -12,8 +12,28 @@
 
         </video>
     </div>
-   <section > {{videoHeading}}</section>
-    <section class="grid-wrap" ng-show="isChannel">
+
+   <div class="video-list" ng-show="isChannel">
+       <div class="video-heading"><h2>{{videoHeading}}</h2></div>
+       <div class="no-js">
+           <ul class="grid-caption cs-style-3">
+               <li class="video-container" ng-repeat="obj in videoList track by $index">
+                   <figure>
+                       <div class="video-block"><img ng-src="{{obj.poster}}" alt="{{obj.heading}}"> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
+                       <figcaption>
+                           <h3>{{obj.heading}}</h3>
+                           <a ng-href="javascript:void(0);" ng-click="playVideo($index , videoList)">Play</a>
+                       </figcaption>
+                   </figure>
+                   <div class="video-detail-block">
+                       <div class="name">{{obj.genre}}</div>
+                       <div>{{obj.date}}</div>
+                   </div>
+               </li>
+           </ul>
+       </div>
+   </div>
+    <!--<section class="grid-wrap" ng-show="isChannel">
         <ul class="grid swipe-down" id="grid">
             <li ng-repeat="obj in videoList track by $index" >
                 <a ng-href="javascript:void(0)" ng-click="playVideo($index , videoList)">
@@ -28,6 +48,6 @@
                 </a>
             </li>
         </ul>
-    </section>
+    </section>-->
 
 </div>

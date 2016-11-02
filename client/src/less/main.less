@@ -82,11 +82,28 @@ body {
 }
 
 .container {
-    background: rgba(0, 0, 0, 0) repeating-linear-gradient(-90deg, #222222, #222222 10px, #111 3px, #222 11px) repeat scroll 0 0;
+  /*  background: rgba(0, 0, 0, 0) repeating-linear-gradient(-90deg, #222222, #222222 10px, #111 3px, #222 11px) repeat scroll 0 0;*/
+
+
     width: 1180px;
     margin: 0 auto;
     padding: 0;
     position: relative;
+   background-color: #111 !important;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  background: -webkit-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -webkit-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), -webkit-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -webkit-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), rgba(63,63,63,1);
+  background: -moz-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -moz-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), -moz-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -moz-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), rgba(63,63,63,1);
+  background: radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), rgba(63,63,63,1);
+  background-position: 3em 3em, 3em 4em, auto auto, 0 1em;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 5px 5px;
+  background-size: 5px 5px;
+
 }
 
 .wrapper {
@@ -105,6 +122,9 @@ body {
     margin-bottom: 30px;
 }
 
+.clear{
+  clear: both;
+}
 
 .vid-container{
     position:relative;
@@ -327,6 +347,7 @@ header {
          padding: 0 10% 0 10px;
          font-weight: 700;
          border: none;
+         text-transform: uppercase;
          background-color: rgba(51, 51, 51, 1);
          font-size: 0.8em;
          color: #ec5a62;
@@ -398,13 +419,13 @@ header {
         &::after {
           content: '';
           position: absolute;
-          width: 2px;
+          width: 4px;
           height: 100%;
           top: 0;
           left: 50%;
           border-radius: 3px;
-          opacity: 0.2;
-          background: #fff;
+          opacity: 0.8;
+          background: #CC0000;
         }
 
      }
@@ -456,6 +477,7 @@ header {
                   display: inline-block;
                   width: 50px;
                   margin: 0 10px 0 0;
+                  float: left;
                   vertical-align: middle;
             }
           h3 {
@@ -468,7 +490,7 @@ header {
                    color: rgba(145,145,145,0.7);
                  }
          .round {
-           border-radius: 50%;
+           /*border-radius: 50%;*/
          }
          &:hover h3 {
            color: rgba(236,90,98,1);
@@ -483,6 +505,22 @@ header {
      top: 0px;
      right: 0px;
       position: fixed;
+
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: none;
+    color: rgba(255,255,255,1);
+    background: -webkit-linear-gradient(135deg, rgba(147,76,76,0) 0, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0.2) 100%), -webkit-linear-gradient(45deg, rgba(209,140,140,0) 0, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0.2) 100%), rgba(9,10,10,1);
+    background: -moz-linear-gradient(-45deg, rgba(147,76,76,0) 0, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0.2) 100%), -moz-linear-gradient(45deg, rgba(209,140,140,0) 0, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0.2) 100%), rgba(9,10,10,1);
+    background: linear-gradient(-45deg, rgba(147,76,76,0) 0, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0.2) 100%), linear-gradient(45deg, rgba(209,140,140,0) 0, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0.2) 100%), rgba(9,10,10,1);
+    background-position: auto auto;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: 7em 7em;
+    background-size: 7em 7em;
      .morphsearch-form {
        height: 180px;
        -webkit-transform: translate3d(0,3em,0);
@@ -570,12 +608,90 @@ input[type="search"] { /* reset normalize */
   transform: rotate(-45deg);
 }
 
-
-
-
 .morphsearch.open ~ .overlay {
   opacity: 1;
 }
+
+
+/**********
+Video List
+***********/
+.video-list{
+  .video-container {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 33%;
+    /*height: 200px;*/
+    .video-block {
+      position: relative;
+      height: 190px;
+      .fa {
+        bottom: 0;
+        color: #fff;
+        font-size: 45px;
+        height: 30px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+        top: 0;
+        width: 30px;
+        transition: all 0.3s ease 0s;
+        transform: translate(-50%, -50%) scale(1);
+        &:hover {
+          transition: all 0.3s ease 0s;
+          transform: translate(-50%, -50%) scale(1.9);
+        }
+      }
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    .video-heading{
+      color: #ddd;
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    .video-content{
+      color: #777;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+
+}
+
+
+#grid {
+  li {
+    img{
+      width: 99%;
+    }
+    &.shown {
+      &:hover {
+        a {
+          &:before {
+            border-color: #333 !important;
+            border-width: 6px !important;
+          }
+        }
+        h3 {
+          color: #fff;
+          background-color: rgba(68,68,68, 0.9) !important;
+          transform: translate3d(0px, -15px, 0px) !important;
+        }
+      }
+    }
+  }
+}
+
+
 
 ul.grid-caption {
   li {
@@ -590,6 +706,29 @@ ul.grid-caption {
         float: left;
       }
       .fav {
+        float: right;
+        .fa {
+          cursor: pointer;
+          &:hover {
+            color: #cc0000;
+          }
+        }
+      }
+    }
+    figcaption {
+      background: none;
+      background-color: rgba(68, 68, 68, 0.8);
+      padding: 20px 10px;
+      h3 {
+        font-size: 17px;
+        float: left;
+      }
+      a {
+        background: none;
+        color: #cc0000;
+        padding: 0px;
+        position: initial;
+        text-transform: uppercase;
         float: right;
       }
     }
@@ -632,6 +771,28 @@ ul.grid-caption {
   }
 }
 
+footer {
+   text-align: center;
+   height: 50px;
+   line-height: 50px;
+   width: 1180px;
+   margin: auto;
+  color: #fff;
+  background-color: #000 !important;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  background: -webkit-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -webkit-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), -webkit-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -webkit-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), rgba(63,63,63,1);
+  background: -moz-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -moz-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), -moz-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -moz-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), rgba(63,63,63,1);
+  background: radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), rgba(63,63,63,1);
+  background-position: 3em 3em, 3em 4em, auto auto, 0 1em;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 5px 5px;
+  background-size: 5px 5px;
+}
 
 @media screen and (max-width: 53.125em) {
   .morphsearch-input {

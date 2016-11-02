@@ -39,7 +39,7 @@
         </slick>
     </div>
 </div>
-<div class="featured-videos">
+<div class="featured-videos video-list">
     <div class="video-heading"><h2>FEATURED VIDEOS</h2></div>
     <div class="no-js">
         <ul class="grid-caption cs-style-3">
@@ -48,8 +48,7 @@
                     <div class="video-block"><img src="{{obj.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
                     <figcaption>
                         <h3>{{obj.heading}}</h3>
-                        <span>{{obj.content}}</span>
-                        <a ng-click="playVideo($index,featuredVideos)">Take a look</a>
+                        <a ng-click="playVideo($index,featuredVideos)">Play</a>
                     </figcaption>
                 </figure>
                 <div class="video-detail-block">
@@ -62,7 +61,7 @@
     <div class="clear"></div>
 </div>
 <div class="clear"></div>
-<div class="top-videos">
+<div class="top-videos video-list">
     <div class="video-heading"><h2>TOP VIDEOS</h2></div>
     <div class="no-js">
         <ul class="grid-caption cs-style-3">
@@ -71,10 +70,13 @@
                     <div class="video-block"><img src="{{obj.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
                     <figcaption>
                         <h3>{{obj.heading}}</h3>
-                        <span>{{obj.content}}</span>
-                        <a ng-click="playVideo($index,topVideos)">Take a look</a>
+                        <a ng-click="playVideo($index,topVideos)">Play</a>
                     </figcaption>
                 </figure>
+                <div class="video-detail-block">
+                    <div class="name">Darkness world, MP4</div>
+                    <div class="fav" ng-click="addToFavorite(obj)"><i class="fa fa-bookmark" aria-hidden="true"></i></div>
+                </div>
             </li>
         </ul>
     </div>

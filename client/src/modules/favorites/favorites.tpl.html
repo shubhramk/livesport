@@ -1,14 +1,19 @@
-<div class="no-js">
-    <ul class="grid-caption cs-style-3">
-        <li ng-repeat="obj in favoriteVidArr track by $index">
-            <figure>
-                <img src="{{obj.poster}}" alt="{{obj.heading}}">
-                <figcaption>
-                    <h3>{{obj.heading}}</h3>
-                    <span>{{obj.content}}</span>
-                    <a ng-href="javascript:void(0);" ng-click="showVideo(obj.channelID,obj.mediaID)">Take a look</a>
-                </figcaption>
-            </figure>
-        </li>
-    </ul>
+<div class="container video-list">
+    <div class="video-heading"><h2>FAVORITES VIDEOS</h2></div>
+    <div class="no-js">
+        <ul class="grid-caption cs-style-3">
+            <li class="video-container" ng-repeat="obj in favoriteVidArr track by $index">
+                <figure>
+                    <div class="video-block"><img class="carousel-image" src="{{obj.poster}}" alt="{{obj.heading}}"> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
+                    <figcaption>
+                        <h3>{{obj.heading}}</h3>
+                        <a ng-href="javascript:void(0);" ng-click="showVideo(obj.channelID,obj.mediaID)">Play</a>
+                    </figcaption>
+                </figure>
+                <div class="video-detail-block">
+                    <div class="name">Darkness world, MP4</div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
