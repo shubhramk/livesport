@@ -7,6 +7,8 @@
       "genre":"Weight Lifting",
       "type":"video",
       "views":100,
+      "likes":58,
+      "unlikes":42,
       "isFeatured":true,
       "isLive":true,
       "sources" : [{
@@ -23,6 +25,8 @@
       "genre":"Water Polo",
       "type":"video",
       "views":50,
+      "likes":48,
+      "unlikes":2,
       "isFeatured":true,
       "isLive":true,
       "sources" : [{
@@ -39,6 +43,8 @@
       "genre":"Squash",
       "type":"video",
       "views":10,
+      "likes":8,
+      "unlikes":2,
       "isFeatured":true,
       "isLive":true,
       "sources" : [{
@@ -55,6 +61,8 @@
       "genre":"Squash",
       "type":"video",
       "views":10,
+      "likes":8,
+      "unlikes":2,
       "isFeatured":true,
       "isLive":true,
       "sources" : [{
@@ -71,6 +79,8 @@
       "genre":"Hockey",
       "type":"video",
       "views":50,
+      "likes":8,
+      "unlikes":2,
       "isFeatured":true,
       "isLive":true,
       "sources" : [{

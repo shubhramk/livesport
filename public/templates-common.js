@@ -6,19 +6,19 @@ angular.module("directives/header/header.tpl.html", []).run(["$templateCache", f
     "    <header class=\"main-header\" ng-if=\"$root.islogin\">\n" +
     "        <div class=\"header-top\">\n" +
     "            <div class=\"col-lg-6 col-md-6 col-xs-6\">\n" +
-    "                <div class=\"logo\">LiveSports <i class=\"fa fa-random\" aria-hidden=\"true\"></i></div>\n" +
+    "                <div class=\"logo\"><img src=\"assets/images/logo.png\" /></div>\n" +
     "            </div>\n" +
     "            <div class=\"col-lg-6 col-md-6 col-xs-6 text-right\">\n" +
     "\n" +
     "                <div id=\"morphsearch\" class=\"morphsearch\">\n" +
     "                    <form class=\"morphsearch-form\">\n" +
-    "                        <input class=\"morphsearch-input\" type=\"search\" placeholder=\"Search...\" ng-model=\"searchText.heading\"/>\n" +
+    "                        <input class=\"morphsearch-input\" type=\"search\" placeholder=\"Search\" ng-model=\"searchText.heading\"/>\n" +
     "                        <i class=\"fa fa-search\" aria-hidden=\"true\"></i>\n" +
     "                        <button class=\"morphsearch-submit\" type=\"submit\">Search</button>\n" +
     "                    </form>\n" +
     "                    <div class=\"morphsearch-content\">\n" +
     "                        <div class=\"dummy-column\">\n" +
-    "                            <h2>Relevance</h2>\n" +
+    "                            <h2>Relevance {{searchArr.relevance.length}}</h2>\n" +
     "                            <a ng-repeat=\"obj in searchArr.relevance | filter:searchText track by $index\"\n" +
     "                                    class=\"dummy-media-object\"\n" +
     "                                    href=\"javascript:void(0);\"\n" +
@@ -26,6 +26,7 @@ angular.module("directives/header/header.tpl.html", []).run(["$templateCache", f
     "                                    >\n" +
     "                                <img class=\"round\" src=\"{{obj.poster}}\" alt=\"{{obj.heading}}\"/>\n" +
     "                                <h3>{{obj.heading}}</h3>\n" +
+    "                               \n" +
     "                            </a>\n" +
     "                        </div>\n" +
     "                        <div class=\"dummy-column\">\n" +
@@ -66,7 +67,7 @@ angular.module("directives/header/header.tpl.html", []).run(["$templateCache", f
     "\n" +
     "        </div>\n" +
     "        <div class=\"header-bottom\">\n" +
-    "            <nav class=\"navbar navbar-default\">\n" +
+    "            <nav class=\"navbar navbar-default\" data-spy=\"affix\" data-offset-top=\"197\">\n" +
     "                <div class=\"\">\n" +
     "                    <!-- Brand and toggle get grouped for better mobile display -->\n" +
     "                    <div class=\"navbar-header\">\n" +

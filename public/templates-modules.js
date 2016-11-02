@@ -41,19 +41,27 @@ angular.module("events/events.tpl.html", []).run(["$templateCache", function($te
 
 angular.module("favorites/favorites.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("favorites/favorites.tpl.html",
-    "<div class=\"no-js\">\n" +
-    "    <ul class=\"grid-caption cs-style-3\">\n" +
-    "        <li ng-repeat=\"obj in favoriteVidArr track by $index\">\n" +
-    "            <figure>\n" +
-    "                <img src=\"{{obj.poster}}\" alt=\"{{obj.heading}}\">\n" +
-    "                <figcaption>\n" +
-    "                    <h3>{{obj.heading}}</h3>\n" +
-    "                    <span>{{obj.content}}</span>\n" +
-    "                    <a ng-href=\"javascript:void(0);\" ng-click=\"showVideo(obj.channelID,obj.mediaID)\">Take a look</a>\n" +
-    "                </figcaption>\n" +
-    "            </figure>\n" +
-    "        </li>\n" +
-    "    </ul>\n" +
+    "<div class=\"container video-list\">\n" +
+    "    <div class=\"video-heading\"><h2>FAVORITES VIDEOS</h2></div>\n" +
+    "    <div class=\"no-js\">\n" +
+    "        <ul class=\"grid-caption cs-style-3\" ng-if=\"favoriteVidArr.length > 0\">\n" +
+    "            <li class=\"video-container\" ng-repeat=\"obj in favoriteVidArr track by $index\">\n" +
+    "                <figure>\n" +
+    "                    <div class=\"video-block\"><img class=\"carousel-image\" src=\"{{obj.poster}}\" alt=\"{{obj.heading}}\"> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
+    "                    <figcaption>\n" +
+    "                        <h3>{{obj.heading}}</h3>\n" +
+    "                        <a ng-href=\"javascript:void(0);\" ng-click=\"showVideo(obj.channelID,obj.mediaID)\">Play</a>\n" +
+    "                    </figcaption>\n" +
+    "                </figure>\n" +
+    "                <div class=\"video-detail-block\">\n" +
+    "                    <div class=\"name\">Darkness world, MP4</div>\n" +
+    "                </div>\n" +
+    "            </li>\n" +
+    "        </ul>\n" +
+    "        <div class=\"no-record\" ng-if=\"favoriteVidArr.length < 1\">\n" +
+    "            No favorite videos found in your list.\n" +
+    "        </div>\n" +
+    "    </div>\n" +
     "</div>");
 }]);
 
@@ -73,7 +81,24 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "\n" +
     "        </video>\n" +
     "    </div>\n" +
-    "\n" +
+    "    <div class=\"vid-play-detail-section\">\n" +
+    "        <div class=\"col-lg-8 col-left\">\n" +
+    "            <h3>{{mediaObj.heading}}</h3>\n" +
+    "            <p>{{mediaObj.description}}</p>\n" +
+    "        </div>\n" +
+    "        <div class=\"col-lg-4 col-right col-right-u text-right\">\n" +
+    "            <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{mediaObj.views}}\n" +
+    "        </div>\n" +
+    "        <div class=\"col-lg-8 col-left-b\">\n" +
+    "            <div class=\"by\">by: <span>{{mediaObj.genre}}</span></div>\n" +
+    "            <div class=\"by\"><i class=\"fa fa-bookmark\" aria-hidden=\"true\"></i> favourite</div>\n" +
+    "        </div>\n" +
+    "        <div class=\"col-lg-4 col-right-b text-right\">\n" +
+    "            <i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i> {{mediaObj.likes}}\n" +
+    "            &nbsp;&nbsp;&nbsp;&nbsp;\n" +
+    "            <i class=\"fa fa-thumbs-down\" aria-hidden=\"true\"></i> {{mediaObj.unlikes}}\n" +
+    "        </div>\n" +
+    "    </div>\n" +
     "    <div class=\"video-section\">\n" +
     "    <div class=\"carousel-section\">\n" +
     "        <slick class=\"slider\" settings=\"slickConfig2\" ng-if=\"slickConfig2Loaded\">\n" +
@@ -84,7 +109,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "        </slick>\n" +
     "    </div>\n" +
     "</div>\n" +
-    "<div class=\"featured-videos\">\n" +
+    "<div class=\"featured-videos video-list\">\n" +
     "    <div class=\"video-heading\"><h2>FEATURED VIDEOS</h2></div>\n" +
     "    <div class=\"no-js\">\n" +
     "        <ul class=\"grid-caption cs-style-3\">\n" +
@@ -93,13 +118,12 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "                    <div class=\"video-block\"><img src=\"{{obj.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
     "                    <figcaption>\n" +
     "                        <h3>{{obj.heading}}</h3>\n" +
-    "                        <span>{{obj.content}}</span>\n" +
-    "                        <a ng-click=\"playVideo($index,featuredVideos)\">Take a look</a>\n" +
+    "                        <a ng-click=\"playVideo($index,featuredVideos)\">Play</a>\n" +
     "                    </figcaption>\n" +
     "                </figure>\n" +
     "                <div class=\"video-detail-block\">\n" +
     "                    <div class=\"name\">Darkness world, MP4</div>\n" +
-    "                    <div class=\"fav\" ng-click=\"addToFavorite(obj)\"><i class=\"fa fa-bookmark\" aria-hidden=\"true\"></i></div>\n" +
+    "                    <div class=\"fav\" ng-click=\"addToFavorite(obj)\"><i class=\"fa fa-bookmark\" aria-hidden=\"true\" tooltip-placement=\"top\" uib-tooltip=\"Add to Favorites\" tooltip-class=\"addtofav\" tooltip-enable=\"!getselected(obj.mediaID)\" ng-class=\"{'favadded':getselected(obj.mediaID)}\"></i></div>\n" +
     "                </div>\n" +
     "            </li>\n" +
     "        </ul>\n" +
@@ -107,7 +131,7 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "    <div class=\"clear\"></div>\n" +
     "</div>\n" +
     "<div class=\"clear\"></div>\n" +
-    "<div class=\"top-videos\">\n" +
+    "<div class=\"top-videos video-list\">\n" +
     "    <div class=\"video-heading\"><h2>TOP VIDEOS</h2></div>\n" +
     "    <div class=\"no-js\">\n" +
     "        <ul class=\"grid-caption cs-style-3\">\n" +
@@ -116,10 +140,13 @@ angular.module("home/home.tpl.html", []).run(["$templateCache", function($templa
     "                    <div class=\"video-block\"><img src=\"{{obj.poster}}\"  class=\"carousel-image\"/> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
     "                    <figcaption>\n" +
     "                        <h3>{{obj.heading}}</h3>\n" +
-    "                        <span>{{obj.content}}</span>\n" +
-    "                        <a ng-click=\"playVideo($index,topVideos)\">Take a look</a>\n" +
+    "                        <a ng-click=\"playVideo($index,topVideos)\">Play</a>\n" +
     "                    </figcaption>\n" +
     "                </figure>\n" +
+    "                <div class=\"video-detail-block\">\n" +
+    "                    <div class=\"name\">Darkness world, MP4</div>\n" +
+    "                    <div class=\"fav\" ng-click=\"addToFavorite(obj)\"><i class=\"fa fa-bookmark\" aria-hidden=\"true\" tooltip-placement=\"top\" uib-tooltip=\"Add to Favorites\"  tooltip-class=\"addtofav\" tooltip-enable=\"!getselected(obj.mediaID)\" ng-class=\"{'favadded':getselected(obj.mediaID)}\"></i></div>\n" +
+    "                </div>\n" +
     "            </li>\n" +
     "        </ul>\n" +
     "    </div>\n" +
@@ -167,8 +194,46 @@ angular.module("view-video/view-video.tpl.html", []).run(["$templateCache", func
     "\n" +
     "        </video>\n" +
     "    </div>\n" +
-    "   <section > {{videoHeading}}</section>\n" +
-    "    <section class=\"grid-wrap\" ng-show=\"isChannel\">\n" +
+    "    <div class=\"vid-play-detail-section\">\n" +
+    "        <div class=\"col-lg-8 col-left\">\n" +
+    "            <h3>{{mediaObj.heading}}</h3>\n" +
+    "            <p>{{mediaObj.description}}</p>\n" +
+    "        </div>\n" +
+    "        <div class=\"col-lg-4 col-right col-right-u text-right\">\n" +
+    "            <i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{mediaObj.views}}\n" +
+    "        </div>\n" +
+    "        <div class=\"col-lg-8 col-left-b\">\n" +
+    "            <div class=\"by\">by: <span>{{mediaObj.genre}}</span></div>\n" +
+    "            <div class=\"by\"><i class=\"fa fa-bookmark\" aria-hidden=\"true\"></i> favourite</div>\n" +
+    "        </div>\n" +
+    "        <div class=\"col-lg-4 col-right-b text-right\">\n" +
+    "            <i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i> {{mediaObj.likes}}\n" +
+    "            &nbsp;&nbsp;&nbsp;&nbsp;\n" +
+    "            <i class=\"fa fa-thumbs-down\" aria-hidden=\"true\"></i> {{mediaObj.unlikes}}\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "   <div class=\"video-list\" ng-show=\"isChannel\">\n" +
+    "       <div class=\"video-heading\"><h2>{{videoHeading}}</h2></div>\n" +
+    "       <div class=\"no-js\">\n" +
+    "           <ul class=\"grid-caption cs-style-3\">\n" +
+    "               <li class=\"video-container\" ng-repeat=\"obj in videoList track by $index\">\n" +
+    "                   <figure>\n" +
+    "                       <div class=\"video-block\"><img ng-src=\"{{obj.poster}}\" alt=\"{{obj.heading}}\"> <i class=\"fa fa-play-circle-o\" aria-hidden=\"true\"></i></div>\n" +
+    "                       <figcaption>\n" +
+    "                           <h3>{{obj.heading}}</h3>\n" +
+    "                           <a ng-href=\"javascript:void(0);\" ng-click=\"playVideo($index , videoList)\">Play</a>\n" +
+    "                       </figcaption>\n" +
+    "                   </figure>\n" +
+    "                   <div class=\"video-detail-block\">\n" +
+    "                       <div class=\"name\">{{obj.genre}}</div>\n" +
+    "                       <div>{{obj.date}}</div>\n" +
+    "                   </div>\n" +
+    "               </li>\n" +
+    "           </ul>\n" +
+    "       </div>\n" +
+    "   </div>\n" +
+    "    <!--<section class=\"grid-wrap\" ng-show=\"isChannel\">\n" +
     "        <ul class=\"grid swipe-down\" id=\"grid\">\n" +
     "            <li ng-repeat=\"obj in videoList track by $index\" >\n" +
     "                <a ng-href=\"javascript:void(0)\" ng-click=\"playVideo($index , videoList)\">\n" +
@@ -183,7 +248,7 @@ angular.module("view-video/view-video.tpl.html", []).run(["$templateCache", func
     "                </a>\n" +
     "            </li>\n" +
     "        </ul>\n" +
-    "    </section>\n" +
+    "    </section>-->\n" +
     "\n" +
     "</div>");
 }]);

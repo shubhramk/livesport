@@ -1,7 +1,7 @@
 <div class="container video-list">
     <div class="video-heading"><h2>FAVORITES VIDEOS</h2></div>
     <div class="no-js">
-        <ul class="grid-caption cs-style-3">
+        <ul class="grid-caption cs-style-3" ng-if="favoriteVidArr.length > 0">
             <li class="video-container" ng-repeat="obj in favoriteVidArr track by $index">
                 <figure>
                     <div class="video-block"><img class="carousel-image" src="{{obj.poster}}" alt="{{obj.heading}}"> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
@@ -15,5 +15,8 @@
                 </div>
             </li>
         </ul>
+        <div class="no-record" ng-if="favoriteVidArr.length < 1">
+            No favorite videos found in your list.
+        </div>
     </div>
 </div>

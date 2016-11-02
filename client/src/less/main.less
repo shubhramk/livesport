@@ -741,12 +741,15 @@ ul.grid-caption {
   margin-bottom: 70px;
   clear: both;
   color: #fff;
-  padding: 14px 0;
+  padding: 5px 0;
   font-size: 12px;
    .col-left {
      h3 {
        font-size: 18px;
        margin: 0;
+     }
+     p {
+         margin-bottom: 0;
      }
    }
   .col-left-b {
@@ -763,8 +766,11 @@ ul.grid-caption {
       }
     }
   }
+  .col-right-u {
+      margin-top: 10px;
+  }
   .col-right-b {
-    margin-top: 5px;
+     margin-top: -7px;
     .fa-thumbs-down {
       color: #706F6F;
     }
@@ -793,7 +799,30 @@ footer {
   -webkit-background-size: 5px 5px;
   background-size: 5px 5px;
 }
-
+/**Custom Class for tooltip for favorite**/
+.tooltip.addtofav {
+    margin-left: -11%;
+    .tooltip-inner {
+              color:red;
+              background-color: #fff;
+              max-width:300px;
+      }
+      .tooltip-arrow {
+                  border-top-color: #fff !important;
+                  left: 89%;
+                }
+}
+.favadded
+{
+    color:red !important;
+    cursor:default  !important;
+}
+.no-record {
+    color: #fff;
+    padding: 200px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
 @media screen and (max-width: 53.125em) {
   .morphsearch-input {
     padding: 0 25% 0 10px;

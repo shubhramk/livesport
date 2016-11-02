@@ -6015,11 +6015,22 @@ Font-Family: Lato
   font-family: 'latoregular';
   src: url('../../../assets/font/Lato/Lato/lato-regular-webfont.woff2') format('woff2'), url("../../../assets/font/Lato/Lato-Regular.ttf") format("truetype"), url('../../../assets/font/Lato/lato-regular-webfont.woff') format('woff');
 }
+/******
+Font-Family: titillium_web
+********/
+@font-face {
+  font-family: 'titillium';
+  src: url('../../../assets/font/titillium_web/TitilliumWeb-Light.woff2') format('woff2'), url("../../../assets/font/titillium_web/TitilliumWeb-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'titillium-bold';
+  src: url("../../../assets/font/titillium_web/TitilliumWeb-Bold.ttf") format("truetype");
+}
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: 'latoregular';
+  font-family: 'titillium';
 }
 .body-bg {
   /* background-image: url('../../../assets/images/body-bg.jpg');
@@ -6031,11 +6042,25 @@ body {
   width: 100%;
 }
 .container {
-  background: rgba(0, 0, 0, 0) repeating-linear-gradient(-90deg, #222222, #222222 10px, #111111 3px, #222222 11px) repeat scroll 0 0;
+  /*  background: rgba(0, 0, 0, 0) repeating-linear-gradient(-90deg, #222222, #222222 10px, #111 3px, #222 11px) repeat scroll 0 0;*/
   width: 1180px;
   margin: 0 auto;
   padding: 0;
   position: relative;
+  background-color: #111 !important;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  background: -webkit-radial-gradient(circle, #231d18 25%, rgba(0, 0, 0, 0) 25%), -webkit-radial-gradient(circle, #3f3932 25%, rgba(0, 0, 0, 0) 25%), -webkit-radial-gradient(circle, #231d18 25%, rgba(0, 0, 0, 0) 25%), -webkit-radial-gradient(circle, #3f3932 25%, rgba(0, 0, 0, 0) 25%), #3f3f3f;
+  background: -moz-radial-gradient(circle, #231d18 25%, rgba(0, 0, 0, 0) 25%), -moz-radial-gradient(circle, #3f3932 25%, rgba(0, 0, 0, 0) 25%), -moz-radial-gradient(circle, #231d18 25%, rgba(0, 0, 0, 0) 25%), -moz-radial-gradient(circle, #3f3932 25%, rgba(0, 0, 0, 0) 25%), #3f3f3f;
+  background: radial-gradient(circle, #231d18 25%, rgba(0, 0, 0, 0) 25%), radial-gradient(circle, #3f3932 25%, rgba(0, 0, 0, 0) 25%), radial-gradient(circle, #231d18 25%, rgba(0, 0, 0, 0) 25%), radial-gradient(circle, #3f3932 25%, rgba(0, 0, 0, 0) 25%), #3f3f3f;
+  background-position: 3em 3em, 3em 4em, auto auto, 0 1em;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 5px 5px;
+  background-size: 5px 5px;
 }
 .wrapper {
   margin-top: 80px;
@@ -6050,6 +6075,9 @@ body {
 }
 .form-signin .form-signin-heading {
   margin-bottom: 30px;
+}
+.clear {
+  clear: both;
 }
 .vid-container {
   position: relative;
@@ -6142,6 +6170,7 @@ body {
   color: #fff;
   font-size: 24px;
   font-weight: bold;
+  font-family: 'titillium-bold';
   height: 50px;
   line-height: 50px;
   padding-left: 20px;
@@ -6156,9 +6185,14 @@ header .header-top .logo {
   color: #fff;
   font-size: 30px;
   margin-top: 10px;
+  width: 200px;
 }
 header .header-top .logo .fa {
   font-size: 25px;
+}
+header .header-top .logo img {
+  display: inline-block;
+  width: 90%;
 }
 header .header-top .search-block {
   margin-top: 20px;
@@ -6201,6 +6235,8 @@ header .header-bottom nav .navbar-nav li a {
   cursor: pointer;
   padding-bottom: 5px;
   padding-top: 10px;
+  font-family: 'titillium';
+  text-transform: uppercase;
 }
 header .header-bottom nav .navbar-nav li a:hover {
   border-bottom: 3px solid #CC0000;
@@ -6250,6 +6286,7 @@ header .header-bottom nav .navbar-nav li a.active {
   padding: 0 10% 0 10px;
   font-weight: 700;
   border: none;
+  text-transform: uppercase;
   background-color: #333333;
   font-size: 0.8em;
   color: #ec5a62;
@@ -6318,13 +6355,13 @@ header .header-bottom nav .navbar-nav li a.active {
 .morphsearch .morphsearch-close::after {
   content: '';
   position: absolute;
-  width: 2px;
+  width: 4px;
   height: 100%;
   top: 0;
   left: 50%;
   border-radius: 3px;
-  opacity: 0.2;
-  background: #fff;
+  opacity: 0.8;
+  background: #CC0000;
 }
 .morphsearch .morphsearch-content {
   color: #333;
@@ -6377,6 +6414,7 @@ header .header-bottom nav .navbar-nav li a.active {
   display: inline-block;
   width: 50px;
   margin: 0 10px 0 0;
+  float: left;
   vertical-align: middle;
 }
 .morphsearch .morphsearch-content .dummy-column .dummy-media-object h3 {
@@ -6389,7 +6427,7 @@ header .header-bottom nav .navbar-nav li a.active {
   color: rgba(145, 145, 145, 0.7);
 }
 .morphsearch .morphsearch-content .dummy-column .dummy-media-object .round {
-  border-radius: 50%;
+  /*border-radius: 50%;*/
 }
 .morphsearch .morphsearch-content .dummy-column .dummy-media-object:hover h3 {
   color: #ec5a62;
@@ -6400,6 +6438,21 @@ header .header-bottom nav .navbar-nav li a.active {
   top: 0px;
   right: 0px;
   position: fixed;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  color: #ffffff;
+  background: -webkit-linear-gradient(135deg, rgba(147, 76, 76, 0) 0, rgba(0, 0, 0, 0) 25%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 75%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0.2) 100%), -webkit-linear-gradient(45deg, rgba(209, 140, 140, 0) 0, rgba(0, 0, 0, 0) 25%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 75%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0.2) 100%), #090a0a;
+  background: -moz-linear-gradient(-45deg, rgba(147, 76, 76, 0) 0, rgba(0, 0, 0, 0) 25%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 75%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0.2) 100%), -moz-linear-gradient(45deg, rgba(209, 140, 140, 0) 0, rgba(0, 0, 0, 0) 25%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 75%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0.2) 100%), #090a0a;
+  background: linear-gradient(-45deg, rgba(147, 76, 76, 0) 0, rgba(0, 0, 0, 0) 25%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 75%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0.2) 100%), linear-gradient(45deg, rgba(209, 140, 140, 0) 0, rgba(0, 0, 0, 0) 25%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 75%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0.2) 100%), #090a0a;
+  background-position: auto auto;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 7em 7em;
+  background-size: 7em 7em;
 }
 .morphsearch.open .morphsearch-form {
   height: 180px;
@@ -6483,6 +6536,67 @@ input[type="search"] {
 .morphsearch.open ~ .overlay {
   opacity: 1;
 }
+/**********
+Video List
+***********/
+.video-list .video-container {
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 33%;
+  /*height: 200px;*/
+}
+.video-list .video-container .video-block {
+  position: relative;
+  height: 190px;
+}
+.video-list .video-container .video-block .fa {
+  bottom: 0;
+  color: #fff;
+  font-size: 45px;
+  height: 30px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  top: 0;
+  width: 30px;
+  transition: all 0.3s ease 0s;
+  transform: translate(-50%, -50%) scale(1);
+}
+.video-list .video-container .video-block .fa:hover {
+  transition: all 0.3s ease 0s;
+  transform: translate(-50%, -50%) scale(1.9);
+}
+.video-list .video-container .video-block img {
+  height: auto;
+  width: 100%;
+}
+.video-list .video-container .video-heading {
+  color: #ddd;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.video-list .video-container .video-content {
+  color: #777;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#grid li img {
+  width: 99%;
+}
+#grid li.shown:hover a:before {
+  border-color: #333 !important;
+  border-width: 6px !important;
+}
+#grid li.shown:hover h3 {
+  color: #fff;
+  background-color: rgba(68, 68, 68, 0.9) !important;
+  transform: translate3d(0px, -15px, 0px) !important;
+}
 ul.grid-caption li .video-detail-block {
   height: 40px;
   line-height: 40px;
@@ -6496,6 +6610,111 @@ ul.grid-caption li .video-detail-block .name {
 }
 ul.grid-caption li .video-detail-block .fav {
   float: right;
+}
+ul.grid-caption li .video-detail-block .fav .fa {
+  cursor: pointer;
+}
+ul.grid-caption li .video-detail-block .fav .fa:hover {
+  color: #cc0000;
+}
+ul.grid-caption li figcaption {
+  background: none;
+  background-color: rgba(68, 68, 68, 0.8);
+  padding: 20px 10px;
+}
+ul.grid-caption li figcaption h3 {
+  font-size: 17px;
+  float: left;
+}
+ul.grid-caption li figcaption a {
+  background: none;
+  color: #cc0000;
+  padding: 0px;
+  position: initial;
+  text-transform: uppercase;
+  float: right;
+}
+.vid-play-detail-section {
+  background-color: #333;
+  height: 70px;
+  margin-bottom: 70px;
+  clear: both;
+  color: #fff;
+  padding: 5px 0;
+  font-size: 12px;
+}
+.vid-play-detail-section .col-left h3 {
+  font-size: 18px;
+  margin: 0;
+}
+.vid-play-detail-section .col-left p {
+  margin-bottom: 0;
+}
+.vid-play-detail-section .col-left-b {
+  margin-top: 5px;
+}
+.vid-play-detail-section .col-left-b > div {
+  float: left;
+}
+.vid-play-detail-section .col-left-b div:last-child {
+  padding-left: 20px;
+}
+.vid-play-detail-section .col-left-b .by span {
+  color: #CC0000;
+}
+.vid-play-detail-section .col-right-u {
+  margin-top: 10px;
+}
+.vid-play-detail-section .col-right-b {
+  margin-top: -7px;
+}
+.vid-play-detail-section .col-right-b .fa-thumbs-down {
+  color: #706F6F;
+}
+footer {
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  width: 1180px;
+  margin: auto;
+  color: #fff;
+  background-color: #000 !important;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  background: -webkit-radial-gradient(circle, #231d18 25%, rgba(0, 0, 0, 0) 25%), -webkit-radial-gradient(circle, #3f3932 25%, rgba(0, 0, 0, 0) 25%), -webkit-radial-gradient(circle, #231d18 25%, rgba(0, 0, 0, 0) 25%), -webkit-radial-gradient(circle, #3f3932 25%, rgba(0, 0, 0, 0) 25%), #3f3f3f;
+  background: -moz-radial-gradient(circle, #231d18 25%, rgba(0, 0, 0, 0) 25%), -moz-radial-gradient(circle, #3f3932 25%, rgba(0, 0, 0, 0) 25%), -moz-radial-gradient(circle, #231d18 25%, rgba(0, 0, 0, 0) 25%), -moz-radial-gradient(circle, #3f3932 25%, rgba(0, 0, 0, 0) 25%), #3f3f3f;
+  background: radial-gradient(circle, #231d18 25%, rgba(0, 0, 0, 0) 25%), radial-gradient(circle, #3f3932 25%, rgba(0, 0, 0, 0) 25%), radial-gradient(circle, #231d18 25%, rgba(0, 0, 0, 0) 25%), radial-gradient(circle, #3f3932 25%, rgba(0, 0, 0, 0) 25%), #3f3f3f;
+  background-position: 3em 3em, 3em 4em, auto auto, 0 1em;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 5px 5px;
+  background-size: 5px 5px;
+}
+/**Custom Class for tooltip for favorite**/
+.tooltip.addtofav {
+  margin-left: -11%;
+}
+.tooltip.addtofav .tooltip-inner {
+  color: red;
+  background-color: #fff;
+  max-width: 300px;
+}
+.tooltip.addtofav .tooltip-arrow {
+  border-top-color: #fff !important;
+  left: 89%;
+}
+.favadded {
+  color: red !important;
+  cursor: default  !important;
+}
+.no-record {
+  color: #fff;
+  padding: 200px 0;
+  text-align: center;
+  text-transform: uppercase;
 }
 @media screen and (max-width: 53.125em) {
   .morphsearch-input {

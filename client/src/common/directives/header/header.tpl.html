@@ -14,7 +14,7 @@
                     </form>
                     <div class="morphsearch-content">
                         <div class="dummy-column">
-                            <h2>Relevance</h2>
+                            <h2>Relevance {{searchArr.relevance.length}}</h2>
                             <a ng-repeat="obj in searchArr.relevance | filter:searchText track by $index"
                                     class="dummy-media-object"
                                     href="javascript:void(0);"
@@ -22,6 +22,7 @@
                                     >
                                 <img class="round" src="{{obj.poster}}" alt="{{obj.heading}}"/>
                                 <h3>{{obj.heading}}</h3>
+                               
                             </a>
                         </div>
                         <div class="dummy-column">

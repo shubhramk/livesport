@@ -5,21 +5,7 @@ angular.module('myApp')
     .controller('HomeCtrl', ['$scope', '$interval' ,  '$location', '$anchorScroll','$http','$rootScope',
         function homeCtrl($scope,$interval,$location,$anchorScroll,$http,$rootScope) {
         $scope.pos = 0;
-        $scope.slickConfig2Loaded = true;
-        $scope.indexcounter = 0 ;
-        $scope.slickConfig2 = {
-            autoplay: true,
-            infinite: true,
-            autoplaySpeed: 4000,
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            method: {} ,
-            event: {
-                beforeChange: function (event, slick, currentSlide, nextSlide) {
-                    $scope.indexcounter = nextSlide;
-                }
-            }
-        };
+        $scope.tooltipIsOpen = false;
 
          $scope.mediaObj = {};
         //get Top Ten Videos
@@ -34,6 +20,21 @@ angular.module('myApp')
         $http.get('/api/getTopVideos').
         success(function(data) {
             $scope.topVideos = data;
+            $scope.slickConfig2Loaded = true;
+            $scope.indexcounter = 0 ;
+            $scope.slickConfig2 = {
+                autoplay: true,
+                infinite: true,
+                autoplaySpeed: 4000,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                method: {} ,
+                event: {
+                    beforeChange: function (event, slick, currentSlide, nextSlide) {
+                        $scope.indexcounter = nextSlide;
+                    }
+                }
+            };
         });
 
         //get Featured Videos
@@ -58,7 +59,13 @@ angular.module('myApp')
             console.log($rootScope.favoriteVidArr);
 
         };
-
+        $scope.getselected = function(id){
+         var getfav = _.where($rootScope.favoriteVidArr , {mediaID:id});
+            if(getfav.length>0){
+                return true;
+            }
+            return false;
+        };
         //video js player event
         $scope.$on('vjsVideoReady', function (e, data) {
 
