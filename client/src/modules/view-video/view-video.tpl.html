@@ -39,12 +39,12 @@
                    <figure>
                        <div class="video-block"><img ng-src="{{obj.poster}}" alt="{{obj.heading}}"> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
                        <figcaption>
-                           <h3>{{obj.heading}}</h3>
+                           <h3>{{obj.description}}</h3>
                            <a ng-href="javascript:void(0);" ng-click="playVideo($index , videoList)">Play</a>
                        </figcaption>
                    </figure>
                    <div class="video-detail-block">
-                       <div class="name">{{obj.genre}}</div>
+                       <div class="name">{{obj.heading}}</div>
                        <div>{{obj.date}}</div>
                    </div>
                </li>

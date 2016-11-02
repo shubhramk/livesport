@@ -64,11 +64,13 @@ angular.module('myApp')
 
             $scope.videoList = $rootScope.favoriteVidArr;
             $timeout(function () {
-                new GridScrollFx(document.getElementById('grid'), {
-                    viewportFactor: 0.4
-                });
+                // new GridScrollFx(document.getElementById('grid'), {
+                //     viewportFactor: 0.4
+                // });
+                $scope.mediaObj = data[0];
             }, 1000);
 
+            console.log($scope.mediaObj);
         }
 
         //get videos
