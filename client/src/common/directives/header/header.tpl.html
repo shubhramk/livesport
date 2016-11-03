@@ -14,14 +14,14 @@
                     </form>
                     <div class="morphsearch-content">
                         <div class="dummy-column">
-                            <h2>Relevance {{searchArr.relevance.length}}</h2>
+                            <h2>Relevance</h2>
                             <a ng-repeat="obj in searchArr.relevance | filter:searchText track by $index"
                                     class="dummy-media-object"
                                     href="javascript:void(0);"
                                ng-click="showVideo(obj.channelID,obj.mediaID)"
                                     >
                                 <img class="round" src="{{obj.poster}}" alt="{{obj.heading}}"/>
-                                <h3>{{obj.heading}}</h3>
+                                <h3>{{obj.heading | limitTo: 35 }}{{obj.heading.length > 35 ? '...' : ''}}</h3>
 
                             </a>
                         </div>
@@ -32,7 +32,7 @@
                                href="javascript:void(0);"
                                ng-click="showVideo(obj.channelID,obj.mediaID)">
                                 <img class="round" src="{{obj.poster}}" alt="{{obj.heading}}"/>
-                                <h3>{{obj.heading}}</h3>
+                                <h3>{{obj.heading | limitTo: 35 }}{{obj.heading.length > 35 ? '...' : ''}}</h3>
                             </a>
 
                         </div>
@@ -43,7 +43,7 @@
                                href="javascript:void(0);"
                                ng-click="showVideo(obj.channelID,obj.mediaID)">
                                 <img class="round" src="{{obj.poster}}" alt="{{obj.heading}}"/>
-                                <h3>{{obj.heading}}</h3>
+                                <h3>{{obj.heading | limitTo: 35 }}{{obj.heading.length > 35 ? '...' : ''}}</h3>
                             </a>
                         </div>
                     </div><!-- /morphsearch-content -->

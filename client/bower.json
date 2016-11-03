@@ -1,9 +1,5 @@
 {
-<<<<<<< Updated upstream
   "name": "ng-livesport",
-=======
-  "name": "myApp",
->>>>>>> Stashed changes
   "version": "0.3.2",
   "devDependencies": {
     "angular": "~1.4.1",
@@ -11,7 +7,8 @@
     "bootstrap": "~3.3.5",
     "angular-bootstrap": "~0.13.0",
     "angular-ui-router": "~0.2.15",
-    "video.js": "5.0.0"
+    "video.js": "5.0.0",
+    "ngstorage":"~0.3.7"
   },
   "dependencies": {
     "oclazyload": "~1.0.4"

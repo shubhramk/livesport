@@ -2,8 +2,8 @@
  * Home module - Home screen
  */
 angular.module('myApp')
-    .controller('HomeCtrl', ['$scope', '$interval' ,  '$location', '$anchorScroll','$http','$rootScope',
-        function homeCtrl($scope,$interval,$location,$anchorScroll,$http,$rootScope) {
+    .controller('HomeCtrl', ['$scope', '$interval' ,  '$location', '$anchorScroll','$http','$rootScope','localStorageService',
+        function homeCtrl($scope,$interval,$location,$anchorScroll,$http,$rootScope,localStorageService) {
         $scope.pos = 0;
         $scope.tooltipIsOpen = false;
 
@@ -51,13 +51,15 @@ angular.module('myApp')
         };
 
         //add to favorites
+        $rootScope.favoriteVidArr = localStorageService.get('FAVORITES_DATA') || [];
         $scope.addToFavorite = function(obj){
-            $rootScope.favoriteVidArr.push(obj);
-            $rootScope.favoriteVidArr = _.uniq($rootScope.favoriteVidArr, function(item, key) {
+            var favArr = localStorageService.get('FAVORITES_DATA') || [];
+            favArr.push(obj);
+            favArr = _.uniq(favArr, function(item, key) {
                 return item.mediaID;
             });
-            console.log($rootScope.favoriteVidArr);
-
+            localStorageService.set('FAVORITES_DATA',favArr);
+            $rootScope.favoriteVidArr = favArr;
         };
         $scope.getselected = function(id){
          var getfav = _.where($rootScope.favoriteVidArr , {mediaID:id});

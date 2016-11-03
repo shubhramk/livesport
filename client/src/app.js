@@ -8,6 +8,7 @@
 
  **/
 angular.module('myApp', [
+    'ngStorage',
     'vjs.video',
     'ui.router',
     'ui.bootstrap',
