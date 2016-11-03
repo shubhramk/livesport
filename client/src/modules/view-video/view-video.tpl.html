@@ -22,7 +22,7 @@
         </div>
         <div class="col-lg-8 col-left-b">
             <div class="by">by: <span>{{mediaObj.genre}}</span></div>
-            <div class="by"><i class="fa fa-bookmark" aria-hidden="true"></i> favourite</div>
+            <div class="by" ng-show="isChannel"><i class="fa fa-bookmark" aria-hidden="true"></i> favourite</div>
         </div>
         <div class="col-lg-4 col-right-b text-right">
             <i class="fa fa-thumbs-up" aria-hidden="true"></i> {{mediaObj.likes}}

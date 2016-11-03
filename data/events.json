@@ -1,11 +1,11 @@
 [
     {
       "eventID":"1",
-      "poster": "assets/images/weight-lifting.jpg",
-      "heading":"LIVE STREAM(RTMP)",
-      "description":"Weight Lifting",
-      "genre":"Weight Lifting",
-      "type":"video",
+      "poster": "assets/images/live-event.jpg",
+      "heading":"Cubs Vs Tankees (RTMP)",
+      "description":"LIVE STREAM (RTMP)",
+      "genre":"Live Event",
+      "type":"live",
       "views":100,
       "likes":58,
       "unlikes":42,
@@ -15,15 +15,15 @@
           "src" : "rtmp://192.168.0.4/live/stream1",
           "type" : "rtmp/mp4"
         }],
-      "date":"Oct 27,2016"
+      "date":"Nov 27,2016"
     },
     {
       "eventID":"2",
       "poster": "assets/images/viblast.png",
-      "heading":"Air Show",
-      "description":"LIVE STREAM",
-      "genre":"Air Show",
-      "type":"video",
+      "heading":"Air Show (HLS)",
+      "description":"LIVE STREAM (HLS)",
+      "genre":"Live TV",
+      "type":"live",
       "views":50,
       "likes":48,
       "unlikes":2,
@@ -33,33 +33,15 @@
         "src" : "http://cdn3.viblast.com/streams/hls/airshow/playlist.m3u8",
         "type" : "application/x-mpegURL"
       }],
-      "date":"Oct 27,2016"
+      "date":"Nov 3,2016"
     },
     {
       "eventID":"3",
-      "poster": "assets/images/viblast1.png",
-      "heading":"",
-      "description":"LIVE STREAM(MPEG-DASH)",
-      "genre":"Squash",
-      "type":"video",
-      "views":10,
-      "likes":8,
-      "unlikes":2,
-      "isFeatured":true,
-      "isLive":true,
-      "sources" : [{
-        "src" : "http://bitlivedemo-a.akamaihd.net/mpds/stream.php?streamkey=bitcodin",
-        "type" : "application/dash+xml"
-      }],
-      "date":"Oct 27,2016"
-    },
-    {
-      "eventID":"4",
-      "poster": "assets/images/squash.JPG",
-      "heading":"LIVE STREAM(MPEG-DASH)- 2",
-      "description":"Squash Game",
-      "genre":"Squash",
-      "type":"video",
+      "poster": "assets/images/espn.PNG",
+      "heading":"ESPN Live (MPEG-DASH)",
+      "description":"LIVE STREAM (MPEG-DASH)",
+      "genre":"Live TV",
+      "type":"live",
       "views":10,
       "likes":8,
       "unlikes":2,
@@ -69,15 +51,15 @@
         "src" : "http://24x7dash-i.akamaihd.net/dash/live/900080/dash-demo/dash.mpd",
         "type" : "application/dash+xml"
       }],
-      "date":"Oct 27,2016"
+      "date":"Nov 5,2016"
     },
     {
-      "eventID":"5",
-      "poster": "assets/images/ice-hockey.jpg",
-      "heading":"LIVE STREAM (HLS) ",
-      "description":"Ice Hockey",
-      "genre":"Hockey",
-      "type":"video",
+      "eventID":"4",
+      "poster": "assets/images/carinatv.PNG",
+      "heading":"Carina Live (HLS)",
+      "description":"LIVE STREAM (HLS)",
+      "genre":"Live TV",
+      "type":"live",
       "views":50,
       "likes":8,
       "unlikes":2,
@@ -87,6 +69,6 @@
         "src" : "http://wms.shared.streamshow.it/carinatv/carinatv/playlist.m3u8",
         "type" : "application/x-mpegURL"
       }],
-      "date":"Oct 27,2016"
+      "date":"Dec 5,2016"
     }
 ]
