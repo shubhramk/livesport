@@ -2,7 +2,17 @@ angular.module( 'myApp').config(['slickCarouselConfig', function (slickCarouselC
     slickCarouselConfig.dots = true;
     slickCarouselConfig.autoplay = false;
 }])
-    .config(function config ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,$compileProvider) {
+    .config(function config ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,$compileProvider,toastrConfig) {
+        angular.extend(toastrConfig, {
+            autoDismiss: true,
+            containerId: 'toast-container',
+            maxOpened: 0,
+            newestOnTop: true,
+            positionClass: 'toast-bottom-right',
+            preventDuplicates: true,
+            preventOpenDuplicates: true,
+            target: 'body'
+        });
         /**For href javascript:void(0)**/
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|javascript):/);
         // Lazy load configuration

@@ -8,6 +8,8 @@
 
  **/
 angular.module('myApp', [
+    'ngAnimate',
+    'toastr',
     'ngStorage',
     'vjs.video',
     'ui.router',

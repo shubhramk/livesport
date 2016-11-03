@@ -71,6 +71,9 @@ module.exports = {
     js: [
       'libs/jquery/dist/jquery.min.js',
       'libs/angular/angular.min.js',
+      'libs/angular/angular-animate.js',
+      'libs/angular-toastr/angular-toastr.js',
+      'libs/angular-toastr/angular-toastr.tpls.js',
       'libs/ngstorage/ngStorage.js',
       'libs/slick-carousel/slick/slick.js',
       'libs/angular-slick-carousel/dist/angular-slick.min.js',

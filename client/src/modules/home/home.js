@@ -2,8 +2,8 @@
  * Home module - Home screen
  */
 angular.module('myApp')
-    .controller('HomeCtrl', ['$scope', '$interval' ,  '$location', '$anchorScroll','$http','$rootScope','localStorageService',
-        function homeCtrl($scope,$interval,$location,$anchorScroll,$http,$rootScope,localStorageService) {
+    .controller('HomeCtrl', ['$scope', '$interval' ,  '$location', '$anchorScroll','$http','$rootScope','localStorageService','toastr',
+        function homeCtrl($scope,$interval,$location,$anchorScroll,$http,$rootScope,localStorageService,toastr) {
         $scope.pos = 0;
         $scope.tooltipIsOpen = false;
 
@@ -53,13 +53,33 @@ angular.module('myApp')
         //add to favorites
         $rootScope.favoriteVidArr = localStorageService.get('FAVORITES_DATA') || [];
         $scope.addToFavorite = function(obj){
+
             var favArr = localStorageService.get('FAVORITES_DATA') || [];
-            favArr.push(obj);
+            var getVid = _.where(favArr,{mediaID:obj.mediaID});
+            var msg    = "";
+
+            if(getVid.length > 0){
+                favArr = _.filter(favArr,function(item) {
+                    return item.mediaID != obj.mediaID;
+                });
+                msg = 'Removed from Favorites';
+            }else{
+                favArr.push(obj);
+                msg = 'Added to Favorites';
+            }
+
             favArr = _.uniq(favArr, function(item, key) {
                 return item.mediaID;
             });
             localStorageService.set('FAVORITES_DATA',favArr);
             $rootScope.favoriteVidArr = favArr;
+
+            toastr.success(msg,obj.heading ,{
+                timeOut: 2000,
+                positionClass: 'toast-bottom-right',
+                preventDuplicates: true,
+                preventOpenDuplicates: true
+            });
         };
         $scope.getselected = function(id){
          var getfav = _.where($rootScope.favoriteVidArr , {mediaID:id});
