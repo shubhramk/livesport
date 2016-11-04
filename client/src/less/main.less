@@ -168,6 +168,7 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
+    z-index:100;
     h1{
         text-align:center;
         margin:30px 0;
@@ -266,9 +267,32 @@ header {
         }
         .logout {
           display: inline-block;
-          margin: 0 8px;
+          margin: -38px -5px 10px -50px;
           position: relative;
           top: 23px;
+            img{
+              width: 20px;
+              height: 20px;
+              border-radius: 20px;
+            }
+            .dropdown-toggle{
+              color: #FFF;
+              text-decoration: none;
+            }
+            .dropdown-menu{
+              left: -113px;
+              top: 31px;
+              min-width: 50px;
+              .fa{
+                margin-right:5px;
+              }
+              .userName {
+                a{
+                  cursor: default;
+                }
+
+              }
+            }
             .fa {
                 color: rgba(153, 153, 153, 1);
                 cursor: pointer;

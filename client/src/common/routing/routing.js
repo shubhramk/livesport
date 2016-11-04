@@ -30,6 +30,7 @@ angular.module( 'myApp').config(['slickCarouselConfig', function (slickCarouselC
                 {
                     name: 'loginAssets',
                     files: [
+                        'assets/css/modules/login/login.css',
                         'src/modules/login/login.js'
                     ]
                 },
@@ -66,6 +67,13 @@ angular.module( 'myApp').config(['slickCarouselConfig', function (slickCarouselC
                     files: [
                         'src/modules/view-video/view-video.js',
                         'assets/css/modules/view-video/view-video.css'
+                    ]
+                },
+                {
+                    name: 'goLiveAssets',
+                    files: [
+                        'src/modules/golive/golive.js',
+                        'assets/css/modules/golive/golive.css'
                     ]
                 }
 
@@ -228,6 +236,23 @@ angular.module( 'myApp').config(['slickCarouselConfig', function (slickCarouselC
             },
             data: {
                 pageTitle: 'Events',
+                requireLogin: true
+            }
+        }).state('golive', {
+            url: '/golive',
+            views: {
+                "main": {
+                    controller: 'goLiveCtrl',
+                    templateUrl: 'golive/golive.tpl.html'
+                }
+            }, resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+                    // you can lazy load files for an existing module
+                    return $ocLazyLoad.load(['mainAssets','goLiveAssets']);
+                }]
+            },
+            data: {
+                pageTitle: 'Go Live',
                 requireLogin: true
             }
         });

@@ -16,16 +16,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <link rel="stylesheet" type="text/css" href="assets/font/font-awesome-4.6.3/css/font-awesome.min.css" />
+    <style>
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
+      .hide-on-load{
+        display:none;
+      }
+    </style>
 
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
   </head>
 
-  <body ng-class="(islogin===true)? 'body-bg': ''">
+  <body ng-class="(islogin===true)? 'body-bg': ''" class="ng-cloak">
   <div class="page-wrapper">
-    <div header ></div>
-    <div ui-view="main"></div>
-    <footer>
+    <div header ng-if="$root.islogin"></div>
+    <div ui-view="main" class="ng-cloak"></div>
+    <footer ng-if="$root.islogin">
       &copy; Tavant Technologies Inc. All rights reserved.
     </footer>
   </div>

@@ -32,11 +32,13 @@ module.exports = {
     cache: ['src/*.appcache'],
     less: [
       'less/main.less',
+      'modules/login/login.less',
       'modules/home/home.less',
       'modules/channels/channels.less',
       'modules/events/events.less',
       'modules/favorites/favorites.less',
-      'modules/view-video/view-video.less'
+      'modules/view-video/view-video.less',
+      'modules/golive/golive.less'
     ]
   },
 

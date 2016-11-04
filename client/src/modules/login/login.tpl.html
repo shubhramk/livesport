@@ -1,15 +1,16 @@
 <div class="vid-container">
+    <div class="dot-matrix"></div>
     <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
         <source src="assets/video/city.mp4" type="video/webm">
     </video>
-    <div class="inner-container">
-        <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
-            <source src="http://mazwai.com/system/posts/videos/000/000/109/webm/leif_eliasson--glaciartopp.webm?random=1" type="video/webm">
-        </video>
+    <!--<div class="inner-container">-->
+        <!--<video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>-->
+            <!--<source src="http://mazwai.com/system/posts/videos/000/000/109/webm/leif_eliasson&#45;&#45;glaciartopp.webm?random=1" type="video/webm">-->
+        <!--</video>-->
 
-    </div>
+    <!--</div>-->
     <form  class="login-box"  name="userForm" ng-submit="doLogin()" novalidate>
-        <h1>Login</h1>
+        <h1> <div class="logo"><img src="assets/images/logo.png" /></div></h1>
         <input type="text" name="name" ng-model="form.Name" required placeholder="Username">
         <input type="password" name="email"  ng-model="form.Password" required placeholder="Password">
         <button type="submit" ng-disabled="userForm.$invalid" >Login</button>

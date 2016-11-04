@@ -1,5 +1,5 @@
 <div class="container">
-    <header class="main-header" ng-if="$root.islogin">
+    <header class="main-header">
         <div class="header-top">
             <div class="col-lg-6 col-md-6 col-xs-6">
                 <div class="logo"><img src="assets/images/logo.png" /></div>
@@ -21,7 +21,7 @@
                                ng-click="showVideo(obj.channelID,obj.mediaID)"
                                     >
                                 <img class="round" src="{{obj.poster}}" alt="{{obj.heading}}"/>
-                                <h3>{{obj.heading | limitTo: 35 }}{{obj.heading.length > 35 ? '...' : ''}}</h3>
+                                <h3>{{obj.heading}}</h3>
 
                             </a>
                         </div>
@@ -32,7 +32,7 @@
                                href="javascript:void(0);"
                                ng-click="showVideo(obj.channelID,obj.mediaID)">
                                 <img class="round" src="{{obj.poster}}" alt="{{obj.heading}}"/>
-                                <h3>{{obj.heading | limitTo: 35 }}{{obj.heading.length > 35 ? '...' : ''}}</h3>
+                                <h3>{{obj.heading}}</h3>
                             </a>
 
                         </div>
@@ -43,14 +43,29 @@
                                href="javascript:void(0);"
                                ng-click="showVideo(obj.channelID,obj.mediaID)">
                                 <img class="round" src="{{obj.poster}}" alt="{{obj.heading}}"/>
-                                <h3>{{obj.heading | limitTo: 35 }}{{obj.heading.length > 35 ? '...' : ''}}</h3>
+                                <h3>{{obj.heading}}</h3>
                             </a>
                         </div>
                     </div><!-- /morphsearch-content -->
                     <span class="morphsearch-close"></span>
                 </div><!-- /morphsearch -->
 
-                <div class="logout"><i ng-click="logout()" class="fa fa-sign-out" aria-hidden="true"></i></div>
+                <div class="logout">
+                    <div class="dropdown">
+                        <a href="javascript:void(0);" data-toggle="dropdown" class="dropdown-toggle">
+                            <img src="assets/images/dummy_image.jpg" /> <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="userName"><a href="javascript:void(0);">
+                                    <i class="fa fa-user" aria-hidden="true"></i>Matt Anderson</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" ng-click="logout()">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a>
+                                </li>
+                            </ul>
+                    </div>
+
+                </div>
             </div>
             <div>
                 <!--<div class="search-block text-right">
@@ -66,15 +81,15 @@
             <nav class="navbar navbar-default" data-spy="affix" data-offset-top="197">
                 <div class="">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <!-- <a class="navbar-brand" href="#">Live Sports</a>-->
-                    </div>
+                    <!--<div class="navbar-header">-->
+                        <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">-->
+                            <!--<span class="sr-only">Toggle navigation</span>-->
+                            <!--<span class="icon-bar"></span>-->
+                            <!--<span class="icon-bar"></span>-->
+                            <!--<span class="icon-bar"></span>-->
+                        <!--</button>-->
+                        <!--&lt;!&ndash; <a class="navbar-brand" href="#">Live Sports</a>&ndash;&gt;-->
+                    <!--</div>-->
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav" ng-init="activeMenu= 'home'">
@@ -82,6 +97,7 @@
                             <li role="presentation"><a ui-sref-active="active" ui-sref="channels">Channels</a></li>
                             <li role="presentation"><a ui-sref-active="active" ui-sref="favorites">Favorites</a></li>
                             <li role="presentation"><a ui-sref-active="active" ui-sref="events">Events</a></li>
+                            <li role="presentation"><a ui-sref-active="active" ui-sref="golive">Live</a></li>
                            <!-- <li><a class="active" href="#">Dashboard</a></li>
                             <li><a href="#">Channel</a></li>
                             <li><a href="#">Wishlist</a></li>-->

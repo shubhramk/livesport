@@ -12,8 +12,8 @@
       "isFeatured":true,
       "isLive":true,
       "sources" : [{
-          "src" : "rtmp://192.168.0.4/live/stream1",
-          "type" : "rtmp/mp4"
+          "src" : "rtmp://127.0.0.1/live/stream1",
+          "type" : "rtmp/flv"
         }],
       "date":"Nov 27,2016"
     },
