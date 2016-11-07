@@ -12,13 +12,31 @@
       "isFeatured":true,
       "isLive":true,
       "sources" : [{
-          "src" : "rtmp://127.0.0.1/live/stream1",
+          "src" : "rtmp://10.193.66.43/oflaDemo/livesport/stream1",
           "type" : "rtmp/flv"
         }],
       "date":"Nov 27,2016"
     },
     {
       "eventID":"2",
+      "poster": "assets/images/vod-event-ipl.jpg",
+      "heading":"India vs Pakistan Match (RTMP)",
+      "description":"VOD STREAM (RTMP)",
+      "genre":"VOD Event",
+      "type":"vod",
+      "views":1000,
+      "likes":500,
+      "unlikes":20,
+      "isFeatured":true,
+      "isLive":true,
+      "sources" : [{
+        "src" : "rtmp://10.193.66.43/oflaDemo/iccT20.mp4",
+        "type" : "rtmp/mp4"
+      }],
+      "date":"Nov 20,2016"
+    },
+    {
+      "eventID":"3",
       "poster": "assets/images/viblast.png",
       "heading":"Air Show (HLS)",
       "description":"LIVE STREAM (HLS)",
@@ -36,7 +54,7 @@
       "date":"Nov 3,2016"
     },
     {
-      "eventID":"3",
+      "eventID":"4",
       "poster": "assets/images/espn.PNG",
       "heading":"ESPN Live (MPEG-DASH)",
       "description":"LIVE STREAM (MPEG-DASH)",
@@ -52,23 +70,6 @@
         "type" : "application/dash+xml"
       }],
       "date":"Nov 5,2016"
-    },
-    {
-      "eventID":"4",
-      "poster": "assets/images/carinatv.PNG",
-      "heading":"Carina Live (HLS)",
-      "description":"LIVE STREAM (HLS)",
-      "genre":"Live TV",
-      "type":"live",
-      "views":50,
-      "likes":8,
-      "unlikes":2,
-      "isFeatured":true,
-      "isLive":true,
-      "sources" : [{
-        "src" : "http://wms.shared.streamshow.it/carinatv/carinatv/playlist.m3u8",
-        "type" : "application/x-mpegURL"
-      }],
-      "date":"Dec 5,2016"
     }
+
 ]
