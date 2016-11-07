@@ -11,6 +11,7 @@
     <!--</div>-->
     <form  class="login-box"  name="userForm" ng-submit="doLogin()" novalidate>
         <h1> <div class="logo"><img src="assets/images/logo.png" /></div></h1>
+        <div  class="msg">{{msg}}</div>
         <input type="text" name="name" ng-model="form.Name" required placeholder="Username">
         <input type="password" name="email"  ng-model="form.Password" required placeholder="Password">
         <button type="submit" ng-disabled="userForm.$invalid" >Login</button>

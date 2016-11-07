@@ -8,120 +8,122 @@ var express = require('express');
 var router = express.Router();
 var _ = require('underscore');
 var fs = require('fs');
+var mongoClient = require('mongodb').MongoClient;
 
-
-// For a real app, you'd make database requests here.
-// For this example, "data" acts like an in-memory "database"
-var data = {
-    employeelist : [
-        {
-            "username":"priya",
-            "password":"priya"
-        },
-        {
-            "username":"shubhram",
-            "password":"shubhram"
-        },
-        {
-            "username":"mukesh",
-            "password":"mukesh"
-        }
-    ],
-    "message":"Tavant is an IT solutions and services provider recognized globally for its innovative solutions. We have been able to provide game changing results for our customers by combining our industry experience with cutting-edge technologies. Our unwavering commitment to customers has paved the way for long-standing customer relationships. At all levels, our employees continually strive to provide a superior experience to customers through their passion and excellence. We specialize in building custom technology solutions and providing end to end services across domains such as capital markets, consumer lending, manufacturing, media and entertainment, gaming, and retail. We pride ourselves on our traditions of innovation and process excellence that are coupled with high employee and customer satisfaction levels. Tavant is an ISO 27001 compliant and SEI-CMMI level 4 compliant organization. Our best-shore delivery model provides close interaction with customers and a strong process oriented offshore team. Our suite of products and services are routinely rated high by the industry and media, and deployed by leading business names like Electronic Arts, TiVo, MLB AM, New York Times, Ingersoll Rand, Bobcat, Federal Signal and many more. We believe that when passionate people come together in an endeavor to achieve excellence, we can build cutting edge solutions and services that have an impact on our customers core business.Priya"
-};
-
-//videos data
-var jsonData;
-fs.readFile('./data/videos.json', 'utf8', function (err, data) {
-    if (err) throw err;
-    jsonData = JSON.parse(data);
-});
-
-//channel data
-var channelData;
-fs.readFile('./data/channels.json', 'utf8', function (err, data) {
-    if (err) throw err;
-    channelData = JSON.parse(data);
-});
-
-//events data
-var eventData;
-fs.readFile('./data/events.json', 'utf8', function (err, data) {
-    if (err) throw err;
-    eventData = JSON.parse(data);
-});
+var db;
+var dbURL = 'mongodb://localhost:27017/livesport';
+mongoClient.connect(dbURL,  function (err, database){
+    if (err) return console.log(err);
+    db = database;
+})
 
 router
      //Login Check
     .post('/checkLogin', function(req, res) {
-        var employeedetails =  _.find(data.employeelist, function (o) { return ( o.username === req.body.Name && o.password === req.body.Password) });
-        res.json({
-            employeedetails: employeedetails
+        db.collection('login').find(
+            {
+                $and:[
+                    {"username":req.body.Name},
+                    {"password":req.body.Password}]
+            }
+        ).toArray(function (err, result) {
+            if (err) throw err;
+
+            if(result.length > 0){
+                res.json({
+                    "status": "0",
+                    "message":"successfully logged IN"
+                });
+            }else{
+                res.json({
+                    "status": "1",
+                    "message":"Invalid username or password"
+                });
+            }
         });
+
     })
      //get top ten videos
     .get('/getTopTenVideos', function(req, res) {
-        var topTenVideos  = _.sortBy(jsonData,'views');
-        topTenVideos = topTenVideos.reverse();
-        topTenVideos =  _.first(topTenVideos,10);
+        db.collection('videos').find().toArray(function (err, result) {
+            var topTenVideos  = _.sortBy(result,'views');
+            topTenVideos = topTenVideos.reverse();
+            topTenVideos =  _.first(topTenVideos,10);
 
-        res.json(topTenVideos);
+            res.json(topTenVideos);
+        });
     })
     //get top videos
     .get('/getTopVideos', function(req, res) {
-        var topVideos  = _.sortBy(jsonData,'views');
-        topVideos = topVideos.reverse();
-        res.json(topVideos);
+        db.collection('videos').find().toArray(function (err, result) {
+            var topVideos  = _.sortBy(result,'views');
+            topVideos = topVideos.reverse();
+            res.json(topVideos);
+        });
     })
     //get featured videos
     .get('/getFeaturedVideos', function(req, res) {
-        var featuredVideos  = _.where(jsonData, {isFeatured: true});
-        res.json(featuredVideos);
+        db.collection('videos').find().toArray(function (err, result) {
+            var featuredVideos  = _.where(result, {isFeatured: true});
+            res.json(featuredVideos);
+        });
+
     })
     //get channels List
     .get('/getChannels', function(req, res) {
-        res.json(channelData);
+        db.collection('channels').find().toArray(function (err, result) {
+           res.json(result);
+        });
     })
     //get Events List
     .get('/getEvents', function(req, res) {
-        res.json(eventData);
+        db.collection('events').find().toArray(function (err, result) {
+           res.json(result);
+        });
     })
     //get Channel Video
     .get('/getVideo/:channelID', function(req, res) {
-        var userVideo  = _.where(jsonData, {channelID: req.params.channelID});
-        res.json(userVideo);
+        db.collection('videos').find().toArray(function (err, result) {
+            var userVideo  = _.where(result, {channelID: req.params.channelID});
+            res.json(userVideo);
+        });
     })
     //get Events Video
     .get('/getEvent/:eventID', function(req, res) {
-        var eventVideo  = _.where(eventData, {eventID: req.params.eventID});
-        res.json(eventVideo);
+        db.collection('events').find().toArray(function (err, result) {
+            var eventVideo  = _.where(result, {eventID: req.params.eventID});
+            res.json(eventVideo);
+        });
     })
     .get('/getAllVideos', function(req, res) {
-        var relevance = _.where(jsonData, {sType:'relevance'});
-        var popular   = _.where(jsonData, {sType: 'popular'});
-        var recent    = _.where(jsonData, {sType: 'recent'});
-        res.json({
-            "relevance": relevance,
-            "popular":popular,
-            "recent":recent
+        db.collection('videos').find().toArray(function (err, result) {
+            var relevance = _.where(result, {sType:'relevance'});
+            var popular   = _.where(result, {sType: 'popular'});
+            var recent    = _.where(result, {sType: 'recent'});
+            res.json({
+                "relevance": relevance,
+                "popular":popular,
+                "recent":recent
 
+            });
         });
     })
     .get('/getSearchedVideo/:cID/:vID', function(req, res) {
+        db.collection('videos').find().toArray(function (err, result) {
+            var channelsVidList  = _.where(result, {channelID: req.params.cID});
 
-        var channelsVidList  = _.where(jsonData, {channelID: req.params.cID});
+            //current video
+            var curVid = _.filter(channelsVidList,function(item) {
+                return item.mediaID == req.params.vID;
+            });
 
-        //current video
-        var curVid = _.filter(channelsVidList,function(item) {
-            return item.mediaID == req.params.vID;
+            //video list
+            var arr = _.filter(channelsVidList,function(item) {
+                return item.mediaID != req.params.vID;
+            });
+             var finalArr  = curVid.concat(arr);
+             res.json(finalArr);
         });
-
-        //video list
-        var arr = _.filter(channelsVidList,function(item) {
-            return item.mediaID != req.params.vID;
-        });
-         var finalArr  = curVid.concat(arr);
-         res.json(finalArr);
     })
 
 

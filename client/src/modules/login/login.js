@@ -11,10 +11,16 @@ angular.module('myApp').controller('LoginCtrl',['$scope' , '$http' ,'$state','$r
     $scope.doLogin = function(){
         $http.post('/api/checkLogin' , $scope.form).
             success(function(data) {
-                console.log(data);
-                $state.go('home');
-                localStorage.setItem("islogin","true");
-                $rootScope.islogin = true;
+                var status = data.status;
+                $scope.msg = '';
+                if(status == "0"){
+                    $state.go('home');
+                    localStorage.setItem("islogin","true");
+                    $rootScope.islogin = true;
+                }else{
+                    $scope.msg =  data.message;
+                }
+
             });
     };
 }]);
