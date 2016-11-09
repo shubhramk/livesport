@@ -29,6 +29,11 @@ angular.module('myApp')
          $scope.closePopupVideo = function(){
              $("#main-vid-container").removeClass("smallvideo");
          };
+        //move to top
+        $scope.moveToTop = function(){
+            $("#main-vid-container").removeClass("smallvideo");
+            $("html, body").animate({scrollTop: $("#video-player").offset().top}, "slow");
+        };
         //get Top Ten Videos
         $http.get('/api/getTopTenVideos').
             success(function(data) {
