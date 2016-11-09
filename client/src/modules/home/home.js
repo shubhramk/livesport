@@ -15,12 +15,10 @@ angular.module('myApp')
              enter: function(direction) {
                 //$scope.smallvideo=false;
                  $("#main-vid-container").removeClass("smallvideo");
-                 console.log("enter");
              },
              exit: function(direction) {
                  //$scope.smallvideo=true;
                  $("#main-vid-container").addClass("smallvideo");
-                 console.log("exit");
              }
          });
         //get Top Ten Videos
