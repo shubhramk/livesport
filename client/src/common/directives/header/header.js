@@ -17,6 +17,10 @@ angular.module("myApp").directive('header', function () {
                 $state.go(value);
             };
 
+            $scope.searchText = {
+                "heading":''
+            };
+
             //get Featured Videos
             $scope.searchArr = {};
             $http.get('/api/getAllVideos').
@@ -25,6 +29,7 @@ angular.module("myApp").directive('header', function () {
                 $scope.searchArr = data;
             });
             $scope.showVideo =  function(ID,vidID){
+                $scope.searchText.heading='';
                 $state.go('channels.search',{id:ID,vID:vidID});
                 angular.element("span.morphsearch-close").trigger('click');
             };

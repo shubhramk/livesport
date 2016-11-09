@@ -81,11 +81,11 @@ angular.module('myApp')
                 console.log($scope.mediaObj);
                 if($state.current.name == 'channels.video' || $state.current.name == 'channels.search') { //if it comes from channel or search parent
                     $scope.videoList = data;
-                    $timeout(function () {
-                        new GridScrollFx(document.getElementById('grid'), {
-                            viewportFactor: 0.4
-                        });
-                    }, 100);
+                    // $timeout(function () {
+                    //     new GridScrollFx(document.getElementById('grid'), {
+                    //         viewportFactor: 0.4
+                    //     });
+                    // }, 100);
                 }
             });
 
