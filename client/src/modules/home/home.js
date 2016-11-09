@@ -18,7 +18,12 @@ angular.module('myApp')
              },
              exit: function(direction) {
                  //$scope.smallvideo=true;
-                 $("#main-vid-container").addClass("smallvideo");
+                 if(direction==="down") {
+                     $("#main-vid-container").addClass("smallvideo");
+                 }
+                 else{
+                     $("#main-vid-container").removeClass("smallvideo");
+                 }
              }
          });
         //get Top Ten Videos
