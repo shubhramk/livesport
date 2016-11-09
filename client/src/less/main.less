@@ -502,9 +502,11 @@ header {
          background: rgba(118,117,128,0.05);
          &:hover{
             background: rgba(118,117,128,0.1);
+            text-decoration:none;
          }
          &:focus{
             background: rgba(118,117,128,0.1);
+             text-decoration:none;
          }
          img {
                   display: inline-block;
@@ -520,8 +522,19 @@ header {
                    font-weight: 700;
                    margin: 0 0 0 0;
                    //width: calc(100% - 70px);
-                   color: rgba(145,145,145,0.7);
+                   color: #fff;
                  }
+           span{
+                    color: rgba(145, 145, 145, 0.7);
+                    display: block;
+                    font-size: 12px;
+                    margin-left: 69px;
+                    overflow: hidden;
+                    text-align: right;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    width: 85%;
+           }
          .round {
            /*border-radius: 50%;*/
          }

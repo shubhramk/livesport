@@ -11,29 +11,46 @@
                 vjs-vid >
 
         </video>
-    </div>   </div>
+    </div>
+    <div class="vid-play-detail-section">
+        <div class="col-lg-8 col-left">
+            <h3>{{mediaObj.heading}}</h3>
+            <p>{{mediaObj.description}}</p>
+        </div>
+        <div class="col-lg-4 col-right col-right-u text-right">
+            <i class="fa fa-eye" aria-hidden="true"></i> {{mediaObj.views}}
+        </div>
+        <div class="col-lg-8 col-left-b">
+            <div class="by">by: <span>{{mediaObj.genre}}</span></div>
+            <div class="by" ng-show="isChannel"><i class="fa fa-bookmark" aria-hidden="true"></i> favourite</div>
+        </div>
+        <div class="col-lg-4 col-right-b text-right">
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i> {{mediaObj.likes}}
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-thumbs-down" aria-hidden="true"></i> {{mediaObj.unlikes}}
+        </div>
     </div>
 
-   <div class="video-list" ng-show="isChannel">
-       <div class="video-heading"><h2>{{videoHeading}}</h2></div>
-       <div class="no-js">
-           <ul class="grid-caption cs-style-3">
-               <li class="video-container" ng-repeat="obj in videoList track by $index">
-                   <figure>
-                       <div class="video-block"><img ng-src="{{obj.poster}}" alt="{{obj.heading}}"> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-                       <figcaption>
-                           <h3>{{obj.description}}</h3>
-                           <a ng-href="javascript:void(0);" ng-click="playVideo($index , videoList)">Play</a>
-                       </figcaption>
-                   </figure>
-                   <div class="video-detail-block">
-                       <div class="name">{{obj.heading}}</div>
-                       <div>{{obj.date}}</div>
-                   </div>
-               </li>
-           </ul>
-       </div>
-   </div>
+    <div class="video-list" ng-show="isChannel">
+        <div class="video-heading"><h2>{{videoHeading}}</h2></div>
+        <div class="no-js">
+            <ul class="grid-caption cs-style-3">
+                <li class="video-container" ng-repeat="obj in videoList track by $index">
+                    <figure>
+                        <div class="video-block"><img ng-src="{{obj.poster}}" alt="{{obj.heading}}"> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
+                        <figcaption>
+                            <h3>{{obj.description}}</h3>
+                            <a ng-href="javascript:void(0);" ng-click="playVideo($index , videoList)">Play</a>
+                        </figcaption>
+                    </figure>
+                    <div class="video-detail-block">
+                        <div class="name">{{obj.heading}}</div>
+                        <div>{{obj.date}}</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
     <!--<section class="grid-wrap" ng-show="isChannel">
         <ul class="grid swipe-down" id="grid">
             <li ng-repeat="obj in videoList track by $index" >
