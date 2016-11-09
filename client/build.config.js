@@ -95,7 +95,9 @@ module.exports = {
       'libs/boxes-effects/colorfinder-1.1.js',
       'libs/boxes-effects/gridScrollFx.js',
       'libs/boxes-effects/modernizr.caption.custom.js',
-      'libs/boxes-effects/toucheffects.js'
+      'libs/boxes-effects/toucheffects.js',
+      'libs/waypoints/jquery.waypoints.min.js',
+      'libs/waypoints/inview.min.js'
     ],
     lazyLoadLibs:[
 

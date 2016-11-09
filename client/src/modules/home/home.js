@@ -8,6 +8,21 @@ angular.module('myApp')
         $scope.tooltipIsOpen = false;
 
          $scope.mediaObj = {};
+
+
+         var inview = new Waypoint.Inview({
+             element: $('#main-video-player-detail')[0],
+             enter: function(direction) {
+                //$scope.smallvideo=false;
+                 $("#main-vid-container").removeClass("smallvideo");
+                 console.log("enter");
+             },
+             exit: function(direction) {
+                 //$scope.smallvideo=true;
+                 $("#main-vid-container").addClass("smallvideo");
+                 console.log("exit");
+             }
+         });
         //get Top Ten Videos
         $http.get('/api/getTopTenVideos').
             success(function(data) {
