@@ -14,7 +14,7 @@
 
         </video>
     </div>
-    <div class="vid-play-detail-section"  id="main-video-player-detail">
+    <div class="vid-play-detail-section"  >
         <div class="col-lg-8 col-left">
             <h3>{{mediaObj.heading}}</h3>
             <p>{{mediaObj.description}}</p>
@@ -33,7 +33,7 @@
         </div>
     </div>
     </div>
-    <div class="video-section">
+    <div class="video-section" id="main-video-player-detail">
     <div class="carousel-section">
         <slick class="slider" settings="slickConfig2" ng-if="slickConfig2Loaded">
             <div ng-repeat="obj in topTenVideos  track by $index ;" ng-click="playVideo($index , topTenVideos)">

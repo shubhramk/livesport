@@ -1,5 +1,7 @@
 <div class="container events">
-    <div class="vid-container" >
+    <div class="video-player-section">
+    <div class="vid-container" id="main-vid-container">
+        <div class="logo" align="left"><img src="assets/images/logo.png" /></div>
         <video
                 id="video-player"
                 controls
@@ -12,7 +14,7 @@
 
         </video>
     </div>
-    <div class="vid-play-detail-section">
+    <div class="vid-play-detail-section" id="main-video-player-detail">
         <div class="col-lg-8 col-left">
             <h3>{{mediaObj.heading}}</h3>
             <p>{{mediaObj.description}}</p>
@@ -30,7 +32,7 @@
             <i class="fa fa-thumbs-down" aria-hidden="true"></i> {{mediaObj.unlikes}}
         </div>
     </div>
-
+    </div>
    <div class="video-list" ng-show="isChannel">
        <div class="video-heading"><h2>{{videoHeading}}</h2></div>
        <div class="no-js">
