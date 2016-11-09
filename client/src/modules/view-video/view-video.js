@@ -6,21 +6,6 @@ angular.module('myApp')
         function eventCtrl($scope , $timeout,$state,$http,$rootScope) {
 
         //get Channels List
-            var inview = new Waypoint.Inview({
-                element: $('#main-video-player-detail')[0],
-                enter: function(direction) {
-                    //$scope.smallvideo=false;
-                    $("#main-vid-container").removeClass("smallvideo");
-                },
-                exit: function(direction) {
-                    //$scope.smallvideo=true;
-                    $("#main-vid-container").addClass("smallvideo");
-                }
-            });
-
-        $scope.closePopupVideo = function(){
-                $("#main-vid-container").removeClass("smallvideo");
-            };
         $scope.videoHeading = getHeading($state.current.name);
         $scope.isChannel    = showVideoList($state.current.name);
 

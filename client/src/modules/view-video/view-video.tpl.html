@@ -1,8 +1,5 @@
 <div class="container events">
-    <div class="video-player-section">
-    <div class="vid-container" id="main-vid-container">
-        <div class="logo" align="left"><img src="assets/images/logo.png" /><i class="fa fa-times" aria-hidden="true" ng-click="closePopupVideo()"></i>
-        </div>
+    <div class="vid-container" >
         <video
                 id="video-player"
                 controls
@@ -14,26 +11,9 @@
                 vjs-vid >
 
         </video>
+    </div>   </div>
     </div>
-    <div class="vid-play-detail-section" id="main-video-player-detail">
-        <div class="col-lg-8 col-left">
-            <h3>{{mediaObj.heading}}</h3>
-            <p>{{mediaObj.description}}</p>
-        </div>
-        <div class="col-lg-4 col-right col-right-u text-right">
-            <i class="fa fa-eye" aria-hidden="true"></i> {{mediaObj.views}}
-        </div>
-        <div class="col-lg-8 col-left-b">
-            <div class="by">by: <span>{{mediaObj.genre}}</span></div>
-            <div class="by" ng-show="isChannel"><i class="fa fa-bookmark" aria-hidden="true"></i> favourite</div>
-        </div>
-        <div class="col-lg-4 col-right-b text-right">
-            <i class="fa fa-thumbs-up" aria-hidden="true"></i> {{mediaObj.likes}}
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <i class="fa fa-thumbs-down" aria-hidden="true"></i> {{mediaObj.unlikes}}
-        </div>
-    </div>
-    </div>
+
    <div class="video-list" ng-show="isChannel">
        <div class="video-heading"><h2>{{videoHeading}}</h2></div>
        <div class="no-js">
