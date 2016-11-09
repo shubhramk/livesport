@@ -17,6 +17,10 @@ angular.module('myApp')
                     $("#main-vid-container").addClass("smallvideo");
                 }
             });
+
+        $scope.closePopupVideo = function(){
+                $("#main-vid-container").removeClass("smallvideo");
+            };
         $scope.videoHeading = getHeading($state.current.name);
         $scope.isChannel    = showVideoList($state.current.name);
 

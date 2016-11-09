@@ -26,6 +26,9 @@ angular.module('myApp')
                  }
              }
          });
+         $scope.closePopupVideo = function(){
+             $("#main-vid-container").removeClass("smallvideo");
+         };
         //get Top Ten Videos
         $http.get('/api/getTopTenVideos').
             success(function(data) {
