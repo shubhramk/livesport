@@ -35,12 +35,12 @@
         <div class="video-heading"><h2>{{videoHeading}}</h2></div>
         <div class="no-js">
             <ul class="grid-caption cs-style-3">
-                <li class="video-container" ng-repeat="obj in videoList track by $index">
+                <li class="video-container" ng-repeat="obj in videoList track by $index" ng-click="playVideo($index , videoList)">
                     <figure>
                         <div class="video-block"><img ng-src="{{obj.poster}}" alt="{{obj.heading}}"> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
                         <figcaption>
                             <h3>{{obj.description}}</h3>
-                            <a ng-href="javascript:void(0);" ng-click="playVideo($index , videoList)">Play</a>
+                            <a ng-href="javascript:void(0);" >Play</a>
                         </figcaption>
                     </figure>
                     <div class="video-detail-block">

@@ -64,7 +64,9 @@ Font-Family: titillium_web
   src: url("../../../assets/font/titillium_web/TitilliumWeb-Bold.ttf") format("truetype")
 }
 
-
+html,body{
+    height:100%;
+}
 
 body {
     margin: 0;
@@ -972,4 +974,20 @@ IPAD
     .main-container {
         width: 100%;
     }
+}
+
+.loader{
+    background:#333;
+    height: 100%;
+    opacity: 0.7;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+.loader > img {
+    left: 49%;
+    margin: 0 auto;
+    position: absolute;
+    top: 49%;
 }

@@ -6,7 +6,7 @@ angular.module('myApp')
         function homeCtrl($scope,$interval,$location,$anchorScroll,$http,$rootScope,localStorageService,toastr) {
         $scope.pos = 0;
         $scope.tooltipIsOpen = false;
-
+        $scope.isVisible = true;
          $scope.mediaObj = {};
 
 
@@ -40,6 +40,7 @@ angular.module('myApp')
                 console.log(data);
                 $scope.topTenVideos = data;
                 $scope.mediaObj = data[0];
+                $scope.isVisible = false;
 
         });
         //get TOp Videos

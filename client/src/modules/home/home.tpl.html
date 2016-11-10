@@ -51,12 +51,12 @@
     <div class="video-heading"><h2>FEATURED VIDEOS</h2></div>
     <div class="no-js">
         <ul class="grid-caption cs-style-3">
-            <li class="video-container" ng-repeat="obj in featuredVideos  track by $index">
+            <li class="video-container" ng-repeat="obj in featuredVideos  track by $index" ng-click="playVideo($index,featuredVideos)">
                 <figure>
                     <div class="video-block"><img src="{{obj.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
                     <figcaption>
                         <h3>{{obj.description}}</h3>
-                        <a ng-click="playVideo($index,featuredVideos)">Play</a>
+                        <a >Play</a>
                     </figcaption>
                 </figure>
                 <div class="video-detail-block">
@@ -73,12 +73,12 @@
     <div class="video-heading"><h2>TOP VIDEOS</h2></div>
     <div class="no-js">
         <ul class="grid-caption cs-style-3">
-            <li class="video-container" ng-repeat="obj in topVideos | limitTo:6 track by $index ">
+            <li class="video-container" ng-repeat="obj in topVideos | limitTo:6 track by $index " ng-click="playVideo($index,topVideos)">
                 <figure>
                     <div class="video-block"><img src="{{obj.poster}}"  class="carousel-image"/> <i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
                     <figcaption>
                         <h3>{{obj.description}}</h3>
-                        <a ng-click="playVideo($index,topVideos)">Play</a>
+                        <a >Play</a>
                     </figcaption>
                 </figure>
                 <div class="video-detail-block">
@@ -92,3 +92,4 @@
 </div>
 <div class="clear"></div>
 </div>
+<div class="loader" ng-if="isVisible"><img src="./assets/images/ajax-loader.gif" /></div>
