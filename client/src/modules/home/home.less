@@ -2,6 +2,8 @@
    width:100%;
    height:665px;
    text-align:center;
+   overflow: hidden;
+   position: relative;
   .vjs-video-wrap{
     display:inline-block;
   }
@@ -102,4 +104,203 @@
 .video-js {
   background-color: #222;
 }
+.hi-icon::before {
+  display: block;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 30px;
+  text-transform: none;
+}
+.hi-icon::after {
+  box-shadow: 0 0 0 4px #666;
+  left: -7px;
+  opacity: 0;
+  padding: 7px;
+  top: -7px;
+  transform: scale(0.8);
+  transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+}
+.hi-icon::after {
+  border-radius: 50%;
+  box-sizing: content-box;
+  content: "";
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
+.hi-icon {
+  background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+  border-radius: 50%;
+  color: #cc0000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0;
+  height: 30px;
+  margin: 13px;
+  position: relative;
+  text-align: center;
+  transition: background 0.2s ease 0s, color 0.2s ease 0s;
+  width: 30px;
+  z-index: 1;
+}
+.hi-icon:hover::after {
 
+  opacity: 1;
+  transform: scale(1);
+
+}
+.hi-icon:hover{
+  background: #666 none repeat scroll 0 0;
+  color: #fff;
+}
+.statistics-div {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10000;
+}
+.statistics-container {
+  background: #222 none repeat scroll 0 0;
+  border-bottom: medium none;
+  border-radius: 0 0 0 8px;
+  bottom: 0;
+  box-sizing: content-box;
+  color: #fff;
+  float: left;
+  height: 370px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: -370px;
+  transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94) 0s;
+  width: 280px;
+  z-index: 100000;
+  &.slideRight {
+    top: 0;
+    //transform: translate3d(0%, 0px, 0px);
+  }
+  .team-heading {
+    margin-top: 10px;
+    > div {
+      display: inline-block;
+      > img {
+        width: 30px;
+      }
+      .team-name {
+        border-bottom: 2px solid red;
+        font-size: 12px;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .team-2{
+        &.team-name {
+          border-bottom: 2px solid #0d58b3;
+        }
+      }
+      .team-pos {
+        font-size: 19px;
+        vertical-align: top;
+      }
+    }
+    .team-heading-label {
+      color: #ccc;
+      font-size: 13px;
+      margin-left: 15px;
+      margin-right: 15px;
+      vertical-align: middle;
+    }
+  }
+  .team-win-number {
+    border-bottom: 1px solid #666;
+    display: table;
+    margin: 6%;
+    padding-bottom: 10px;
+    width: 88%;
+    .percent {
+      display: table-cell;
+      font-size: 17px;
+      vertical-align: middle;
+    }
+    .team-1 {
+      color: red;
+    }
+    .percent-label {
+      display: table-cell;
+      font-size: 15px;
+      margin-left: 20px;
+      margin-right: 20px;
+      word-wrap: break-word;
+    }
+    .team-2 {
+      color: #0d58b3;
+    }
+  }
+  .team-player-details {
+    border-bottom: 1px solid #666;
+    display: table;
+    margin: 6%;
+    padding-bottom: 10px;
+    width: 88%;
+    .player-details {
+      color: #fff;
+      font-size: 12px;
+      vertical-align: top;
+      width: 40%;
+      > img {
+        border-radius: 50%;
+        height: 30px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        width: 30px;
+      }
+      .block-scores {
+        display: table;
+        width: 100%;
+        >div {
+          display: table-cell;
+        }
+
+      }
+      .text-scores {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 10px;
+      }
+      .player-details-label {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+    > div {
+      display: table-cell;
+      vertical-align: middle;
+      padding-right: 10px;
+    }
+  }
+  .on-deck-details{
+    .name-heading, .text-scores {
+      font-size: 12px;
+    }
+  }
+
+  .team-1 .heading {
+    background: #f3642a none repeat scroll 0 0;
+  }
+  .team-2 .heading {
+    background: #0d58b3 none repeat scroll 0 0;
+  }
+  .fa.fa-times {
+    border: 2px solid #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 13px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: 1px;
+    width: 20px;
+  }
+}
