@@ -18,7 +18,7 @@
 
         </video>
         <div class="statistics-div" ng-show="mediaObj.genre==='Baseball'||mediaObj.genre==='Hockey'">
-            <i class="hi-icon fa fa-bar-chart" aria-hidden="true" ng-click="showMatchStatistics=true"></i>
+            <i class="hi-icon fa fa-bar-chart" aria-hidden="true" ng-init="showMatchStatistics = true" ng-click="showMatchStatistics=true"></i>
         </div>
         <div class="statistics-container" ng-class="{'slideRight':showMatchStatistics}">
             <i aria-hidden="true" class="fa fa-times" ng-click="showMatchStatistics=false"></i>

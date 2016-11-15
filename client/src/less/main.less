@@ -885,12 +885,12 @@ footer {
     width: 358px;
     z-index: 10000;
     border-radius: 5px;
-    .statistics-div{
+    .statistics-div,.statistics-container{
         display:none;
     }
-    .statistics-container {
+    .statistics-container.slideRight {
+       display:block;
        background: #222 none repeat scroll 0 0;
-       border: 2px solid #fff;
        border-radius: 0 5px 5px 0;
        bottom: 2px;
        height: auto;
@@ -898,9 +898,6 @@ footer {
        padding: 5px;
        position: fixed;
        top: auto;
-       .fa{
-           display:none;
-           }
     }
     .logo{
       background:#3c3c3c;
