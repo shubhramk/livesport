@@ -17,7 +17,7 @@
                 vjs-vid >
 
         </video>
-        <div class="statistics-div" ng-show="mediaObj.genre==='Baseball'||mediaObj.genre==='Hockey'">
+        <div class="statistics-div" ng-show="mediaObj.genre=='Baseball'||mediaObj.genre=='Hockey'">
             <i class="hi-icon fa fa-bar-chart" aria-hidden="true" ng-init="showMatchStatistics = true" ng-click="showMatchStatistics=true"></i>
         </div>
         <div class="statistics-container" ng-class="{'slideRight':showMatchStatistics}">
@@ -106,12 +106,12 @@
                     <div class="text-scores">1-3,1B,RBI</div>
                 </div>
             </div>
-            <div class="statistics-data-container" ng-show="mediaObj.genre==='Hockey'">
+            <div class="statistics-data-container" ng-show='mediaObj.genre == "Hockey"'>
                 <table class="ihl-template">
                     <thead>
                         <tr>
-                            <td><img class="team-logo" src="assets/images/nhl1.png" /><span class="team-name">Chicago Blackhawks</span></td>
-                            <td><img class="team-logo" src="assets/images/nhl2.png" /><span class="team-name">Montreal Canadiens</span></td>
+                            <td class="mTop"><img class="team-logo" src="assets/images/nhl1.png" /><span class="team-name">Chicago Blackhawks</span></td>
+                            <td class="mTop"><img class="team-logo" src="assets/images/nhl2.png" /><span class="team-name">Montreal Canadiens</span></td>
                         </tr>
                     </thead>
                     <tbody>
