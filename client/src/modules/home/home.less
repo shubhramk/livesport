@@ -163,9 +163,7 @@
   z-index: 10000;
 }
 .statistics-container {
-  background: #222 none repeat scroll 0 0;
   border-bottom: medium none;
-  border-radius: 0 0 0 8px;
   bottom: 0;
   box-sizing: content-box;
   color: #fff;
@@ -178,12 +176,15 @@
   transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94) 0s;
   width: 280px;
   z-index: 100000;
+  .statistics-data-container {
+    background: #222;
+  }
   &.slideRight {
     top: 0;
     //transform: translate3d(0%, 0px, 0px);
   }
   .team-heading {
-    margin-top: 10px;
+    padding-top: 10px;
     > div {
       display: inline-block;
       > img {
@@ -302,5 +303,53 @@
     right: 0;
     top: 1px;
     width: 20px;
+  }
+  table.ihl-template {
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    thead {
+      tr {
+        td {
+          background: #1785d8 none repeat scroll 0 0;
+          border-bottom: 1px solid #fff;
+          color: #fff;
+          width: 50%;
+          .team-logo {
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+          }
+          .team-name {
+            display: block;
+            font-weight: bold;
+          }
+          &:first-child {
+            border-right: 1px solid #fff;
+          }
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          &.header-column {
+            background: #fff none repeat scroll 0 0;
+            color: #333;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+          }
+          &.column-data{
+            height: 30px;
+            line-height: 30px;
+            &:first-child {
+              border-right: 1px solid #fff;
+            }
+          }
+        }
+      }
+    }
+
+
   }
 }
