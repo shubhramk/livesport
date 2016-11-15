@@ -2,7 +2,7 @@
 /**
  * @ video js
  */
-angular.module("myApp").directive('vjsVid', function () {
+angular.module("myApp").directive('vjsVid', function ($rootScope) {
     return {
         restrict: 'A', //This means that it will be used as an attribute and NOT as an element.
         replace:true,
@@ -38,6 +38,10 @@ angular.module("myApp").directive('vjsVid', function () {
                 element.attr('id', attrs.id);
                 videojs(attrs.id, setup, function(){
                     player = this;
+                    player.on("ended", function(){
+                        console.log('vid started');
+                        $rootScope.$broadcast("vidEnded",{ player: player});
+                    });
                     setStreams(media);
                 });
             }

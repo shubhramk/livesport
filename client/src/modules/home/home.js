@@ -116,11 +116,16 @@ angular.module('myApp')
             return false;
         };
         //video js player event
-        $scope.$on('vjsVideoReady', function (e, data) {
+        // $scope.$on('vjsVideoReady', function (e, data) {
+        //
+        //     console.log('video id:' + data.id);
+        //     console.log('video.js player instance:' + data.player);
+        //     console.log('video.js controlBar instance:' + data.controlBar);
+        //     data.player.play();
+        // });
 
-            console.log('video id:' + data.id);
-            console.log('video.js player instance:' + data.player);
-            console.log('video.js controlBar instance:' + data.controlBar);
+        $scope.$on('vidEnded', function (e, data) {
+            //console.log('video.js player instance:' + data.player);
             data.player.play();
         });
 
@@ -128,4 +133,8 @@ angular.module('myApp')
 
 
 
-  }]);
+
+
+
+
+        }]);
